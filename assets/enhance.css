@@ -1,0 +1,102 @@
+/* ===========================================================
+   enhance.css — 全ページ共通のUX層
+   パートページ側が定義する配色トークン（--paper / --ink /
+   --accent 等）を var() で参照するので、パートごとの配色に
+   自動で馴染む。フォールバック値は一覧ページ用。
+   =========================================================== */
+
+/* --- 1. sticky目次の裏に見出しが隠れるのを防ぐ --- */
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:68px}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+}
+
+/* --- 2. キーボード操作の可視化 --- */
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--accent,#2f5e8c);
+  outline-offset:2px;
+  border-radius:3px;
+}
+
+/* --- 3. スキップリンク --- */
+.ux-skip{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--accent,#2f5e8c);color:#fff;
+  padding:10px 16px;border-radius:0 0 6px 0;
+  font-size:14px;font-weight:700;text-decoration:none;
+}
+.ux-skip:focus{left:0}
+
+/* --- 4. 読み進みバー --- */
+.ux-progress{
+  position:fixed;top:0;left:0;height:3px;width:0;
+  background:var(--accent,#2f5e8c);
+  z-index:60;transition:width .1s linear;
+  pointer-events:none;
+}
+
+/* --- 5. 目次の現在位置 --- */
+.toc a.is-active{
+  color:var(--accent-ink,#fff)!important;
+  background:var(--accent,#2f5e8c);
+  border-color:var(--accent,#2f5e8c)!important;
+  font-weight:700;
+}
+
+/* --- 6. 横スクロールする表の合図 --- */
+.ux-scrollable{
+  position:relative;
+  /* insetの影はスクロールしても要素の枠に留まる */
+  box-shadow:var(--shadow, 0 1px 2px rgba(0,0,0,.06)), inset -14px 0 14px -14px rgba(28,37,48,.45);
+}
+.ux-scrollable.is-at-end{
+  box-shadow:var(--shadow, 0 1px 2px rgba(0,0,0,.06));
+}
+.ux-hint{
+  display:flex;align-items:center;gap:6px;
+  margin:18px 0 -14px;
+  font-size:12.5px;font-weight:600;
+  color:var(--accent,#2f5e8c);
+}
+.ux-hint::before{
+  content:"";
+  width:15px;height:15px;flex:none;
+  background:currentColor;
+  /* 横向き矢印 */
+  -webkit-mask:no-repeat center/contain url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 12h14M13 7l5 5-5 5" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  mask:no-repeat center/contain url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 12h14M13 7l5 5-5 5" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+.ux-hint.is-done{opacity:0;transition:opacity .3s ease}
+
+/* --- 7. 右下の操作ボタン --- */
+.ux-fab{
+  position:fixed;right:16px;bottom:16px;z-index:55;
+  display:flex;flex-direction:column;gap:8px;
+}
+.ux-fab button{
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  border:1px solid var(--rule,#c9cdc4);
+  background:var(--paper-raised,#fff);
+  color:var(--ink,#1c2530);
+  box-shadow:0 2px 6px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.10);
+  cursor:pointer;
+  font-size:17px;line-height:1;
+  transition:transform .16s ease, border-color .16s ease, opacity .2s ease;
+}
+.ux-fab button:hover{transform:translateY(-2px);border-color:var(--accent,#2f5e8c)}
+.ux-fab button svg{width:20px;height:20px;display:block}
+.ux-top[hidden]{display:none!important}
+
+@media (max-width:600px){
+  .ux-fab{right:12px;bottom:12px}
+  .ux-fab button{width:42px;height:42px}
+}
+
+/* --- 8. 印刷時は操作系を隠す --- */
+@media print{
+  .ux-fab,.ux-progress,.ux-skip,.ux-hint,.site-crumb,.crumb{display:none!important}
+  .ux-scrollable{box-shadow:none!important}
+}
