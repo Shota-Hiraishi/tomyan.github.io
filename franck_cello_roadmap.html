@@ -1,0 +1,1178 @@
+<title>フランク 交響曲ニ短調 — チェロ練習ロードマップ</title>
+<style>
+:root{
+  --paper:#eef0ec;
+  --paper-raised:#ffffff;
+  --ink:#1c2530;
+  --ink-soft:#4b5563;
+  --rule:#c9cdc4;
+  --accent:#2f7a6b;
+  --accent-ink:#ffffff;
+  --accent-soft:#d9ece7;
+  --brass:#8a6a30;
+  --brass-soft:#eee2c4;
+  --good:#3f6b4a;
+  --good-soft:#dbe7dd;
+  --shadow: 0 1px 2px rgba(28,37,48,.06), 0 6px 20px rgba(28,37,48,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141920;
+    --paper-raised:#1b212b;
+    --ink:#e7e6df;
+    --ink-soft:#a7aeb8;
+    --rule:#333c48;
+    --accent:#7fd4c0;
+    --accent-ink:#0b1a16;
+    --accent-soft:#1c332e;
+    --brass:#d1b064;
+    --brass-soft:#3a3220;
+    --good:#7fae8c;
+    --good-soft:#213229;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141920; --paper-raised:#1b212b; --ink:#e7e6df; --ink-soft:#a7aeb8;
+  --rule:#333c48; --accent:#7fd4c0; --accent-ink:#0b1a16; --accent-soft:#1c332e;
+  --brass:#d1b064; --brass-soft:#3a3220; --good:#7fae8c; --good-soft:#213229;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --paper:#eef0ec; --paper-raised:#ffffff; --ink:#1c2530; --ink-soft:#4b5563;
+  --rule:#c9cdc4; --accent:#2f7a6b; --accent-ink:#ffffff; --accent-soft:#d9ece7;
+  --brass:#8a6a30; --brass-soft:#eee2c4; --good:#3f6b4a; --good-soft:#dbe7dd;
+  --shadow: 0 1px 2px rgba(28,37,48,.06), 0 6px 20px rgba(28,37,48,.06);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Hiragino Sans","Yu Gothic",Meiryo,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent-soft)}
+h1,h2,h3,h4{
+  font-family:Iowan,"Iowan Old Style","Palatino Linotype",Palatino,"Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  font-weight:600;
+  color:var(--ink);
+  text-wrap:balance;
+  margin:0;
+}
+a{color:var(--accent)}
+p{margin:.6em 0}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.tabnum{font-variant-numeric:tabular-nums}
+
+/* ---------- masthead ---------- */
+.masthead{
+  border-bottom:1px solid var(--rule);
+  padding:56px 0 34px;
+  background:linear-gradient(var(--paper),var(--paper));
+}
+.masthead .eyebrow{
+  font-family:Iowan,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-style:italic;
+  color:var(--ink-soft);
+  font-size:.95rem;
+  letter-spacing:.02em;
+}
+.masthead h1{
+  font-size:clamp(1.9rem,4.2vw,2.7rem);
+  margin-top:.25em;
+  line-height:1.15;
+}
+.masthead .sub{
+  font-size:1.05rem;
+  color:var(--ink-soft);
+  margin-top:.6em;
+  max-width:60ch;
+}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.meta-chip{
+  border:1px solid var(--rule);
+  background:var(--paper-raised);
+  border-radius:3px;
+  padding:6px 12px;
+  font-size:.82rem;
+  color:var(--ink-soft);
+  display:flex;
+  gap:6px;
+  align-items:baseline;
+}
+.meta-chip b{color:var(--ink);font-weight:600}
+
+/* ---------- toc ---------- */
+.toc{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+}
+.toc .wrap{
+  display:flex;gap:2px;overflow-x:auto;padding-top:10px;padding-bottom:10px;
+  scrollbar-width:thin;
+}
+.toc a{
+  white-space:nowrap;
+  text-decoration:none;
+  color:var(--ink-soft);
+  font-size:.82rem;
+  padding:6px 10px;
+  border-radius:3px;
+  border:1px solid transparent;
+}
+.toc a:hover{border-color:var(--rule);color:var(--ink)}
+a:focus-visible,.toc a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+section{padding:52px 0}
+section + section{border-top:1px solid var(--rule)}
+.kicker{
+  display:inline-block;
+  font-size:.75rem;
+  letter-spacing:.08em;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:.5em;
+}
+h2.h-title{font-size:clamp(1.4rem,3vw,1.85rem);margin-bottom:.3em}
+.lede{color:var(--ink-soft);max-width:66ch;font-size:1.02rem}
+
+/* ---------- rehearsal-letter badge ---------- */
+.rl{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.5em;height:1.5em;
+  border:1.3px solid currentColor;
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;
+  font-weight:700;font-size:.8rem;
+  margin-right:.35em;
+  color:var(--ink);
+  border-radius:2px;
+  vertical-align:-.25em;
+}
+
+/* ---------- roadmap timeline ---------- */
+.roadmap{list-style:none;margin:34px 0 0;padding:0;position:relative}
+.roadmap::before{
+  content:"";position:absolute;left:19px;top:6px;bottom:6px;width:1px;
+  background:var(--rule);
+}
+.phase{position:relative;padding:0 0 34px 56px}
+.phase:last-child{padding-bottom:0}
+.phase-num{
+  position:absolute;left:0;top:0;
+  width:40px;height:40px;border-radius:50%;
+  background:var(--paper-raised);border:1.5px solid var(--accent);
+  color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:1.05rem;
+}
+.phase h3{font-size:1.12rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.6em}
+.phase h3 .when{font-family:inherit;font-weight:400;font-size:.78rem;color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:3px;padding:2px 8px;}
+.phase p.goal{color:var(--ink-soft);margin-top:.3em;font-size:.96rem}
+.phase ul{margin:.7em 0 0;padding-left:1.15em}
+.phase li{margin:.28em 0;font-size:.96rem}
+.phase li b{color:var(--ink)}
+
+/* ---------- movement sections ---------- */
+.mvt-head{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;
+  border-bottom:2px solid var(--ink);
+  padding-bottom:14px;margin-bottom:10px;
+}
+.mvt-head .tag{
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;font-style:italic;
+  color:var(--ink-soft);font-size:1rem;
+}
+.mvt-key{font-size:.85rem;color:var(--ink-soft)}
+
+.tbl-scroll{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:4px;background:var(--paper-raised);box-shadow:var(--shadow)}
+table.form-map{border-collapse:collapse;width:100%;min-width:680px;font-size:.88rem}
+table.form-map th{
+  text-align:left;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:600;
+  background:var(--brass-soft);color:var(--ink);
+  padding:10px 12px;border-bottom:1px solid var(--rule);white-space:nowrap;font-size:.8rem;
+  letter-spacing:.02em;
+}
+table.form-map td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.form-map tr:last-child td{border-bottom:none}
+table.form-map tr:hover td{background:color-mix(in srgb, var(--accent-soft) 40%, transparent)}
+td.m{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+td.tk{white-space:nowrap;color:var(--ink-soft)}
+td.role{min-width:24ch}
+td.lv{white-space:nowrap;color:var(--brass);letter-spacing:-.05em}
+
+.callout{
+  margin-top:26px;border:1px solid var(--accent);border-left-width:4px;
+  background:var(--accent-soft);border-radius:3px;padding:18px 20px;
+}
+.callout h4{font-size:1rem;color:var(--ink);margin-bottom:.3em}
+.callout.neutral{border-color:var(--brass);background:var(--brass-soft)}
+.diff-list{list-style:none;margin:.6em 0 0;padding:0;display:grid;gap:14px}
+.diff-item{display:flex;gap:12px;align-items:flex-start}
+.diff-rank{
+  flex:none;width:1.7em;height:1.7em;border-radius:50%;
+  background:var(--accent);color:var(--accent-ink);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.82rem;margin-top:.1em;
+}
+.diff-item p{margin:0;font-size:.93rem}
+.diff-item p b{display:block;color:var(--ink);font-size:.95rem;margin-bottom:.15em}
+.diff-item p .fix{display:block;margin-top:.35em;color:var(--ink-soft)}
+
+.note{
+  margin-top:18px;font-size:.9rem;color:var(--ink-soft);
+  border-left:2px solid var(--rule);padding-left:12px;
+}
+
+/* ---------- cyclic diagram ---------- */
+.cyclic{margin-top:30px;display:grid;gap:0;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-raised);box-shadow:var(--shadow)}
+.cyc-row{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--rule)}
+.cyc-row:first-child{border-top:none}
+.cyc-label{
+  padding:14px 14px;background:var(--brass-soft);
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:600;font-size:.88rem;
+  display:flex;align-items:center;
+}
+.cyc-events{padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.cyc-evt{display:flex;gap:10px;align-items:baseline;font-size:.88rem}
+.cyc-evt .m{flex:none;width:6.5em;color:var(--brass);font-variant-numeric:tabular-nums;font-weight:700}
+.cyc-evt .d{color:var(--ink-soft)}
+
+/* ---------- 4-part comparison ---------- */
+.compare{margin-top:26px;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-raised);box-shadow:var(--shadow);overflow-x:auto}
+.compare-row{display:grid;grid-template-columns:.8fr 1fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule);min-width:980px}
+.compare-row:first-child{border-top:none}
+.compare-row > div{padding:12px 16px;font-size:.87rem;color:var(--ink-soft);border-right:1px solid var(--rule)}
+.compare-row > div:last-child{border-right:none}
+.compare-row > div:first-child{font-size:.82rem}
+.compare-row > div.me{color:var(--accent);font-weight:600;background:color-mix(in srgb, var(--accent-soft) 40%, transparent)}
+.compare-head{display:grid;grid-template-columns:.8fr 1fr 1fr 1fr 1fr 1fr;background:var(--brass-soft);min-width:980px}
+.compare-head div{padding:10px 16px;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:.85rem;border-right:1px solid var(--rule)}
+.compare-head div:last-child{border-right:none}
+
+/* ---------- theory / glossary cards ---------- */
+.theory-grid{display:grid;gap:18px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.theory-card{
+  background:var(--paper-raised);border:1px solid var(--rule);border-radius:4px;
+  padding:18px 20px;box-shadow:var(--shadow);
+}
+.theory-card h4{font-size:.98rem;margin-bottom:.5em;color:var(--accent)}
+.theory-card p{font-size:.9rem;color:var(--ink-soft);margin:0}
+.theory-card code{
+  font-family:Cambria,Georgia,serif;font-style:italic;color:var(--ink);background:none;padding:0;
+}
+
+/* ---------- recordings ---------- */
+.rec-list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:16px}
+.rec{
+  background:var(--paper-raised);border:1px solid var(--rule);border-radius:4px;
+  padding:18px 20px;box-shadow:var(--shadow);
+}
+.rec h4{font-size:1rem;margin-bottom:.2em}
+.rec .who{font-size:.82rem;color:var(--brass);font-weight:600;letter-spacing:.02em}
+.rec p{font-size:.91rem;color:var(--ink-soft);margin:.45em 0 0}
+.rec .use{display:block;margin-top:.5em;color:var(--ink)}
+.rec a{font-size:.88rem}
+
+/* ---------- checklist ---------- */
+.checklist{margin-top:24px;display:grid;gap:10px}
+.check-item{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--paper-raised);border:1px solid var(--rule);border-radius:4px;padding:12px 16px;
+}
+.check-box{
+  flex:none;width:1.1em;height:1.1em;border:1.4px solid var(--good);border-radius:3px;margin-top:.2em;
+}
+.check-item p{margin:0;font-size:.92rem}
+
+footer{padding:40px 0 70px;color:var(--ink-soft);font-size:.82rem}
+footer .wrap{border-top:1px solid var(--rule);padding-top:20px}
+
+@media (min-width:1200px){
+  .wrap > .tbl-scroll,.wrap > .compare{width:calc(100% + 200px);margin-left:-100px}
+}
+
+@media (min-width:1280px){
+  .toc .wrap{max-width:1240px}
+}
+
+@media (max-width:600px){
+  .cyc-row{grid-template-columns:1fr}
+  .cyc-label{padding:10px 14px}
+  .compare-row,.compare-head{grid-template-columns:1fr;min-width:0}
+  .compare{overflow-x:visible}
+}
+
+@media print{
+  .toc{display:none}
+  .tbl-scroll{overflow-x:visible;box-shadow:none}
+  table.form-map{min-width:0;width:100%;table-layout:fixed;font-size:.72rem}
+  table.form-map td,table.form-map th{padding:6px 8px;word-break:break-word;white-space:normal}
+  td.m,td.tk,td.lv{white-space:normal}
+  .compare,.compare-row,.compare-head{min-width:0;overflow:visible;box-shadow:none}
+  .compare-row,.compare-head{grid-template-columns:.75fr 1fr 1fr 1fr 1fr 1fr}
+  .compare-row > div,.compare-head div{font-size:.62rem;padding:6px 8px;overflow-wrap:anywhere;word-break:break-word}
+  .wrap > .tbl-scroll,.wrap > .compare{width:auto;margin-left:0}
+  .theory-card,.rec,.check-item{box-shadow:none;break-inside:avoid}
+  .masthead{break-after:page}
+  section + section{break-before:page}
+}
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">César Franck &nbsp;·&nbsp; Symphonie en ré mineur, FWV 48 (1888)</div>
+    <h1>チェロ奏者のための<br>本番までの練習ロードマップ</h1>
+    <p class="sub">循環形式で書かれた全3楽章を、ほぼ初見の状態から本番の舞台に載せるまでの道筋です。今回は<b>ブライトコプフ新校訂版(Peter Jost, 1999)のチェロ・パート譜</b>そのものを1ページずつ精読し、印刷された小節番号と練習記号に基づいて全面的に作り直しました。</p>
+    <div class="meta-row">
+      <span class="meta-chip">対象パート &nbsp;<b>Violoncello</b></span>
+      <span class="meta-chip">楽章 &nbsp;<b>全3楽章</b></span>
+      <span class="meta-chip">想定期間 &nbsp;<b>4〜6ヶ月以上</b></span>
+      <span class="meta-chip">前提 &nbsp;<b>ほぼ初見から</b></span>
+      <span class="meta-chip">参照譜 &nbsp;<b>Breitkopf OB 5328 (Urtext)</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#background">作曲背景</a>
+    <a href="#overview">曲の概要</a>
+    <a href="#roadmap">練習ロードマップ</a>
+    <a href="#mvt1">第1楽章</a>
+    <a href="#mvt2">第2楽章</a>
+    <a href="#mvt3">第3楽章</a>
+    <a href="#cyclic">循環主題マップ</a>
+    <a href="#compare">5パートの違い</a>
+    <a href="#theory">理論との橋渡し</a>
+    <a href="#glossary">用語集</a>
+    <a href="#recordings">おすすめ音源</a>
+    <a href="#checklist">本番までの総チェック</a>
+  </div>
+</nav>
+
+<section id="background">
+  <div class="wrap">
+    <span class="kicker">BACKGROUND</span>
+    <h2 class="h-title">教会オルガニストが66歳で書いた、最初で最後の交響曲</h2>
+    <p class="lede">
+      <b>セザール・フランク</b>(1822–1890)はベルギー・リエージュ生まれ。パリ音楽院でピアノを学んだのち、生涯の大半を教会オルガニストとして過ごしました。1858年にサント=クロチルド教会の主任オルガニストに就任し、1872年からはパリ音楽院オルガン科教授も務めています。弟子にはヴァンサン・ダンディ、エルネスト・ショーソン、アンリ・デュパルク、ルイ・ヴィエルヌ、シャルル・トゥルヌミール、ギヨーム・ルクーら——後に「フランキスト」と呼ばれる一群がいました。<b>代表作(この交響曲・ヴァイオリンソナタ・弦楽四重奏曲)はいずれも驚くほど晩年に集中して生まれています。</b>
+    </p>
+    <p class="lede">
+      交響曲の作曲は1887年の夏に始まり、<b>総譜が完成したのは1888年8月22日</b>、フランク66歳のときでした。献呈されたのは、ワーグナーの楽劇研究を勧めた弟子デュパルクです。初演の道のりは平坦ではなく、指揮者シャルル・ラムルーには一度断られています。結局<b>1889年2月17日、パリ音楽院のコンセール・ソシエテで、ジュール・ガルサン指揮により初演</b>されました。フランクはその翌1890年、乗合馬車との接触事故をきっかけに体調を崩し、この世を去ります。
+    </p>
+    <p class="lede">
+      初演の評価は真っ二つでした。『フィガロ』紙は「きわめて重要な作品」としつつ「あまりに濃密で緊密なため、一度聴いただけではその全貌を掴みきれない」と書き、熱狂と冷淡さの同居を伝えています。批評家カミーユ・ベレーグは「潤いも魅力もない、乾いてくすんだ音楽」と切り捨て、『ル・メネストレル』紙は「陰鬱で仰々しく、語ることが少ない」と評しました。作曲家グノーに至っては「独断にまで押し進められた無能の断言」と言い放ったと伝えられます。<b>とりわけ集中砲火を浴びたのが、第2楽章で主題を歌うコーラングレ(イングリッシュホルン)</b>でした——音楽院の同僚が「交響曲にコーラングレを使うなど、誰が聞いたことがあるか」と詰め寄った逸話は有名です。普仏戦争(1870–71)の敗戦後、フランス音楽界にはナショナリズムが渦巻いており、ワーグナーとリストの影響を隠さないフランクの書法は「裏切り」とすら見なされました。
+    </p>
+    <p class="lede">
+      それでも作曲者自身は動じませんでした。弟子たちが伝えるところによれば、フランクは初演のホールを出るとき「実によく鳴ったじゃないか」と満足げに語ったといいます。作品が広く受け入れられたのは、1893年に当のラムルーがようやく取り上げてからのこと。以後この曲は、フランスの交響曲としては例外的な頻度で演奏される「近代の古典」となりました。
+    </p>
+    <p class="lede">
+      フランク自身は3つの楽章にそれぞれ性格づけを与えています——第1楽章は「力強く、そして温かく」、第2楽章は「甘美で、もの悲しく」、終楽章は「輝かしく、光を放つように」。第2楽章が緩徐楽章とスケルツォを1つに融合した特異な構造なのは、4楽章制を3楽章に圧縮した結果です。そして全体を貫くのが<b>循環形式(cyclic form)</b>——冒頭に置かれた短い動機が、姿を変えながら全楽章に回帰する構成原理です。ベートーヴェンの第9交響曲を先例とし、直接には前年に成功したサン=サーンス《オルガン付き》交響曲(1886)からの示唆があったとされます。
+    </p>
+    <div class="tbl-scroll">
+      <table class="form-map" style="margin-top:8px">
+        <thead><tr><th>楽章</th><th>調・拍子・形式</th><th>フランク自身の性格づけ</th><th>特徴</th></tr></thead>
+        <tbody>
+          <tr><td class="m">I. Lento – Allegro non troppo</td><td class="tk">ニ短調 / 4-4→2-2 / ソナタ形式</td><td class="tk">力強く、温かく</td><td>低弦(Vc/Va/Cb)が提示する重々しい動機が、全曲を支配する循環主題になる</td></tr>
+          <tr><td class="m">II. Allegretto</td><td class="tk">変ロ短調 / 3-4 / 緩徐楽章+スケルツォ</td><td class="tk">甘美で、もの悲しく</td><td>ハープと弦のピチカートの上でコーラングレが歌う。初演時に最も批判された楽章</td></tr>
+          <tr><td class="m">III. Allegro non troppo</td><td class="tk">ニ長調 / 2-2 / ソナタ形式の変形</td><td class="tk">輝かしく、光を放つように</td><td>第1・第2楽章の主題が回帰・統合され、ニ長調の凱歌として閉じる</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout neutral">
+      <h4>今回参照した楽譜について — なぜ小節番号が旧版と違うのか</h4>
+      <p style="font-size:.92rem;margin:.3em 0 0">この交響曲の<b>自筆総譜は1935年、シャトーの火災で焼失</b>しています。そのため現行の校訂譜は、フランク生前に出版された初版譜と、作曲者自身による4手ピアノ編曲を典拠に復元されたものです。今回参照した<b>ブライトコプフ&amp;ヘルテル社のウアテクスト版(Peter Jost 校訂, 1999年 / Orchester-Bibliothek 5328)</b>もこの系譜にあります。<br>
+      このパート譜には<b>各段の頭に小節番号</b>が、そして<b>練習記号(A, B, C…)</b>が明記されています。<b>本ロードマップの小節番号・練習記号はすべてこの版の印刷値です。</b>IMSLPで入手できるパブリックドメインの旧パート譜とは番号がずれる箇所があるため、他パートの奏者と場所を確認し合うときは「どの版か」を先に揃えてください。</p>
+    </div>
+  </div>
+</section>
+
+<section id="overview">
+  <div class="wrap">
+    <span class="kicker">OVERVIEW</span>
+    <h2 class="h-title">なぜこの曲のチェロは難しいのか</h2>
+    <p class="lede">
+      チェロには<b>全曲でいちばん重い責任</b>があります——<b>m.1 の1拍目、循環主題を最初に鳴らすのがチェロ</b>だからです(ヴィオラ・コントラバスと共に)。パート譜の冒頭に休符ではなく実音(d–cis–f)が p で書かれている。<b>冷えた状態の1音目で、オーケストラ全体の音程が決まります。</b>しかもこの主題を<b>第1楽章だけで6回</b>弾く——4パート中で最多です。
+    </p>
+    <p class="lede">
+      技術の山は別のところにあります。<b>第1楽章 m.417–434 の18小節ノンストップの8分音符</b>——低音↔高音の交替型で<b>弦跨ぎが1拍ごと</b>に発生し、実質128音以上を ff で弾き続けます。後半は音程よりも<b>弓が持たなくなる</b>ことで崩れる。そして<b>♭6の調号のまま加線3〜4本を読む m.349–358</b>。
+    </p>
+    <p class="lede">
+      音部記号の扱いも独特です。第1楽章ではヘ音⇄テノールを4区間往復し、<b>m.65 と m.321 は小節の途中で切り替わります</b>。ところが<b>第3楽章は全440小節がヘ音記号のみ</b>——テノール記号もト音記号も1か所も現れません。その代償として、<b>G4〜A4 相当の高音もすべてヘ音記号の加線3〜4本</b>で書かれています。<b>該当箇所に鉛筆でテノール記号を書き足すだけで、読譜負荷が半減します。</b>
+    </p>
+    <p class="lede">
+      第2楽章は<b>4パート中で最も奏法の切替が多い楽章</b>です。pizz.⇄arco が<b>20回</b>——うち<b>猶予が0.5拍しかない切替が5回</b>、とくに <b>m.199 は1小節の中に「arco → pizz. → arco」と3つの奏法指示が並記</b>されています。<b>「弓を持ったまま人差し指で撥弦する」方式を全区間の標準にする</b>——この方針を最初に決めることが、この楽章の攻略法です。
+    </p>
+    <p class="lede">
+      以下の楽章別セクションは、パート譜全15ページ(第1楽章 p.1–7 / 第2楽章 p.8–10 / 第3楽章 p.11–15)を1ページずつ視覚解析し、印刷された小節番号・練習記号・強弱・奏法指示をすべて拾い出したうえで構成しています。
+    </p>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <span class="kicker">ROADMAP</span>
+    <h2 class="h-title">本番までの6フェーズ</h2>
+    <p class="lede">4〜6ヶ月以上という期間を想定した段階分けです。期間が4ヶ月に近い場合はフェーズ5・6を圧縮して並行させ、6ヶ月以上あるならフェーズ2・3を長めに取ってください。「何ヶ月目か」より<b>「どの段階の課題を今やっているか」</b>を意識するのが大切です。</p>
+
+    <ol class="roadmap">
+      <li class="phase">
+        <div class="phase-num">1</div>
+        <h3>冒頭の6小節を作り込む <span class="when">目安: 1ヶ月目</span></h3>
+        <p class="goal">チェロは「最初の音」から責任が発生します。そこから始めてください。</p>
+        <ul>
+          <li><b>m.1–6 の循環主題(d–cis–f)を最優先で仕上げる。</b>3音だけをチューナーで毎日確認(<b>cis は低めに取りすぎない</b>)。p での発音は<b>「置き弓スタート」</b>——弓を弦に置いてから動かす——に統一する。</li>
+          <li><b>音部記号が変わる小節の直前に、鉛筆で縦線と「テノール」「ヘ音」を大書きする。</b>第1楽章の4区間、とくに <b>m.65 と m.321 は小節の途中</b>で変わります。</li>
+          <li><b>第3楽章の加線3〜4本の箇所に、鉛筆でテノール記号を書き足す。</b>m.201–202 / m.263–267 / m.421–426。この版の第3楽章は<b>全編ヘ音記号</b>なので、この一手間で読譜負荷が半減します。</li>
+          <li>全曲を通して1回、遅いテンポで初見通し。止まらず最後まで、を優先。</li>
+          <li>ニ短調・ヘ短調・ニ長調のスケールとアルペジオを毎日のウォームアップに。<b>変ホ短調(♭6)は親指ポジションで</b>別メニューを組む。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">2</div>
+        <h3>難所の分解練習 <span class="when">目安: 2ヶ月目</span></h3>
+        <p class="goal">各楽章の難所を、メトロノームで個別に潰していく段階。</p>
+        <ul>
+          <li><b>第1楽章:</b> m.63–73 の記号往復は<b>「m.13–20(同じ音型のニ短調版、ヘ音記号のみ)を先に仕上げてから」</b>移ると、音型が既知になって記号だけに集中できます。m.353–358 の♭6は<b>先に音名を書き込んでから</b>。</li>
+          <li><b>第2楽章:</b> m.199 の「arco→pizz.→arco」を<b>右手だけ(左手は開放弦)</b>で♩=50から100回。<b>弓を持ったまま人差し指で弾く形</b>を固定する。</li>
+          <li><b>第3楽章:</b> m.268–279 の6度重音8分連打は、<b>下声だけ／上声だけ</b>を全弓レガートで固めてから重音に。m.171–174 の半音階は<b>運指を完全に確定</b>してから。</li>
+          <li><b>持ち替えの時間を確認する。</b>第1楽章 m.226–228 と m.240–242 の3小節休みは、<b>pizz./arco の持ち替えのために確保されています</b>。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">3</div>
+        <h3>弓の持久力を作る <span class="when">目安: 3ヶ月目</span></h3>
+        <p class="goal">チェロの最大の課題は「弓が最後まで持つか」です。</p>
+        <ul>
+          <li><b>第1楽章 m.417–434(18小節の ff 8分音符)を通しで。</b>まず<b>右手だけ</b>(開放弦A・D)で弓順とリズムを ff で通し、<b>弓幅の上限を決め打ち</b>する——ff だからと元弓まで使うと確実に足りません。<b>中弓の1/3幅で密度を出す</b>方向で設計。</li>
+          <li>60→76→88→100→本番テンポと段階を踏み、<b>各段階で必ず m.417 から通す</b>(部分練習だけでは持久力が付きません)。</li>
+          <li><b>第3楽章 m.350–403 の54小節スラー</b>は<b>弓の配分表</b>を作る。<span class="rl">S</span>(m.398)で ff になるので <b>m.395 までに弓元に戻しておく</b>。</li>
+          <li>本番に近いテンポで通し、崩れた箇所はフェーズ2の分解練習に戻す(往復してよい)。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">4</div>
+        <h3>パート内合わせ <span class="when">目安: 4ヶ月目</span></h3>
+        <p class="goal">セクションで音を揃え、ディヴィジを確定させる段階。</p>
+        <ul>
+          <li><b>div. の上下を確定する。</b>第1楽章 m.21–25 / 69–73 / <b>m.282–286</b> / m.456、第3楽章 m.145 / 153 / <b>m.203(3声)</b> / 293 / 318 / 330 / 347。<b>m.282–286 は下声が完全な保続音で、動かない分だけ音程が露呈します</b>——耳のよい奏者を下に置く判断もあり得ます。</li>
+          <li><b>第3楽章 m.268–279 の6度重音</b>は、<b>トゥッティで実際に div. するかを必ず事前に決める</b>。分けるなら上下どちらかだけを完成させればよくなります。</li>
+          <li>ボウイングの統一。とくに循環主題の付点リズム(m.1 ほか)と、第1楽章 m.417–434 の弓順。</li>
+          <li>練習記号を区切りにして部分練習できるようにする。<b>Jは欠番</b>(Iの次はK)。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">5</div>
+        <h3>オーケストラ合わせとスタミナ強化 <span class="when">目安: 5ヶ月目</span></h3>
+        <p class="goal">全奏の中でのバランスと、全曲を通す体力をつける段階。</p>
+        <ul>
+          <li><b>主題を弾く6か所</b>(第1楽章 m.1 / 29 / 49 / 77 / 331 / 349)では、ヴィオラ・コントラバスと音色とテンポ感を揃える。<b>m.331 は最強奏での再現</b>で、楽章のクライマックスのひとつです。</li>
+          <li><b>歌う場面を遠慮しない。</b>第1楽章 m.100–110 の <i>cantabile dolce</i>、m.389–408 の <i>dolce cantabile</i>、第3楽章 m.7–18 と m.98–120。<b>チェロは意外に歌う場面が多いパート</b>です。</li>
+          <li><b>キュー音符を実際に聴いて入る練習。</b>第1楽章 m.183–194 は<b>フェルマータ3つで拍が数えられず、Vn.I → Vn.II → Va. のキューが唯一の手がかり</b>。「ヴィオラの2小節が終わったら自分」と体で覚える。</li>
+          <li>3楽章を止まらずに通す練習を重ね、第3楽章の終結まで体力を持たせる。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">6</div>
+        <h3>仕上げ・本番直前調整 <span class="when">目安: 6ヶ月目／最終週</span></h3>
+        <p class="goal">技術的な伸びしろより、再現性とコンディションを整える段階。</p>
+        <ul>
+          <li>新しい練習は増やさず、難所を短時間・高頻度で確認する<b>メンテナンス練習</b>に切り替える。</li>
+          <li><b>m.1 の1音目だけを、毎日いちばん最初に弾く。</b>本番と同じ「冷えた状態」で音程と音色が出せるか——これがこの曲のチェロにとって最後まで残る課題です。</li>
+          <li>ゲネプロで指揮者を見る余裕(目線配分)が確保できているか確認する。とくに第3楽章 m.203–227 のフェルマータ地帯。</li>
+          <li>楽器・弓・<b>弱音器</b>・松脂など本番当日の道具一式を、直前リハーサルで実際に使っておく。</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="mvt1">
+  <div class="wrap">
+    <div class="mvt-head">
+      <div>
+        <span class="kicker">MOVEMENT I</span>
+        <h2 class="h-title">第1楽章 — Lento / Allegro non troppo</h2>
+      </div>
+      <div class="mvt-key">ニ短調 / 4-4 ⇄ 2-2 / 全521小節<br>練習記号 <b>A〜V</b>(Jは欠番・全21個)</div>
+    </div>
+    <p class="lede">この楽章のチェロには、<b>全曲でいちばん重い責任</b>があります——<b>m.1 の1拍目、循環主題を最初に鳴らすのがチェロ</b>だからです。パート譜の冒頭に休符ではなく実音(d–cis–f、付点4分+8分+4分)が書かれていることが、それを裏づけています。この主題を<b>6回にわたって実音で弾く</b>のがチェロの役割で、他のどのパートより多い回数です。技術的な山は別のところにあります——<b>m.417 から18小節ノンストップの8分音符</b>と、<b>♭6の調号で加線3〜4本を読む m.349</b>。そして音部記号がヘ音とテノールを4回往復します。</p>
+
+    <div class="callout neutral">
+      <h4>音部記号は変わりますが、実音でテノール記号を読むのは4区間だけです</h4>
+      <p style="font-size:.92rem;margin:.3em 0 0">チェロ譜には<b>ヘ音・テノール・ト音・アルトの4種類</b>が現れますが、<b>ト音記号とアルト記号はすべてキュー音符用</b>で、チェロは弾きません(m.191–192＝Vn.I/II、m.193–194＝Va.、m.307–308＝Vn.I、m.469–472＝Kl.I)。<br>
+      <b>実音でテノール記号を読むのは m.63–65 / m.69–73 / m.222–225 / m.321–330 の4区間のみ</b>です。とくに <b>m.65 と m.321 は小節の途中で記号が変わります</b>——最も事故りやすい条件なので、<b>切り替わる直前に鉛筆で縦線と記号名を大書き</b>しておくことを勧めます。<br>
+      なお <b>m.33–37 / m.81–86 / m.353–358 の高音域は、テノール記号に変わらずヘ音記号のまま加線3〜4本</b>で書かれています。読譜の負荷が最も高いのはここです。</p>
+    </div>
+
+    <div class="tbl-scroll">
+      <table class="form-map">
+        <thead><tr><th>小節</th><th>記号</th><th>テンポ・調・記号</th><th>チェロの動き</th><th>難度</th></tr></thead>
+        <tbody>
+          <tr><td class="m">1–6</td><td class="tk">—</td><td class="tk">Lento / ♭1(d-moll) / 4-4<br><b>ヘ音記号</b></td><td class="role"><b>循環主題を実音で提示——全曲の起点。</b>d–cis–f で開始(付点4分+8分+4分)、p→cresc.→dim.→p。D3–C4程度、D線・A線の1〜4ポジション。<b>技術より責任が重い</b></td><td class="lv">★★★</td></tr>
+          <tr><td class="m">7–16</td><td class="tk">—</td><td class="tk">molto cresc.(12) → f → <b>pp</b>(13)</td><td class="role">全音符・2分音符による半音階的な長い線(<b>和声の低音基盤</b>)。m.13末から<b>8分音符のトレモロ</b>が始まり、半音階的に上行しながら加線1〜2本まで到達する</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">17–28</td><td class="tk"><span class="rl">A</span>(17)</td><td class="tk">p(17) / <b>div.</b>(21) → <b>unis.</b>(26)</td><td class="role">急に静まったのち、<b>ディヴィジ2声のトレモロ</b>。上声は保続的、下声は m.25 で旋律を引き取る。m.27–28のトレモロ全音符でクレッシェンドの頂点へ</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">29–32</td><td class="tk">—</td><td class="tk"><b>Allegro non troppo</b><br>2-2 / ♭1 / <b>ff</b></td><td class="role"><b>循環主題のAllegro変形</b>——m.1とまったく同じリズム型を速いテンポで。ユニゾンの主題提示</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">33–37</td><td class="tk">—</td><td class="tk"><b>sempre ff</b> / ヘ音記号のまま</td><td class="role"><b>加線3〜4本の高音域</b>を複付点+32分の鋭い付点リズムで下行。A線ハイポジション〜<b>親指ポジション</b>。<b>読譜の難所</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">38–48</td><td class="tk"><span class="rl">B</span>(47)</td><td class="tk">mf &lt; sf &gt; → p → pp(41)<br><b>ff</b>(47) / molto rall.(48)</td><td class="role">トレモロ全音符の持続和音ののち、低音域の8分音符による跳躍フィギュア。<span class="rl">B</span>で ff の上行、m.48の末にフェルマータ</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">49–60</td><td class="tk">—</td><td class="tk"><b>Lento</b> / <b>♭4(f-moll)</b> / 4-4</td><td class="role"><b>循環主題をヘ短調で再提示</b>(m.1–6の短3度上)。以降は全音符・2分音符の半音階線で molto cresc.</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">61–68</td><td class="tk"><span class="rl">C</span>(61)</td><td class="tk"><b>pp</b>(61)<br><b>テノール記号</b>(63) → <b>ヘ音</b>(65の途中)</td><td class="role">8分音符のトレモロ半音階フィギュア。<b>m.63でテノール記号に変わり、m.65の小節途中でヘ音記号に戻る</b>——この楽章で最も事故りやすい箇所</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">69–76</td><td class="tk">—</td><td class="tk"><b>テノール記号</b>(69) → <b>ヘ音</b>(73)<br><b>unis.</b>(74)</td><td class="role">2声書法+トレモロ(m.21–25のヘ短調版)。テノール記号の中で div. とトレモロが同時進行する。m.75–76で大きなクレッシェンド</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">77–90</td><td class="tk">—</td><td class="tk"><b>Allegro non troppo</b><br>2-2 / ♭4 / <b>ff</b></td><td class="role"><b>循環主題のAllegro変形をヘ短調で。</b>続く m.81–86 は<b>加線3〜4本の高音域の付点リズム</b>(m.33–37の反復)で<b>親指ポジション必須</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">91–99</td><td class="tk"><span class="rl">D</span>(91)</td><td class="tk">p → pp<br><b>調号 ♭1</b>(96) / poco rall.</td><td class="role">8分音符の跳躍フィギュア(和声低音の刻み)ののち、<b>4小節休み</b>。m.96で調号がニ短調に戻る</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">100–110</td><td class="tk">—</td><td class="tk"><b>a tempo</b> / ♭1 / 2-2<br><b>cantabile / dolce</b></td><td class="role"><b>チェロが歌う旋律線。</b>4分・2分・付点2分による抒情的な歌。F3–D4中心、D線・A線1〜4ポジション</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">111–126</td><td class="tk"><span class="rl">E</span>(111)</td><td class="tk">p → mf(120) → cresc.(123)</td><td class="role">長い音価(2分・全音符)の半音階的な線を長時間持続。<b>長いクレッシェンドを支える体力</b>が要る</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">127–144</td><td class="tk">—</td><td class="tk"><b>f molto cresc.</b>(127) → <b>ff</b>(130)</td><td class="role"><b>連続8分音符(2音スラー+弦跨ぎの反復音型)が18小節続く。</b>低音の推進力を担当。1小節＝8分音符8個で、右腕の持久力が問われる</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">145–155</td><td class="tk"><span class="rl">F</span>(145)</td><td class="tk">—</td><td class="role">付点2分+♯4分の持続と<b>トレモロ全音符</b>が交互に。m.154–155に2音の重音(※div.か要確認)</td><td class="lv">★★</td></tr>
+          <tr><td class="m">156–173</td><td class="tk"><span class="rl">G</span>(171)</td><td class="tk">molto dim.(156)<br><b>molto dolce / espress.</b><br>→ <b>pp</b>(164)</td><td class="role">全音符から4分音符の<b>歌う線</b>へ——<b>表情の主役</b>になる区間。以降は pp で4分・全音符・2分音符が休符と交互に現れる和声の低音基盤</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">174–194</td><td class="tk">—</td><td class="tk">pp / フェルマータ3つ(186・188・190)</td><td class="role"><b>実質12小節の連続休み。</b>フェルマータがあるため<b>拍では数えられない</b>。<b>m.191に「Vn. I」、m.192に「Vn. II」、m.193–194に「Va.」のキュー音符</b>が順に印刷されている</td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">195–212</td><td class="tk"><span class="rl">H</span>(195)</td><td class="tk"><b>ヘ音記号に復帰</b><br>mf cresc.(195) → f(201)</td><td class="role">♭付き2分音符の半音階的上行線(内声／対旋律的)。m.208–212は<b>低音域(D2付近まで)の半音階4分音符</b>で、C線・G線での音程の正確さが課題</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">213–221</td><td class="tk"><span class="rl">I</span>(213)</td><td class="tk"><b>f ma cantando</b>(215)</td><td class="role">8分音符の<b>歌う半音階下行</b>(スラー付き)。m.221末でテノール記号の予告</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">222–228</td><td class="tk">—</td><td class="tk"><b>テノール記号</b>(222)<br>sempre f → cresc. → <b>ff</b>(225)</td><td class="role">8分音符の上行〜下行。<b>m.225に♭の重音</b>。m.226–228は3小節休み(テノール記号のまま)——<b>この間に pizz. の構えを作る</b></td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">229–242</td><td class="tk"><span class="rl">K</span>(239)</td><td class="tk"><b>ヘ音記号</b>+<b>pizz.</b>(229)<br>f → cresc. → <b>ff</b>(239)</td><td class="role"><b>この楽章で唯一の pizz. 区間。</b>4分音符の上行アルペジオ的音型と休符の交替で、音域が広く跳ぶ。<span class="rl">K</span>の ff の一発ののち3小節休み</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">243–260</td><td class="tk">—</td><td class="tk"><b>arco</b>(243) / <b>ff</b> → molto dim.<br>→ f(248) → <b>ff</b>(251・259)</td><td class="role"><b>弓に持ち替えていきなり ff。</b>8分音符の半音階下行、低↔高の跳躍フィギュアを経て、♯を伴う8分音符の反復・分散音型へ</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">261–281</td><td class="tk"><span class="rl">L</span>(267)</td><td class="tk"><b>sempre ff</b>(273) → molto dim.(279)</td><td class="role"><span class="rl">L</span>から<b>連続8分音符の上行フィギュア</b>。半音階的に上行を続け、m.277–278の♯全音符トレモロで頂点に達する</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">282–295</td><td class="tk">—</td><td class="tk"><b>div.</b>(282) → <b>unis.</b>(287)<br>pp / sempre pp</td><td class="role"><b>上声＝テヌート付き4分音符の上行フレーズ / 下声＝全音符のタイ保続。</b>下声は動かない分だけ音程が露呈するので、<b>耳のよい奏者を下に置く判断もあり得る</b></td><td class="lv">★★★</td></tr>
+          <tr><td class="m">296–308</td><td class="tk"><span class="rl">M</span>(296)</td><td class="tk"><b>espress. / ppp</b>(296)</td><td class="role">♯付き付点2分+重嬰(×)4分音符という<b>最弱音の色彩</b>。続いて<b>9小節休み</b>で、<b>m.307–308に「Vn. I」のキュー音符</b>(espress.)</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">309–320</td><td class="tk"><span class="rl">N</span>(317)</td><td class="tk">p(309) → mf cresc.(313)</td><td class="role">付点2分+♯4分の静かな線から、cresc. の4分音符上行へ</td><td class="lv">★★</td></tr>
+          <tr><td class="m">321–330</td><td class="tk">—</td><td class="tk"><b>テノール記号</b>(321の途中)<br><b>ff</b></td><td class="role"><b>小節の途中で記号が変わる</b>(4分休符の直後)。4分音符主体の<b>力強い旋律線</b>をA線ハイポジションで。m.330末でヘ音記号に復帰</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">331–348</td><td class="tk">—</td><td class="tk"><b>Lento</b> / ♭1 / 4-4 / <b>ff</b><br>dim.→pp(345) → cresc. → ff(348)</td><td class="role"><b>循環主題を最強奏で再現——楽章のクライマックスのひとつ。</b>m.336・343・348に重音を含む。m.348末で調号が♭6に、拍子が2-2に変わる</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">349–360</td><td class="tk"><span class="rl">O</span>(349)</td><td class="tk"><b>Allegro</b> / <b>♭6(es-moll)</b> / 2-2</td><td class="role"><b>循環主題のAllegro変形を変ホ短調で。</b>続く m.353–358 は<b>♭6の調号のまま加線3〜4本の高音域</b>を複付点リズム+8分音符の走句で。<b>親指ポジション必須で、読譜の負荷が最大</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">361–369</td><td class="tk">—</td><td class="tk"><b>調号 ♭1</b>(361) / ff → dim.<br>p → cresc.</td><td class="role"><b>まったく同じ8分音符のオスティナートが9小節連続</b>(譜面にも「1(-9)」〜「9」と番号が振られている)。頭2音スラー+以下スタッカート。<b>何小節目にいるか見失いやすい</b></td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">370–384</td><td class="tk"><span class="rl">P</span>(370)</td><td class="tk"><b>ff</b>(370) → dim.<br>molto sosten.(377) → p / più p</td><td class="role">オスティナートの9小節目で ff に到達。トレモロ全音符、4分+休符の刻み、<b>重音のトレモロ</b>(m.375–376)を経て、低音域の8分音符の伴奏へ静まる</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">385–388</td><td class="tk">—</td><td class="tk"><b>調号 ♯2(D-dur)</b>(385)<br>poco rall.</td><td class="role"><b>4小節休み。</b>この休符の頭で調号がニ長調に変わるので、<b>休んでいる間に頭を切り替えておく</b></td><td class="lv">★</td></tr>
+          <tr><td class="m">389–408</td><td class="tk"><span class="rl">Q</span>(389)</td><td class="tk"><b>a tempo</b> / ♯2 / 2-2<br><b>dolce cantabile</b></td><td class="role"><b>チェロが歌う旋律線(再現部)。</b>付点2分+4分／4分の連続による長いスラーのフレーズ。D3–D4中心、D線・A線1〜4ポジション。<b>音楽的な責任が大きい</b></td><td class="lv">★★★</td></tr>
+          <tr><td class="m">409–416</td><td class="tk"><span class="rl">R</span>(409)</td><td class="tk">mf(411) → cresc.(413)</td><td class="role">2分・4分音符が徐々に高音へ向かう</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">417–434</td><td class="tk">—</td><td class="tk">f → molto cresc. → <b>ff</b>(420)</td><td class="role"><b>この楽章最大の難所。</b>高音(加線2〜3本)からの下行16分+8分に始まり、<b>ff のまま連続8分音符が18小節</b>。低↔高の交替型で<b>弦跨ぎが1拍ごとに発生</b>する。右手の持久力が最大の課題</td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">435–445</td><td class="tk"><span class="rl">S</span>(435)</td><td class="tk">—</td><td class="role">付点2分+♯4分の持続と<b>トレモロ全音符</b>が交互に(m.145–155に対応)。m.444–445に2音の重音</td><td class="lv">★★</td></tr>
+          <tr><td class="m">446–463</td><td class="tk">—</td><td class="tk">molto dim.(446)<br><b>espress. / molto dolce</b><br>→ <b>pp</b>(454) / <b>div.</b>(456) → unis.(458)</td><td class="role">歌う線に戻ったのち pp へ。<b>m.456の div. は♯付き全音符の重音を pp で1小節保持</b>——上下とも保続なので<b>弓の配分(1弓で1小節)を統一</b>すること</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">464–473</td><td class="tk"><span class="rl">T</span>(473)</td><td class="tk"><b>Poco più lento</b> → più rall.<br>フェルマータ(468・472) / <b>ppp</b>(472)</td><td class="role"><b>実質9小節の連続休み。m.469–472に「Kl. I」(クラリネット1)のキュー音符</b>(dolciss.)。<span class="rl">T</span>で調号が♭1に戻るが、m.473自体も休み</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">474–483</td><td class="tk">—</td><td class="tk"><b>a tempo</b> / ♭1 / <b>pp</b><br>cresc.(480)</td><td class="role">2分音符2つで静かに入り、2分・4分音符の<b>歌う線(対旋律的)</b>へ</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">484–497</td><td class="tk"><span class="rl">U</span>(485)</td><td class="tk">mf(485) → <b>sempre cresc.</b>(490)</td><td class="role">4分+2分+4分の上行反復パターンが繰り返され、<b>長いクレッシェンドを継続</b>する(体力)</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">498–512</td><td class="tk"><span class="rl">V</span>(501)</td><td class="tk"><b>ff</b>(501) → <b>fff</b>(511)</td><td class="role">コーダ。4分音符の上行フィギュア(♯を含む)が強奏で連続し、高音域の下行〜上行を経て<b>m.511の fff</b> へ</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">513–521</td><td class="tk">—</td><td class="tk"><b>Lento</b> / ♭1</td><td class="role"><b>コラール的な終結。</b>2分音符・全音符のトレモロで和声の基盤を支え、<b>m.519–520は3度の重音トレモロ</b>。m.521の重音8分音符で終止</td><td class="lv">★★★</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <h4>第1楽章の難所トップ7</h4>
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>m.417–434(<span class="rl">R</span>〜<span class="rl">S</span>) — 18小節連続の8分音符 f→ff</b>
+        m.417の高音(加線2〜3本)からの下行に始まり、m.419の ff から m.434 まで<b>8分音符が途切れず続きます</b>。しかも低音↔高音の交替型で<b>弦跨ぎが1拍ごとに発生</b>。1小節が8分音符8個なので、<b>実質128個以上の音を ff で弾き続ける</b>ことになります。後半は音程よりも<b>弓が持たなくなる</b>ことで崩れます。
+        <span class="fix"><b>対策:</b> ①まず<b>右手だけ</b>(開放弦A・D)で m.419–434 の弓順とリズムを ff で通し、弓幅・弓の位置(中弓〜先寄り)を身体に覚えさせる。②<b>弓幅の上限を決め打ちする</b>——ff だからと元弓まで使うと確実に足りません。<b>中弓の1/3幅で密度を出す</b>方向で設計。③左手は♩=60(本番の半分)から。<b>2小節ずつ</b>切り出し、弦跨ぎの箇所は「上の音→下の音」を重音として同時に押さえて右手の高さを確認してから分離する。④60→76→88→100→本番テンポと段階を踏み、<b>各段階で必ず m.417 から通す</b>(部分練習だけでは持久力が付きません)。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>m.349–358(<span class="rl">O</span>) — ♭6の調号 + 加線3〜4本の高音域</b>
+        <b>調号♭6つ</b>という視覚的に最も読みにくい調で、しかも<b>ヘ音記号のまま加線3〜4本</b>の複付点リズムを Allegro で弾きます。音部記号が変わらないため<b>「加線を数える」作業が発生して目が止まる</b>。さらに親指ポジションが必要な高さで、変ホ短調の音階に慣れていないと指が探ります。
+        <span class="fix"><b>対策:</b> ①<b>まず楽譜に自分で音名を書き込む</b>(読譜の負荷を先に潰す)。加線3本以上の音は必ず書く。②変ホ短調の音階・アルペジオを<b>親指ポジションで</b>1オクターブ、ゆっくり練習して調の指の形を作る。③m.353–358を<b>リズムを外して全部4分音符</b>にして音程だけ通し、安定してから複付点を戻す。④<b>親指の起点を先に決める</b>(m.353の頭で親指をA線に置き、そのまま動かさない運指を探す)。<b>移弦を減らす運指</b>を優先。⑤m.349–352(主題)と m.353–358(高音)は性格が違うので、別々に仕上げてから接続する。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>m.33–37 / m.81–86 — sempre ff の高音域付点リズム(ヘ音記号のまま)</b>
+        第2位と同じ音型がニ短調／ヘ短調で現れます。<b>ヘ音記号のまま加線3〜4本</b>で書かれており、テノール記号に変わってくれないぶん読みにくい。複付点+32分の鋭いリズムを ff で、しかも高いポジションで鳴らす必要があり、<b>弓圧をかけると音程がぶら下がります</b>。
+        <span class="fix"><b>対策:</b> ①m.33–37とm.81–86は<b>同じ音型の移調</b>なので必ずセットでさらう(一方が身に付けばもう一方は移調で対応できます)。②複付点は「短い音を遅らせる」意識で。<b>32分音符を次の拍の直前に貼り付ける</b>練習を、メトロノームを16分で鳴らして行う。③高音域では<b>弓を駒寄りに寄せて弓速を落とす</b>——<b>ff を弓圧で作らない</b>。④32分音符を同じ弓の中で処理するか別弓にするかを、隣の奏者と統一して決める。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">4</span><p><b>m.63–73 — テノール記号⇄ヘ音記号の往復 + div. + トレモロ(♭4)</b>
+        わずか11小節の間に<b>記号が3回変わります</b>(m.63テノール → m.65途中でヘ音 → m.69テノール → m.73ヘ音)。しかも♭4の調号、トレモロ、div.の2声書法が同時進行。<b>m.65は小節の途中で記号が変わる</b>ため、読み間違いが起きやすい最悪の条件です。
+        <span class="fix"><b>対策:</b> ①<b>記号が変わる小節の直前に、鉛筆で縦線と「テノール」「ヘ音」を大書きする</b>——これだけで事故が半減します。②m.63–68を<b>テノール記号だけの譜として書き写して</b>(4小節でよい)記号に慣れる。③m.65は「8分音符+8分休符」の<b>休符の瞬間に頭を切り替える</b>——休符を切り替えのタイミングとして意識する。④<b>m.13–20(同じ音型のニ短調版、ヘ音記号のみ)を先に仕上げてから</b> m.61–73 に移ると、音型が既知になるので記号だけに集中できます。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">5</span><p><b>m.216–229 — 半音階下行 → テノール記号 → ff → 3小節休み → pizz.</b>
+        <b>4つの異なる要求が連続します。</b>①m.216–221の半音階8分下行(音程)、②m.222でテノール記号に切り替わり ff まで上行、③m.226–228の3小節休み(テノール記号のまま数える)、④<b>m.229でヘ音記号に戻ると同時に pizz. に持ち替え</b>。持ち替えのための時間がほとんどありません。
+        <span class="fix"><b>対策:</b> ①<b>m.225(ff の重音)→m.229(pizz.入り)だけを取り出して</b>、休符3小節を実際に数えながら pizz. の構えに移る動作を20回繰り返す。<b>弓の持ち方を決めてしまう</b>こと。②m.216–221の半音階下行は<b>同じ指で滑らせず必ず指を置き換える</b>運指を決める。③m.222のテノール記号は、<b>直前の m.221 の2音で「次はテノール」と唱える</b>習慣をつける。④m.229–242のpizz.は右手を指板寄りに置いて<b>弦をはじく方向を斜め上</b>に。f→ff で音が痩せないよう指の腹を使う。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">6</span><p><b>m.183–195(<span class="rl">H</span>への入り) — フェルマータ付き12小節休みからの入り</b>
+        m.183–190の8小節休みには <b>m.186・188・190 にフェルマータ</b>があり、指揮者の任意で伸びるので<b>拍で数えることが物理的に不可能</b>です。続く m.191–194 も休みで、ここには <b>Vn. I → Vn. II → Va.</b> のキュー音符が順に印刷されています。つまり<b>「聴いて入る」以外に方法がありません</b>。しかも <span class="rl">H</span> は mf cresc. の重要な線の開始点です。
+        <span class="fix"><b>対策:</b> ①<b>キューを実際に歌えるようにする</b>。m.191のVn.I、m.192のVn.II、<b>m.193–194のVa.(アルト記号なので読み替えが必要)</b>を、それぞれ音程付きで暗譜し、<b>「ヴィオラの2小節が終わったら自分」</b>という身体的な合図にする。②合奏録音で<b>m.180からm.196までを繰り返し聴き</b>、フェルマータの実際の長さを耳で覚える。③m.195の入りの音を単独で鳴らす練習を。長い休みの後は弓が冷えているので、<b>弓を弦に置いてから引く準備動作をルーティン化</b>する。④楽譜のキュー音符の上に「Vn1 / Vn2 / Va」と大きく書き、<b>Va.の最後の音に赤丸</b>をつける。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">7</span><p><b>m.362–370(<span class="rl">P</span>の直前) — 9小節の同型オスティナート</b>
+        <b>まったく同じ8分音符の音型が9小節連続</b>します——<b>楽譜にも「1(-9)」〜「9」と番号が振られているほど</b>で、これは「奏者が迷子になる」ことを版元が想定している証拠です。p から cresc. して <span class="rl">P</span>(m.370)で ff に到達しますが、同じ小節が続くため<b>何小節目にいるか見失います</b>。頭2音スラー+残りスタッカートというアーティキュレーションを9回まったく同じに保つ集中力も必要です。
+        <span class="fix"><b>対策:</b> ①<b>1小節分の弓順を完全に固定する</b>(例: スラーの2音を下げ弓、以下すべて別弓)。9回とも同じにすれば身体が数を覚えます。②<b>3小節ずつにグループ分け</b>して、ダイナミクスの階段を3段で設計する——<b>「9回」ではなく「3×3」と考えると数えやすい</b>。③楽譜の番号を蛍光ペンでなぞり、特に「5」と「9」に印。④メトロノームを<b>2小節に1回だけ鳴らす</b>設定で練習し、小節感覚を体内に作る。⑤<b>最初の p を意識的に小さくしないと ff の余地がなくなります</b>。</span></p></li>
+      </ol>
+    </div>
+
+    <div class="callout neutral">
+      <h4>第1楽章の実務メモ — 音部記号・キュー音符・ディヴィジ</h4>
+      <p style="font-size:.92rem;margin:.3em 0 .6em"><b>音部記号が変わる箇所</b>。実音で読むのは<b>ヘ音記号とテノール記号だけ</b>で、ト音記号・アルト記号はすべてキュー音符用です。</p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>小節</th><th>記号</th><th>備考</th></tr></thead>
+          <tbody>
+            <tr><td class="m">m.63 → <b>m.65(途中)</b></td><td class="tk">テノール → ヘ音</td><td class="role"><b>小節の途中で切り替わる。最も事故りやすい</b></td></tr>
+            <tr><td class="m">m.69 → m.73</td><td class="tk">テノール → ヘ音</td><td class="role">div.+トレモロと同時進行</td></tr>
+            <tr><td class="m">m.191–194</td><td class="tk">ト音 → <b>アルト</b></td><td class="role">Vn.I/II と Va. のキュー用。<b>アルト記号なので読み替えが必要</b></td></tr>
+            <tr><td class="m">m.222 → m.229</td><td class="tk">テノール → ヘ音</td><td class="role">m.229 は同時に <b>pizz.</b></td></tr>
+            <tr><td class="m">m.307–308</td><td class="tk">ト音</td><td class="role">Vn.I のキュー用</td></tr>
+            <tr><td class="m"><b>m.321(途中)</b> → m.331</td><td class="tk">テノール → ヘ音</td><td class="role"><b>4分休符の直後に切り替わる</b></td></tr>
+            <tr><td class="m">m.469–472</td><td class="tk">ト音</td><td class="role">Kl.I のキュー用</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.92rem;margin:1.2em 0 .6em"><b>4小節以上の休みと、復帰の手がかり</b></p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>休符</th><th>直後</th><th>手がかり</th></tr></thead>
+          <tbody>
+            <tr><td class="m">m.96–99(4)</td><td class="tk">m.100 / cantabile, dolce</td><td class="role">直前が poco rall.、m.100で a tempo。<b>「2+2」と印刷されている</b>ので2回に分けて数える</td></tr>
+            <tr><td class="m">m.175–179(5)</td><td class="tk">m.180 / pp</td><td class="role">m.174の自分の2分音符から数え始める。拍で数えられる</td></tr>
+            <tr><td class="m">m.183–194(<b>12</b>)</td><td class="tk">m.195(<span class="rl">H</span>) / mf cresc.</td><td class="role"><b>フェルマータ3つで拍では数えられない。</b>Vn.I → Vn.II → <b>Va.</b> のキューが唯一の手がかり——<b>ヴィオラの2小節が終わった次が入り</b></td></tr>
+            <tr><td class="m">m.226–228(3) / m.240–242(3)</td><td class="tk">m.229 pizz. / m.243 arco</td><td class="role">いずれも<b>持ち替えの時間として確保されている</b></td></tr>
+            <tr><td class="m">m.298–306(<b>9</b>)</td><td class="tk">m.309 / p</td><td class="role"><b>m.307–308に「Vn. I」のキュー</b>。キューの2小節が終わった次が自分</td></tr>
+            <tr><td class="m">m.385–388(4)</td><td class="tk">m.389(<span class="rl">Q</span>) / a tempo</td><td class="role">直前が poco rall.。<b>休符の頭(m.385)で調号が♯2に変わる</b>ので、休んでいる間に頭をニ長調に切り替える</td></tr>
+            <tr><td class="m">m.465–473(<b>9</b>)</td><td class="tk">m.474 / pp</td><td class="role"><b>m.469–472に「Kl. I」のキュー</b>(dolciss.)。m.472末のフェルマータ+ppp のあと、<span class="rl">T</span>(m.473)も休みで、その次が自分</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.92rem;margin:1.2em 0 .6em"><b>ディヴィジと、循環主題を弾く6か所</b></p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>小節</th><th>内容</th><th>判断材料</th></tr></thead>
+          <tbody>
+            <tr><td class="m">m.21–25(→26 unis.)</td><td class="tk">div. トレモロ</td><td class="role">音域差は3〜4度と小さく両声とも1〜4ポジションで無理がない。上声は保続的、<b>下声は m.25 で旋律を引き取る</b>。前プルト＝上声の通常配分でよい</td></tr>
+            <tr><td class="m">m.69–73(→74 unis.)</td><td class="tk">2声書法</td><td class="role">m.21–25のヘ短調版。同じ配分を踏襲する</td></tr>
+            <tr><td class="m">m.282–286(→287 unis.)</td><td class="tk">div.</td><td class="role"><b>上声＝旋律的、下声＝完全な保続音。</b>下声は動かない分だけ音程が露呈するので、<b>耳のよい奏者を下に置く判断もあり得る</b></td></tr>
+            <tr><td class="m">m.456(→458 unis.)</td><td class="tk">div.</td><td class="role">♯付き全音符の重音を pp で1小節保持。上下とも保続なので<b>弓の配分(1弓で1小節)を統一</b></td></tr>
+            <tr><td class="m"><b>m.1–6 / 29–32 / 49–54 / 77–80 / 331–336 / 349–352</b></td><td class="tk"><b>循環主題を実音で</b></td><td class="role"><b>チェロは主題を6回弾きます</b>——m.1(起点)、m.29(Allegro変形)、m.49(ヘ短調)、m.77(ヘ短調Allegro)、<b>m.331(最強奏の再現)</b>、m.349(変ホ短調)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:1.2em"><b>pizz. は m.229–242 の1区間だけ</b>で、m.243 で arco に復帰。それ以外は全編 arco です。<br>
+      <b>「重音の和音」に見える箇所の多くは、実際にはトレモロ記号です</b>——m.13–16 / 21–25 / 27–28 / 61–72 / 87–88 / 147–148 / 151–152 / 277–278 / 371–372 / 438 / 441–442 / 513–520。初見時に和音と誤読しないこと(m.375–376 と m.519–520 は<b>重音のトレモロ</b>)。<br>
+      <b>調号・拍子は10回変わります</b>——♭1/4-4(m.1) → 2-2(m.29) → ♭4/4-4(m.49) → 2-2(m.77) → ♭1(m.96) → 4-4(m.331) → <b>♭6</b>(m.349) → ♭1(m.361) → <b>♯2</b>(m.385) → ♭1(m.473)。<br>
+      最も弱いのは <b>m.296 と m.472 の ppp</b>、最も強いのは <b>m.511 の fff</b> です。</p>
+    </div>
+  </div>
+</section>
+
+<section id="mvt2">
+  <div class="wrap">
+    <div class="mvt-head">
+      <div>
+        <span class="kicker">MOVEMENT II</span>
+        <h2 class="h-title">第2楽章 — Allegretto</h2>
+      </div>
+      <div class="mvt-key">変ロ短調 / 3-4拍子(全曲を通じて) / 全262小節<br>練習記号 <b>A〜Q</b>(Jは欠番) ＋ 冒頭に1拍のアウフタクト</div>
+    </div>
+    <p class="lede">チェロにとってこの楽章は、<b>4パート中で最も奏法の切替が多い楽章</b>です。pizz.⇄arco の切替が<b>20箇所</b>——うち<b>猶予が8分休符1つ(0.5拍)しかない切替が5箇所、4分休符1つ(1拍)が10箇所</b>。加えて音部記号がヘ音⇄テノールで4回変わり、そのうち2回は奏法変更と同時に起こります。<b>「弓を持ったまま人差し指で撥弦する」奏法を全区間の標準にする</b>——この方針を最初に決めてしまうことが、この楽章の攻略法です。</p>
+
+    <div class="callout neutral">
+      <h4>弱音器の指示位置はパートごとに違います</h4>
+      <p style="font-size:.92rem;margin:.3em 0 0">チェロ譜の1回目の装着は <b>m.94</b> で、2ndVn譜の m.96 より2小節早く印刷されています。チェロが m.94 の1拍目で pizz. を弾き終えてすぐ休みに入るためで、<b>版元が各パートの実際の空き時間に合わせて指示位置を調整している</b>と読めます。<br>
+      <b>装着① — 1stVn: m.94 / 2ndVn: m.96 / Vc: m.94</b>　<b>解除① — 1stVn: m.135 / 2ndVn: m.133 / Vc: m.133</b>　装着②(m.174)と解除②(m.238)は全パート共通。<b>合奏で「何小節目で付ける」と確認し合うときは、パートによって印刷位置が違う前提で話してください。</b></p>
+    </div>
+
+    <div class="tbl-scroll">
+      <table class="form-map">
+        <thead><tr><th>小節</th><th>記号</th><th>テンポ・調・奏法</th><th>チェロの動き</th><th>難度</th></tr></thead>
+        <tbody>
+          <tr><td class="m">Auftakt–15</td><td class="tk">—</td><td class="tk">Allegretto<br>♭5 / 3-4 / <b>pizz.</b><br>ヘ音記号</td><td class="role"><b>完全に低音の伴奏。</b>1拍のアウフタクト(pizz.の4分音符、p)から始まり、徹底して「1拍目=音、2拍目=休符、3拍目=音」。<b>ハーフ〜第1ポジション中心、C線・G線</b>。重音・div.なし。m.8で mf、m.12で f</td><td class="lv">★★</td></tr>
+          <tr><td class="m">16–23</td><td class="tk"><span class="rl">A</span>(16)</td><td class="tk">pizz. / ♭5</td><td class="role">同じ低音pizz.伴奏が継続。和声が動くので<b>♭系の半音階的経過音の音程</b>に注意</td><td class="lv">★★</td></tr>
+          <tr><td class="m">24–31</td><td class="tk">—</td><td class="tk"><b>div.</b>(24の3拍目) / pizz.</td><td class="role"><b>2声の重音表記によるピチカート。</b>上声=内声の和音構成音、下声=バス。<b>下声が痩せると楽章の土台が崩れる</b>ので、下声を人数多めにするのが安全</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">32–39</td><td class="tk"><span class="rl">B</span>(39)</td><td class="tk"><b>unis.</b>(32) / pizz.</td><td class="role">再び単音の低音pizz.。mf→p→f→dim.→p。<span class="rl">B</span>に入ってもチェロはまだ伴奏</td><td class="lv">★★</td></tr>
+          <tr><td class="m">40</td><td class="tk">—</td><td class="tk"><b>pizz. → arco</b><br><b>ヘ音記号 → テノール記号</b><br><b>f</b></td><td class="role"><b>楽章最大の転換点。</b>1拍目 pizz. → 8分休符 → テノール記号に変わって arco の8分音符3つ。<b>猶予は8分休符1つ=0.5拍のみ</b>で、しかも切り替えた直後がいきなり f。同じ瞬間に音部記号も変わる</td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">41–47</td><td class="tk">—</td><td class="tk">♭5 / <b>テノール記号</b> / arco<br>cresc. → f(45) → <b>pp</b>(47)</td><td class="role"><b>ここでチェロは旋律的な線(対旋律)を弾く。</b>8分音符の流れるようなラインが半音階を含みながら上行し、<b>m.45で五線上に飛び出す最高音域に到達</b>。第4ポジション〜親指ポジション手前</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">48–55</td><td class="tk"><span class="rl">C</span>(48)</td><td class="tk">テノール → <b>ヘ音記号</b>(48の3拍目)<br><b>調号 ♭2</b>(49) / <b>pp sostenuto</b></td><td class="role">歌う低音／内声の持続線。2分音符+4分音符を基本とするレガート。<b>音価が長いので弓の配分と音色が問われる</b>。第1〜2ポジション中心</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">56–63</td><td class="tk">—</td><td class="tk">♭2 / arco / f(63)</td><td class="role"><b>m.56のみ2声書法</b>(下声=付点2分の保続音／上声=4分音符3つのスラー)。<b>音程差が10度以上あり重音では不可能——div. 必須</b>(※div.の印刷はない)。m.60から上行</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">64–72</td><td class="tk"><span class="rl">D</span>(64)</td><td class="tk">p(68) → f(69) → dim.<br>→ <b>ppp</b>(72)</td><td class="role">2分音符+4分音符のスラー音型が<b>段階的に上行するゼクエンツ</b>。旋律の高揚を担う声部。m.72末に ppp で16分音符の上行アウフタクト</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">73–76</td><td class="tk">—</td><td class="tk">♭2 / arco / ppp → cresc.</td><td class="role"><b>4小節連続の半音階16分音符走句</b>(1小節12個、4つずつスラー)。♮♭が交錯する純粋な半音階で<b>指の型が使えない</b>。m.75–76で音域が跳ね上がる。<b>技術的には楽章最大の左手課題</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">77–85</td><td class="tk"><span class="rl">E</span>(78)</td><td class="tk">f(78) → dim.(82) → <b>pp</b>(84)</td><td class="role"><span class="rl">E</span>で五線内から一気に五線下へ<b>広い跳躍</b>(♯を伴う)。m.85は<b>五線下の半音階上行3音を1スラー</b>で、低音域の pp 圏——<b>音程が非常に取りにくい</b></td><td class="lv">★★★</td></tr>
+          <tr><td class="m">86–93</td><td class="tk">—</td><td class="tk"><b>arco → pizz.</b>(86の3拍目)</td><td class="role"><b>猶予は4分休符1つ=1拍。</b>以降 m.93 まで冒頭と同じ低音pizz.伴奏。<b>m.90の2拍目の休符にフェルマータ</b></td><td class="lv">★★</td></tr>
+          <tr><td class="m">94–101</td><td class="tk"><span class="rl">F</span>(96)</td><td class="tk"><b>mettez les sourdines</b>(94)<br>poco rall. ⇄ a tempo が3回<br>フェルマータ2回</td><td class="role">m.94の1拍目に低音pizz.を弾いたあと、<b>約7小節半の完全休止</b>。この間に弱音器を装着(猶予は極めて大きい)。<b>「間」の連続で、小節を数えるだけでは入れない——指揮者必見</b></td><td class="lv">★</td></tr>
+          <tr><td class="m">102–105</td><td class="tk">—</td><td class="tk"><b>arco</b>+<b>テノール記号</b>(102の3拍目)<br><b>pp</b> / フェルマータ(104)</td><td class="role">arco復帰と音部記号変更が同時(猶予はたっぷり)。短いが<b>弱音器付き pp の露出したソリスティックな断片</b></td><td class="lv">★★★</td></tr>
+          <tr><td class="m">106–114</td><td class="tk"><span class="rl">G</span>(113)</td><td class="tk"><b>ヘ音記号</b>(106) / <b>sempre pp</b><br>フェルマータ(108)</td><td class="role">スタッカート付き8分音符の<b>軽い低音伴奏</b>(8分+8分休符の刻み)。<b>m.114の3拍目から pizz.</b>(猶予1拍)</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">115–128</td><td class="tk"><span class="rl">H</span>(124)</td><td class="tk"><b>pizz.⇄arco の高速交替</b><br>cresc.(128)</td><td class="role"><b>m.116・122・124 で1拍の猶予での切替が3回連続。</b>しかも m.122 は「pizz. div.」で<b>2音の和音</b>、m.124の1拍目も div. 和音のpizz.。撥弦の角度と音程を同時に決める必要がある</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">129–134</td><td class="tk"><span class="rl">I</span>(133)</td><td class="tk">f(129) → dim.<br><b>pizz.</b>(130の3拍目) / <b>pp</b><br><b>ôtez les sourdines</b>(133)</td><td class="role">2小節休符の上に弱音器の解除指示。<b>解除に使えるのは約7拍半だが、pizz.→arcoの持ち替えと同時</b>なのでやや慌ただしい</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">135–145</td><td class="tk">—</td><td class="tk"><b>調号 ♭3</b>(135) / arco<br>senza sordino / <b>pp</b> → mf(143)</td><td class="role"><b>弱音器なしの「歌うカンタービレの対旋律」。</b>2分音符+4分音符を基本にした長いスラー。第1〜4ポジション。重音・div.なし</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">146–158</td><td class="tk"><span class="rl">K</span>(150)</td><td class="tk">p → mf(150)<br>p espress.(153)</td><td class="role">五線下の低音を半音階的に長いスラーで下行したのち、<b>明確に旋律的</b>な歌(8分・16分の装飾を伴う)。m.157–158は2小節休み</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">159–173</td><td class="tk"><span class="rl">L</span>(159)</td><td class="tk">f(159) → molto dim.(162)<br>p(165) → <b>ppp</b>(170)</td><td class="role">f の付点2分音符から保続へ。スタッカート付き4分音符の下行を経て再び旋律的な8分音符、そして ppp で消えていく</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">174–178</td><td class="tk"><span class="rl">M</span>(174)</td><td class="tk"><b>mettez les sourdines</b>(174)<br><b>sempre pp</b>(175) / ♭3→<b>♭2</b>(176)</td><td class="role">1小節休符の上に装着指示。<b>猶予は約10拍と余裕あり</b>。m.175の3拍目からスタッカート8分の伴奏が再開</td><td class="lv">★★</td></tr>
+          <tr><td class="m">179–193</td><td class="tk">—</td><td class="tk"><b>pizz.⇄arco</b>(181/183/187/188)</td><td class="role"><b>わずか1小節半のためだけに pizz. に持ち替える</b>(m.181→183)。m.188の切替は猶予1拍で、pizz.区間はわずか3つの8分音符</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">194–198</td><td class="tk"><span class="rl">N</span>(194)</td><td class="tk">f(194) → <b>ppp</b>(195)</td><td class="role">m.195–196は<b>2声書法の arco ppp</b>(div.の印刷なし、※要確認)。<b>m.197の1拍目で pizz.——猶予は8分休符1つ=0.5拍</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">199</td><td class="tk">—</td><td class="tk"><b>arco → pizz. → arco を1小節内で</b></td><td class="role"><b>楽章最大の難所。</b>1拍目=arco、2拍目=pizz.、3拍目=arco と<b>3つの奏法指示が1小節に並記</b>されている。<b>各切替の猶予は8分休符1つ=0.5拍のみ</b>。小節末で調号も♭5に変わる</td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">200–211</td><td class="tk">—</td><td class="tk"><b>調号 ♭5</b>(200)<br><b>pizz.</b>(205の3拍目) → <b>arco</b>(207)</td><td class="role">スタッカート8分の伴奏の合間に、<b>2音の重音pizz.</b>が m.206–207 に。猶予はいずれも1拍</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">212–221</td><td class="tk"><span class="rl">O</span>(218)</td><td class="tk">f(212) → dim. → <b>pp</b>(215)<br>poco rall.(220頃)</td><td class="role">8分+8分休符の低音伴奏が延々と続く。<b>音の長さと発音を全員で揃える</b>ことが課題</td><td class="lv">★★</td></tr>
+          <tr><td class="m">222–225</td><td class="tk">—</td><td class="tk"><b>調号 ♯5</b>(222)<br><b>Poco più lento</b> → rall.</td><td class="role"><b>4小節の完全休止</b>(最後にフェルマータ)。<b>♭5→♯5 の激変</b>なので、休みの間に頭を切り替える</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">226–233</td><td class="tk"><span class="rl">P</span>(229)</td><td class="tk"><b>Tempo I</b>(226) / <b>div.</b> / <b>pp</b><br>→ rall. → Poco più lento → rall.</td><td class="role">上声=旋律的な線／下声=和声の支え。<b>m.229の下声に重嬰(ダブルシャープ)記号</b>があり読み間違いが起きやすい。m.230–233は4小節の完全休止</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">234–237</td><td class="tk"><span class="rl">Q</span>(236)</td><td class="tk"><b>Tempo I</b> / <b>unis.</b>(234)<br>rall.+molto cresc.(236) → f(237)</td><td class="role">付点8分+16分の<b>行進曲的な付点リズムの上行</b>。♯5の中で音程を取る</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">238–241</td><td class="tk">—</td><td class="tk"><b>調号 ♭2</b>(238)<br><b>ôtez les sourdines</b>(238)</td><td class="role">1小節休符の上に解除指示。<b>猶予は6拍で、これが最短</b>。しかも<b>外した直後の m.239 3拍目が f の2声</b>。m.239–241は2声書法だが div. の印刷なし(※要確認)</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">242–245</td><td class="tk">—</td><td class="tk">♭2 / cresc. → f(245末)</td><td class="role"><b>8分三連符による上行走句が4小節連続</b>。♯♭♮が入り乱れる半音階的な上行</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">246–252</td><td class="tk">—</td><td class="tk"><b>ff</b>(246) → dim. → p(249)<br>sempre dim.(252)</td><td class="role">ff の三連符から下行し、付点2分音符を経て穏やかな下行フレーズへ</td><td class="lv">★★</td></tr>
+          <tr><td class="m">253–262</td><td class="tk">—</td><td class="tk">pp / molto cresc.(258)<br><b>div.</b>(260) / poco rall.</td><td class="role">五線下の低音を pp で。m.259は<b>符幹が1本の重音</b>(全員が2音)、<b>m.260で div. に分かれて終止和音</b>。<b>pp で消えるので下声をわずかに厚く</b>して和音の底が抜けないように。m.261–262は2小節休符で終止</td><td class="lv">★★★</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <h4>第2楽章の難所トップ5</h4>
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>m.199(<span class="rl">N</span>直後) — 1小節内で arco → pizz. → arco</b>
+        1拍目 arco(8分)→8分休符→2拍目 pizz.(8分)→8分休符→3拍目 arco(8分×2)。<b>各切替の物理的猶予は8分休符1つ分</b>で、Allegretto なら約0.28秒。<b>弓を右手から持ち替える動作は絶対に間に合いません。</b>しかも直前の m.195–196 は ppp の2声、直後の m.200 で調号が♭5に変わります。m.197の入り(arco→pizz.)も同じく0.5拍——<b>3小節の間に4回の奏法変更</b>です。
+        <span class="fix"><b>対策:</b> ①<b>弓を持ったまま人差し指で弾く奏法を標準解とする</b>——弓は薬指・小指と親指で保持し、人差し指の腹を<b>指板の端</b>に当てて撥弦。♩=50でこの動作だけを100回反復。②<b>右手だけの練習</b>——左手は開放弦のまま「arco・休・pizz・休・arco」のリズムを♩=50→60→72→88→100と上げる。<b>弓が弦から離れる高さを1cm以内</b>に抑えること。③左手だけを arco で通して♭2→♭5の臨時記号を体に入れる。④合成後に<b>録音して pizz. と arco の音色差・音量差をチェック</b>——pizz.が大きくなりがちなので ppp の枠に収める。⑤どうしても危険なら、指揮者・トップの合意のうえで<b>プルト単位で pizz./arco を分担</b>する選択肢も現実的です。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>m.40(<span class="rl">B</span>の2小節後) — pizz.から0.5拍で arco の f 旋律へ、同時にテノール記号</b>
+        猶予は8分休符1つ。しかも切り替えた直後がいきなり <b>f</b> の旋律的パッセージで、<b>弓を弦に乗せる余裕がゼロ</b>です。同じ瞬間にヘ音記号からテノール記号へ変わり、読譜負荷が同時に発生します。さらに<b>ここまで約40小節ずっと pizz. だった</b>ため、弓の持ち方・重さの感覚が鈍っている状態から最高の発音を要求されます。
+        <span class="fix"><b>対策:</b> ①m.33–40を pizz. のまま弾き、<b>m.40の1拍目直後に「弓を構え直す→8分音符3つを弾く」動作だけを分離</b>して反復。ここでも弓を持ったまま pizz. する奏法が有効です。②m.40の3拍目の8分音符3つは m.41 への上行アウフタクト——<b>上げ弓で入り、m.41の頭に下げ弓が来る</b>弓順を確定してパート内で統一。③テノール記号は m.40–48 を<b>1オクターヴ下のヘ音記号に書き換えたものと交互に読む</b>練習で定着させる。④直前の pizz. は音を短く切って右手をすぐ準備位置へ。ただしバスの支えなので<b>切りすぎて痩せさせない</b>こと。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>m.73–76(<span class="rl">D</span>の後半) — 4小節連続の半音階16分音符走句</b>
+        1小節あたり16分音符12個×4小節＝<b>約48音が休みなく続き</b>、♮・♭が交錯する純粋な半音階運動。調号は♭2なのに実質的に調性が浮遊しており、<b>指の型が使えません</b>。4つずつのスラーで弓が短くなるうえ、直前の m.72 が ppp なので<b>弓元〜中間の極小の弓で発音を揃える</b>必要があります。m.75–76 では走句の途中にポジション移動が入ります。
+        <span class="fix"><b>対策:</b> ①<b>リズム変奏</b>(付点／逆付点／3+1・1+3のグルーピング)を各小節10回ずつ。②<b>スラーを外して全弓デタシェで音程を確認</b>してから4つスラーに戻す。♭系の狭い半音はチューナーで確認。③<b>ポジション設計を紙に書き込み、移動は必ず4音の境目に置く</b>。④♩=40から始め、<b>4小節をノーミスで3回通せたら+4</b>のルールで漸進。目標テンポの110%まで上げてから戻す。⑤<b>ppp の指定を最後まで守る</b>——cresc.は m.76 の最後だけです。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">4</span><p><b>m.114 / 116 / 122 / 124 / 130 / 181 / 183 / 188 / 205 / 207 — 「1拍」での pizz.⇄arco 反復</b>
+        いずれも「1拍目に音→2拍目4分休符→3拍目で奏法変更」という同一パターン。1回なら可能ですが、<b>m.114→116→122→124→130 と5回、m.181→183→188 と3回、m.205→207 と2回、短時間に連続</b>します。しかも <b>m.122・124・205・206・207 は2音の和音のpizz.</b> で、撥弦の角度と音程を同時に決める必要がある。全区間 pp 指定で弱音器も付いているため、<b>arco 側が埋もれ pizz. 側だけが浮きやすい</b>のも厄介です。
+        <span class="fix"><b>対策:</b> ①<b>「1拍で持ち替える」型をルーティン化</b>——2拍目の頭で弓を離し、裏で右手を撥弦位置へ、3拍目直前に指を弦に触れさせておく。この3段階を毎回同じ動作で、「音・準備・準備・pizz.」と唱えながら。②<b>和音pizz.は人差し指1本で下から上へ掃く</b>(親指で押さえない)。div.なら担当を事前に確定し、<b>担当外の音は絶対に鳴らさない</b>指の当て方を練習。③撥弦位置を<b>指板の端</b>に固定して柔らかい音を作り、arco と音量が揃うか録音で確認。④m.113–117 / 121–125 / 129–131 / 180–184 / 186–190 / 204–208 の<b>6ブロックを各5回、毎日のルーティン</b>に。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">5</span><p><b>m.226–237(<span class="rl">P</span>前後) — ♯5のディヴィジと重嬰記号、♭5⇄♯5 の転調ショック</b>
+        <b>チェロにとって♯5(嬰ハ／嬰ト系)は最も指が慣れない調号</b>です。しかも直前まで♭5を弾いていたため、<b>同じ指の型が全て半音ずれます</b>。m.226–233 は pp のディヴィジで上下が和声の骨格を作るため、ここで音程が濁ると Poco più lento の静寂が壊れる。<b>m.229 の下声には重嬰(ダブルシャープ)記号</b>があり読み間違いが起きやすい。さらに m.230–233 の4小節休止＋フェルマータの後、m.234 で unis. の付点リズムに Tempo I で飛び込みます。
+        <span class="fix"><b>対策:</b> ①<b>♯5の音階練習</b>(嬰ハ短調／ロ長調の3オクターヴ音階+分散和音)を毎日。②m.226–229を<b>自分の担当声部だけで単旋律として暗譜</b>し、次に相方と2人で純正な3度・6度を作る。相方の音を録音してドローンにするのが有効。③<b>重嬰記号の箇所は鉛筆で実音名を書き込む</b>——読み替えミスを物理的に防ぎます。④m.230–233の休みは「2・1・1(フェルマータ)」と分節して数え、<b>m.234の付点リズムを休みの間に頭の中で先取りして刻んでおく</b>。⑤m.237→238は<b>調号切替(♯5→♭2)と弱音器解除が同時</b>なので、この2小節だけ単独で10回反復。</span></p></li>
+      </ol>
+    </div>
+
+    <div class="callout neutral">
+      <h4>第2楽章の実務メモ — 切替タイミングと音部記号</h4>
+      <p style="font-size:.92rem;margin:.3em 0 .6em"><b>pizz. ⇄ arco の全20回</b>。0.5拍しかない切替が5箇所、1拍が10箇所——<b>「弓を持ったままの撥弦」を全区間の標準とし、余裕のある3箇所(m.102 / m.135 / m.187)でのみ通常の持ち替えを行う</b>のが現実的な方針です。</p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>小節・拍</th><th>切替</th><th>猶予</th><th>備考</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Auftakt</td><td class="tk">→ pizz.</td><td class="tk">開始前</td><td class="role">p で楽章が始まる</td></tr>
+            <tr><td class="m">m.40 2拍目裏</td><td class="tk">pizz. → <b>arco</b></td><td class="tk"><b>0.5拍</b></td><td class="role">同時にテノール記号へ。直後 f ★最難級</td></tr>
+            <tr><td class="m">m.86 3拍目</td><td class="tk">arco → pizz.</td><td class="tk">1拍</td><td class="role">—</td></tr>
+            <tr><td class="m">m.102 3拍目</td><td class="tk">pizz. → <b>arco</b></td><td class="tk">約8小節</td><td class="role">同時にテノール記号へ。pp。<b>唯一余裕がある</b></td></tr>
+            <tr><td class="m">m.114 / 116 / 122 / 124 / 130</td><td class="tk">arco⇄pizz. 5回</td><td class="tk">各1拍</td><td class="role">m.122・124は<b>2音和音</b>のpizz.</td></tr>
+            <tr><td class="m">m.135 1拍目</td><td class="tk">pizz. → <b>arco</b></td><td class="tk">約7拍半</td><td class="role"><b>弱音器解除と同時</b>。調号♭3へ</td></tr>
+            <tr><td class="m">m.181 / 183</td><td class="tk">arco⇄pizz.</td><td class="tk">各1拍</td><td class="role">pizz.区間はわずか1小節半</td></tr>
+            <tr><td class="m">m.187 3拍目</td><td class="tk">arco → pizz.</td><td class="tk">約5拍</td><td class="role">余裕あり</td></tr>
+            <tr><td class="m">m.188 3拍目</td><td class="tk">pizz. → arco</td><td class="tk">1拍</td><td class="role">pizz.区間はわずか8分音符3つ</td></tr>
+            <tr><td class="m">m.197 1拍目</td><td class="tk">arco → <b>pizz.</b></td><td class="tk"><b>0.5拍</b></td><td class="role">★最難</td></tr>
+            <tr><td class="m">m.199(1拍目/2拍目/3拍目)</td><td class="tk"><b>arco→pizz.→arco</b></td><td class="tk"><b>各0.5拍</b></td><td class="role">★<b>楽章最大の難所</b>。1小節に3つの奏法指示</td></tr>
+            <tr><td class="m">m.205 / 207 3拍目</td><td class="tk">arco⇄pizz.</td><td class="tk">各1拍</td><td class="role"><b>2音和音</b>。m.207以降は終わりまで arco</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.92rem;margin:1.2em 0 .6em"><b>音部記号の変更4回</b>——うち<b>2回は奏法変更と同時</b>に起こります。ト音記号は一度も使われません。</p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>小節</th><th>変更</th><th>備考</th></tr></thead>
+          <tbody>
+            <tr><td class="m">m.40 2拍目裏</td><td class="tk">ヘ音 → <b>テノール</b></td><td class="role"><b>pizz.→arco と同時</b>。直後 f</td></tr>
+            <tr><td class="m">m.48 3拍目</td><td class="tk">テノール → ヘ音</td><td class="role">直後に調号変更(♭2)</td></tr>
+            <tr><td class="m">m.102 3拍目</td><td class="tk">ヘ音 → <b>テノール</b></td><td class="role"><b>arco復帰と同時</b>。pp</td></tr>
+            <tr><td class="m">m.106</td><td class="tk">テノール → ヘ音</td><td class="role">以後、楽章末まで変化なし</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.92rem;margin:1.2em 0 .6em"><b>ディヴィジ・2声書法と、4小節以上の休み</b></p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>小節</th><th>種類</th><th>内容・注意点</th></tr></thead>
+          <tbody>
+            <tr><td class="m">m.24–31</td><td class="tk"><b>div.</b>(明示)</td><td class="role">pizz.の2声。<b>下声(バス)が痩せると土台が崩れる</b>ので下声を人数多めに。m.32で unis.</td></tr>
+            <tr><td class="m">m.56 / 195–196 / 205–207 / 239–241</td><td class="tk">2声書法(表記なし)</td><td class="role">いずれも<b>div.の印刷がないが、音程差から div. が必要</b>と判断される箇所(※要確認)。とくに m.56 は音程差10度以上で重音は物理的に不可能</td></tr>
+            <tr><td class="m">m.122–124</td><td class="tk"><b>pizz. div.</b>(明示)</td><td class="role">1拍しか準備時間がないので<b>担当音を暗譜して指を先に置く</b></td></tr>
+            <tr><td class="m">m.226–233</td><td class="tk"><b>div.</b>(明示)</td><td class="role">♯5・重嬰記号あり。上下とも同じ音価なのでプルトの表／裏で素直に分割。<b>下声担当者は m.229 の重嬰の実音名を書き込む</b>。m.234で unis.</td></tr>
+            <tr><td class="m">m.259 / m.260</td><td class="tk">重音 → <b>div.</b></td><td class="role">m.259は符幹1本の<b>重音</b>(全員が2音)、m.260で分かれて終止和音。<b>pp で消えるので下声を厚めに</b></td></tr>
+            <tr><td class="m">m.94–102(約7小節半)</td><td class="tk">長休み</td><td class="role">→ m.102の3拍目、arco・テノール記号・pp。<b>poco rall.⇄a tempo が3回、フェルマータが2回</b>——小節を数えるだけでは絶対に入れない。この間に弱音器を装着</td></tr>
+            <tr><td class="m">m.222–225(4小節)</td><td class="tk">長休み</td><td class="role">→ m.226、Tempo I、♯5、div.、pp。<b>フェルマータの解除を指揮者が示した次の小節</b>。休みの間に♭5→♯5の読み替えを済ませておく</td></tr>
+            <tr><td class="m">m.230–233(4小節)</td><td class="tk">長休み</td><td class="role">→ m.234、Tempo I、unis.、付点8分+16分。<b>休みの間に内心でリズムを刻んでおく</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:1.2em"><b>この楽章のチェロ譜にもキュー音符は1か所もありません。</b>長い休みの復帰はすべて小節数のカウントと指揮者の指示に依存します。とくに m.94–101 はフェルマータとテンポ変化が入り乱れるため、<b>総譜から手書きでキューを書き込むこと</b>を強く勧めます(コーラングレの主題、ハープのアルペジオ、クラリネットの動きなど)。<br>
+      <b>調号は7回変わります</b>——♭5 → ♭2(m.49) → ♭3(m.135) → ♭2(m.176) → ♭5(m.200) → ♯5(m.222) → ♭2(m.238)。とくに <b>m.199→200(♭2→♭5)</b> と <b>m.221→222(♭5→♯5)</b> は<b>奏法変更・テンポ変更と重なる</b>ので、譜面に大きく色付けしておくこと。</p>
+    </div>
+  </div>
+</section>
+
+<section id="mvt3">
+  <div class="wrap">
+    <div class="mvt-head">
+      <div>
+        <span class="kicker">MOVEMENT III</span>
+        <h2 class="h-title">第3楽章 — Allegro non troppo</h2>
+      </div>
+      <div class="mvt-key">ニ長調 / 2-2拍子 / 全440小節<br>練習記号 <b>A〜S</b>(Jは欠番・全18個)</div>
+    </div>
+    <p class="lede">チェロにとってのフィナーレは<b>「歌う楽章」と「支える楽章」が交互に来る</b>構造です。m.7 で早くも主題を dolce cantabile で実音提示し、m.98 からは50小節近い半音階カンタービレ、m.246 では主題の変形を歌います。一方で m.350 からは<b>54小節にわたる2分音符スラーの伴奏</b>で他パートの主題回帰を支えます。<b>そしてこの版のチェロ譜には、第3楽章を通じて音部記号の変更が一切ありません</b>——加線3〜4本の高音もすべてヘ音記号で書かれており、それ自体が最大の読譜負荷になります。</p>
+
+    <div class="callout">
+      <h4>この版のチェロ譜について、先に知っておくべき3点</h4>
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>音部記号の変更がゼロ — 全440小節がヘ音記号</b>
+        テノール記号もト音記号も1か所も現れません。<b>G4〜A4相当の音がヘ音記号の加線3〜4本</b>で書かれています(m.201–202 / m.263–267 / m.421–426)。加線が4本を超えると目が瞬時に高さを判定できず、本番で1音ずれる事故が起きやすい。<b>該当箇所は鉛筆でテノール記号を書き加えることを強く勧めます</b>——それだけで読譜負荷が半減します。</p></li>
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>キュー音符が1か所もない</b>
+        第3楽章のチェロ譜には他パートのキュー音符が印刷されていません。<b>7小節休み(m.339–345)の直後に <span class="rl">Q</span> の ppp で入る</b>場面も、手がかりなしで入る必要があります。しかもその休みは poco a poco rall. の進行中——拍で数えるのではなく指揮者を見て入るしかありません。</p></li>
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>4e corde / double corde の指示はない</b>
+        2ndVn譜にあるG線指定(m.330)や全員重音(m.360)に相当する指示は、チェロ譜には印刷されていません。チェロ譜の奏法指示は div. / unis. / pizz. / arco と強弱・アーティキュレーションのみです。</p></li>
+      </ol>
+    </div>
+
+    <div class="tbl-scroll">
+      <table class="form-map">
+        <thead><tr><th>小節</th><th>記号</th><th>テンポ・調・拍子</th><th>チェロの動き</th><th>難度</th></tr></thead>
+        <tbody>
+          <tr><td class="m">1–6</td><td class="tk">—</td><td class="tk">Allegro non troppo<br>♯2 / 2-2 / <b>ff</b></td><td class="role">低音の推進役。<b>D音の8分音符連打</b>(半音符+斜線1本)を1小節2つずつ。旋律ではなく和声基盤+リズム推進。1ポジション・D線</td><td class="lv">★★</td></tr>
+          <tr><td class="m">7–18</td><td class="tk">—</td><td class="tk"><b>dolce cantabile</b> → p(15)</td><td class="role"><b>チェロが主題を実音で歌う</b>。4分音符主体、2〜3小節にわたる長いスラー。D3〜B3(1〜4ポジション)。m.15からは p で2回目の提示。終楽章第1主題の提示位置(※総譜未確認)</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">19–26</td><td class="tk">—</td><td class="tk">cresc.(23) → dim.(26)</td><td class="role">「4分音符+休符」の点描的な低音に断片化したのち、♮を伴う全音符・2分音符の持続音へ。和声の土台</td><td class="lv">★★</td></tr>
+          <tr><td class="m">27–36</td><td class="tk"><span class="rl">A</span></td><td class="tk">cresc. → f(31)</td><td class="role">全音符・2分音符の長い持続音が半音階的に動く。m.31–36に<b>4〜5〜6度の重音</b>(全音符)。ロングトーンの音程とヴィブラート維持</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">37–44</td><td class="tk">—</td><td class="tk"><b>ff</b></td><td class="role"><b>重音(4〜5度)の8分音符連打</b>が m.37–40。m.41–42は♯を含む8分音符の走句。刻み+重音で右手の持久力を要求</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">45–48</td><td class="tk">—</td><td class="tk">mf</td><td class="role">「付点2分+8分音符2つ」の歌う音型が2回。B3〜D4付近でスラー、4〜5ポジション</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">49–56</td><td class="tk"><span class="rl">B</span></td><td class="tk"><b>espress. e marcato</b><br>f → 即 pp(53)</td><td class="role">♯を多用した半音階的な動機を3回。m.53で f から pp への急激な落差、以降は♭を伴う全音符のタイ</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">57–67</td><td class="tk">—</td><td class="tk">molto cresc. → <b>ff</b>(61)<br>→ dim. → pp</td><td class="role">2声重音の8分音符連打ののち、<b>4分音符による上行の旋律線</b>。<b>加線2本(E4付近)まで上昇</b>して dim. で下行。5〜6ポジション</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">68–71</td><td class="tk"><span class="rl">C</span></td><td class="tk">—</td><td class="role">全音符の持続。静かな和声保持</td><td class="lv">★★</td></tr>
+          <tr><td class="m">72–83</td><td class="tk">—</td><td class="tk"><b>調号 ♯5</b>(72)</td><td class="role"><b>4小節休み → p の全音符4つ → また4小節休み</b>。調号が♯5(ロ長調)に変わっている。<b>キュー音符なし</b></td><td class="lv">★★</td></tr>
+          <tr><td class="m">84–97</td><td class="tk"><span class="rl">D</span>(84)</td><td class="tk"><b>f molto sosten.</b><br>→ dolce espress.(88)</td><td class="role">全音符3つをタイで結ぶ持続音(大きな強弱の山付き)から、<b>半音階的なレガート旋律</b>へ。m.91に3連符。持続と歌の両立</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">98–112</td><td class="tk"><span class="rl">E</span>(98)</td><td class="tk"><b>調号 ♯2 に復帰</b><br><b>molto legato / pp</b><br>→ ppp(109)</td><td class="role"><b>長大なカンタービレの半音階旋律</b>。この楽章でチェロが最も長く歌い続ける区間。m.104–105で加線2本(E4〜F4)まで上昇し、その後 ppp まで落ちる</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">113–120</td><td class="tk">—</td><td class="tk">molto cresc.(114) → dim.(119)</td><td class="role">3連符(m.114・117)を含み、加線2本の高音へ再上昇。旋律的</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">121–124</td><td class="tk"><span class="rl">F</span></td><td class="tk">pp → ppp</td><td class="role">4分音符と2分音符の交替。静かな和声</td><td class="lv">★★</td></tr>
+          <tr><td class="m">125–139</td><td class="tk"><span class="rl">G</span>(138)</td><td class="tk"><b>3-4に変拍子</b>(125)<br><i>Les temps ont exactement la même valeur</i><br>ppp(128) → mf(132) → ppp(134)</td><td class="role"><b>「8分音符+8分休符+4分休符」——音より休符のほうが多い</b>断片的な音型が15小節。裏拍に置かれる音もあり、リズムの拠り所が薄い。<b>入りを見失うと復帰できない</b></td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">140–144</td><td class="tk">—</td><td class="tk"><b>2-2に復帰</b>(140)<br>ppp</td><td class="role">m.141に<b>急速な上行の8分音符走句</b>(ダブルシャープを含む)。以降は全音符の持続</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">145–160</td><td class="tk">—</td><td class="tk"><b>div.</b>(145) / unis.(149・157)</td><td class="role"><b>上声=arco の espress. な旋律 / 下声=pizz. mf の低音</b>という2声書法。m.149で unis.+arco、m.153で再び2声、m.157で unis. に戻り全音符のタイへ。<b>短い区間で pizz./arco が往復する</b></td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">161–170</td><td class="tk"><span class="rl">H</span>(161)</td><td class="tk"><b>pp</b>(cresc.の直後に急に) → mf(169)</td><td class="role"><b>全音符のタイによる長大なペダル音</b>(m.161–165)ののち、♭を伴う4分・2分音符が半音階的に動く。弓と音程の持久戦</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">171–174</td><td class="tk">—</td><td class="tk">f → cresc.</td><td class="role"><b>半音階の8分音符走句が4小節連続</b>。m.173–174はスタッカート付きで<b>加線2〜3本(E4〜G4)まで駆け上がる</b>。この楽章屈指の技巧的パッセージ</td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">175–186</td><td class="tk">—</td><td class="tk"><b>ff</b> → mf(181) → cresc.</td><td class="role">半音階の4分・2分音符ののち、<b>2分音符・全音符の重音(2声)</b>が続く。低い♯音を伴う開離気味の和音</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">187–200</td><td class="tk"><span class="rl">I</span>(187)</td><td class="tk">ff / sostenuto(192)<br>アクセント(196)</td><td class="role">高音の2分音符で旋律的に動き、m.196からは「付点2分+8分音符2つ」の音型を低音域から反復</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">201–202</td><td class="tk">—</td><td class="tk">—</td><td class="role"><b>♭・♯を伴う4分音符で一気に上行し、加線3〜4本(G4〜A4付近)に到達</b>。ヘ音記号のまま。<b>親指ポジション必須</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">203–211</td><td class="tk"><span class="rl">K</span>(203)</td><td class="tk"><b>div.</b> / dim.<br>rall.(207) / p→pp(209)</td><td class="role"><b>3声の和音</b>(全音符・2分音符)。m.207から rall. が m.210 まで破線で続き、<b>m.211は休符にフェルマータ</b></td><td class="lv">★★★</td></tr>
+          <tr><td class="m">212–223</td><td class="tk">—</td><td class="tk"><b>Più lento</b> / pp</td><td class="role"><b>独奏的・瞑想的な断片</b>。m.214は1小節休み、<b>m.215とm.219はフェルマータ付き全休符</b>。m.220・223に3連符。<b>循環主題の回想が置かれる可能性が最も高い位置</b>(※総譜未確認)</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">224–227</td><td class="tk"><span class="rl">L</span>(224)</td><td class="tk"><b>très long</b>(227)</td><td class="role">2小節休みののち、<b>「非常に長く」と記された大フェルマータ付きの全休符</b>。緊張維持のヤマ場</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">228–245</td><td class="tk">—</td><td class="tk"><b>Tempo I.</b> Allegro non troppo<br>♯2 / 2-2 / pp</td><td class="role">再現部の開始。<b>2分音符をスラーで2つずつ結ぶ低音域の和声保持</b>。m.231・232・235・236に全音符のトレモロ。チェロは低音の土台に回る</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">246–258</td><td class="tk"><span class="rl">M</span>(246)</td><td class="tk">mf → poco a poco cresc.(250)</td><td class="role"><b>「付点4分+♯8分+2分音符」のカンタービレをチェロが実音で歌う</b>。主題の変形の可能性が高い(※総譜未確認)。m.255–256は<b>加線2〜3本の高音でアクセント付き2分音符</b>——親指ポジション</td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">259–267</td><td class="tk"><span class="rl">N</span>(262)</td><td class="tk"><b>ff</b>(262)</td><td class="role"><b>4分音符の3連符が1小節に2組ずつ</b>連続して半音階的に上行。m.263・265–267で<b>加線3〜4本(G4〜A4)まで駆け上がる</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">268–279</td><td class="tk">—</td><td class="tk"><b>ff</b> → mf(279)</td><td class="role"><b>この楽章最大の難所。</b>6度前後の重音(上声=加線2本のE4〜G4、下声=譜表最上線A3付近)を<b>8分音符で約12小節連打</b>。親指ポジションでの重音+刻みの持久力。div.の明示はないが実務上は分ける判断も(※要打ち合わせ)</td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">281–292</td><td class="tk">—</td><td class="tk"><b>cantabile</b> → dim. → f(292)</td><td class="role">4分・8分音符による<b>歌う旋律</b>。m.288–289で全音符の持続に落ち着く</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">293–299</td><td class="tk"><span class="rl">O</span>(296)</td><td class="tk"><b>div.</b>(293) → <b>unis.</b>+ff(296)</td><td class="role">上声が加線2〜3本の高音を弾く2声ののち、unis. でアクセント付き2分音符が半音階的に上行して拍子変換へ</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">300–313</td><td class="tk">—</td><td class="tk"><b>3-4に変拍子</b>(300)<br><i>Les temps de même valeur</i> / <b>ff sempre</b></td><td class="role"><b>拍子変換直後に ff の走句</b>。m.307–313は8分音符の連続走句(1小節6個の連続を含む)で、♮♯♭が入り乱れる半音階。<b>最も事故りやすい箇所のひとつ</b></td><td class="lv">★★★★★</td></tr>
+          <tr><td class="m">314–321</td><td class="tk"><span class="rl">P</span>(316)</td><td class="tk">dim.(316)<br><b>2-2に復帰</b>(318) / <b>div.</b> pp</td><td class="role">2分音符+4分音符へ落ち着き、拍子が戻ると2声の和音をスラーで。m.320で unis.</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">322–338</td><td class="tk">—</td><td class="tk"><b>div.</b>+<i>non troppo dolce</i>(330)<br>poco a poco rall.(338〜)</td><td class="role">4小節休み(キューなし)ののち3声と2声の和音が交互に。m.330からは<b>低音域の2〜3声の全音符和音を5小節</b>——静かな和声のベッド</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">339–345</td><td class="tk">—</td><td class="tk"><b>poco a poco rall. 進行中</b></td><td class="role"><b>7小節の休み(キューなし)</b>。減速の最中に休むため拍で数えられない。<b>この楽章で最も危険な入り</b></td><td class="lv">★★</td></tr>
+          <tr><td class="m">346–349</td><td class="tk"><span class="rl">Q</span>(346)</td><td class="tk"><b>unis.</b>+ppp → <b>div.</b>(347)</td><td class="role">♭全音符ののち、♭を伴う2〜3声の全音符和音が3小節</td><td class="lv">★★★</td></tr>
+          <tr><td class="m">350–397</td><td class="tk"><span class="rl">R</span>(382)</td><td class="tk"><b>a tempo</b> / unis. / ppp<br>→ molto cresc.(366) → pp(370)<br>→ mf(390) → sempre cresc.(392)</td><td class="role"><b>「2分音符+2分音符を1本のスラー」の揺れる音型が延々と続く</b>。低音域の半音階(m.380にダブルシャープ)。他パートで循環主題が回帰しているのを支える伴奏(※総譜未確認)</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">398–405</td><td class="tk"><span class="rl">S</span>(398)</td><td class="tk"><b>ff</b></td><td class="role">同じ音型のまま ff へ。<b>約54小節続いた2分音符スラーの頂点</b></td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">406–413</td><td class="tk">—</td><td class="tk">pp → molto cresc.(409)</td><td class="role"><b>重音(6度前後)の全音符トレモロ</b>。右手のトレモロ持久力+重音の音程</td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">414–436</td><td class="tk">—</td><td class="tk"><b>ff</b></td><td class="role">コーダ。<b>「付点2分+8分音符2つ」の音型を執拗に反復</b>。低音域中心だが、m.421–426で<b>加線3〜4本(G4付近)へ跳躍</b></td><td class="lv">★★★★</td></tr>
+          <tr><td class="m">437–440</td><td class="tk">—</td><td class="tk">—</td><td class="role">1小節休みののち、<b>重音の全音符トレモロ</b>(m.438–439)で終止和音を保持し、m.440の重音で全曲が閉じる</td><td class="lv">★★★</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <h4>第3楽章の難所トップ7</h4>
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>m.268–279 — 高音域6度重音の8分音符連打</b>
+        上声が加線2本(E4〜G4付近)、下声が譜表最上線付近という<b>6度前後の重音を、ff で約12小節ノンストップの8分音符連打</b>。親指ポジションで重音を保持しながら右手を刻み続けるため、<b>左手の握力と右手の持久力が同時に限界に来ます</b>。しかもヘ音記号のまま加線2本なので読み替えの負荷も重なる。
+        <span class="fix"><b>対策:</b> ①まず<b>下声だけ</b>を全弓レガートで弾いてポジションと音程の骨格を固める。②上声だけを同様に。③親指をA線・D線にセットしたまま<b>重音を4分音符でロングトーン</b>(8分にしない)。④テンポを半分にして8分連打、右手は<b>上腕を使わず前腕と手首だけ</b>の小さな運動に限定。⑤弓は<b>先半分〜中央</b>を使い駒寄りに保つ。⑥<b>トゥッティで実際に div. するかを必ず事前に決める</b>——分けるなら上下どちらかだけを完成させればよくなります。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>m.201–202 / m.421–426 — ヘ音記号のまま加線3〜4本</b>
+        この版は<b>テノール記号に一切切り替わらない</b>ため、G4〜A4相当の音がヘ音記号の加線3〜4本で書かれています。加線が4本を超えると目が瞬時に高さを判定できず、<b>本番で1音ずれる事故</b>が起きやすい。さらに親指ポジションへの移動を伴います。
+        <span class="fix"><b>対策:</b> ①該当箇所を<b>鉛筆でテノール記号に書き換えて併記</b>する(この版は余白があるので上に小さく書けます)。②到達音(最高音)に印を付け、<b>そこへの跳躍だけを単独反復</b>。③直前の音から最高音までを<b>グリッサンドで繋いでから</b>正確な音程に置き換える。④親指の位置(A線とD線に同時に触れる位置)を指板に軽い印で確認しておく。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>m.171–174 — 半音階8分音符の走句(後半スタッカート)</b>
+        4小節連続の半音階8分音符で、m.173–174には<b>スタッカート</b>が付き、加線2〜3本の高音まで駆け上がります。f → cresc. なので音量も落とせない。半音階は隣り合う指の使い分けの設計が甘いと必ず崩れます。
+        <span class="fix"><b>対策:</b> ①<b>運指を完全に確定して書き込む</b>(「1-2-3-4」で組むか「親指-1-2-3」で組むかを決め打ち)——これをやらないと毎回違う音程になります。②リズム練習を付点／逆付点／3連分割の3種で。③スタッカートは<b>弓を止めるのではなく弓速の減速</b>で切る。④メトロノームを8分＝♩に設定し、♩=60から5ずつ上げる。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">4</span><p><b>m.300–313 — 3/4への拍子変換直後の ff sempre 走句</b>
+        m.300でいきなり2/2→3/4になり、しかも「拍の長さは変えない」＝<b>体感テンポは変わらないのに小節線の位置だけがズレます</b>。その状態で ff sempre の走句(m.307–313は8分音符の連続)に入るため、小節を見失いやすい。
+        <span class="fix"><b>対策:</b> ①m.296–320を<b>拍子を無視して「4分音符の連続」として通す</b>練習を先に(拍の長さが不変であることを体で覚える)。②その上で<b>3/4の1拍目にだけ足で印</b>を付けて通す。③m.318の3/4→2/2も同じ要領で。④<b>指揮者の振り方(3拍振りか1つ振りか)を必ずリハで確認</b>しておく。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">5</span><p><b>m.350–403 — 54小節続く2分音符スラーの持久戦</b>
+        「2分音符+2分音符を1本のスラー」という音型が <b>ppp → pp → mf → ff</b> と50小節以上続きます。<b>弓が足りない</b>(1弓で4拍を使う)、<b>低音域の半音階で音程がぶれる</b>、<b>ppp を保ちながら弓を止めない</b>という3重の負荷。
+        <span class="fix"><b>対策:</b> ①<b>弓の配分表</b>を作る(どこで元弓、どこで先弓かを4小節単位で書き込む)。②<b>ppp は駒から離し、弓速を落とし、毛を寝かせる</b>——圧力を下げるのではなく接点で作る。③半音階は<b>同じ指の半音移動(1→1)を避け、指を替える</b>運指に統一。④<span class="rl">R</span>(m.382)と<span class="rl">S</span>(m.398)を目標地点として、そこまでのクレッシェンドを4分割して計画する。<b>S で ff になるので m.395 までに弓元に戻しておくこと。</b></span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">6</span><p><b>m.125–139 — 3/4の断片的8分音符(ppp)と長い数え</b>
+        「8分音符+8分休符+4分休符」という<b>音より休符のほうが多い</b>音型が15小節。ppp で、しかも3/4(拍の長さ不変)。裏拍に置かれる音もありリズムの拠り所が薄く、<b>入りを見失うと復帰できません</b>。
+        <span class="fix"><b>対策:</b> ①<b>休符に数字を書き込む</b>(「1と2と3と…」)。②メトロノームを<b>裏拍だけ</b>鳴らして練習する。③音を出さず<b>エア・ボウイングで15小節通す</b>(腕だけで拍を刻む)。④m.140の2/2復帰で<b>すぐ m.141 の上行走句が来る</b>ので、セットで練習しておく。</span></p></li>
+
+        <li class="diff-item"><span class="diff-rank">7</span><p><b>m.203–227(<span class="rl">K</span>〜<span class="rl">L</span>) — 4つのフェルマータと長い沈黙</b>
+        m.207から rall.、m.211にフェルマータ付き休符、m.212で Più lento、m.215・m.219にフェルマータ付き全休符、そして<b>m.227に「très long」の大フェルマータ</b>。<b>音を出していない時間が非常に長く、しかも長さが指揮者次第</b>です。ここで集中を切らすと m.228 の Tempo I(再現部)に飛び込めません。加えて m.212–223 は pp の独奏的フレーズで、音程と音色がむき出しになります。
+        <span class="fix"><b>対策:</b> ①<b>指揮者の棒だけを見て呼吸で入る</b>練習(音源を止め、無音のまま m.227→m.228 の切り替えをイメージする)。②<b>m.228の最初の音をどのポジションで取るかを決めて、フェルマータ中も左手をその形で待機</b>させておく。③m.212–223は<b>メトロノームなしで、フレーズの息だけで</b>通す。④m.227の直前(m.224–226)で<b>弓を元に戻し、次の pp に必要な弓を確保</b>しておく。</span></p></li>
+      </ol>
+    </div>
+
+    <div class="callout neutral">
+      <h4>第3楽章の実務メモ — ディヴィジ・長休符・拍子変化</h4>
+      <p style="font-size:.92rem;margin:.3em 0 .6em"><b>div. / unis. の箇所と割り振りの考え方</b></p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>小節</th><th>声部</th><th>判断材料</th></tr></thead>
+          <tbody>
+            <tr><td class="m">m.145(→149 unis.)</td><td class="tk">2声</td><td class="role"><b>上声=arco の旋律(dolce espress.) / 下声=pizz. の低音</b>。性格がまったく違うので<b>上声は前プルト、下声は後プルト</b>が自然</td></tr>
+            <tr><td class="m">m.153(→157 unis.)</td><td class="tk">2声</td><td class="role">同上。m.149のunis./arcoを挟んで再度分かれる</td></tr>
+            <tr><td class="m">m.203(<span class="rl">K</span>)</td><td class="tk"><b>3声</b></td><td class="role">全音符の和音。3声なら上2声を前・下1声を後ろに。dim.〜rall. なので<b>音量バランス優先</b>で決める</td></tr>
+            <tr><td class="m">m.293(→296 unis.)</td><td class="tk">2声</td><td class="role"><b>上声が加線2〜3本の高音</b>。高音を弾ける奏者を上声(前プルト)に</td></tr>
+            <tr><td class="m">m.318(→320 unis.)</td><td class="tk">2声</td><td class="role">pp の2分音符和音。短い区間</td></tr>
+            <tr><td class="m">m.330</td><td class="tk">2〜3声</td><td class="role">低音域の全音符和音(non troppo dolce)。<b>下声を厚めに</b>して土台を作る</td></tr>
+            <tr><td class="m">m.347</td><td class="tk">2〜3声</td><td class="role"><span class="rl">Q</span>の unis. ppp の直後。ppp なので<b>人数配分より音程の揃え</b>を優先</td></tr>
+            <tr><td class="m">div.表記なしの2声書法</td><td class="tk">2〜3声</td><td class="role">m.31–36 / 37–44 / 57–60 / 182–186 / <b>265–279</b> / 326–329 / 335–338 / 406–413 / 438–439。多くは重音で演奏可能だが、<b>m.265–279は高音域の6度重音なので div. する判断が現実的</b>(要相談)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.92rem;margin:1.2em 0 .6em"><b>4小節以上の休符 — この楽章はキュー音符が1つもありません</b></p>
+      <div class="tbl-scroll" style="margin-top:0">
+        <table class="form-map">
+          <thead><tr><th>休符</th><th>直後</th><th>準備のポイント</th></tr></thead>
+          <tbody>
+            <tr><td class="m">m.72–75(4)</td><td class="tk">m.76 / p</td><td class="role">直前のm.72で<b>調号が♯5に変わっている</b>。休みの間に調号の切り替えを意識する</td></tr>
+            <tr><td class="m">m.80–83(4)</td><td class="tk">m.84(<span class="rl">D</span>) / <b>f molto sosten.</b></td><td class="role">4小節休みの直後に f で入る。<b>休符中に弓を元に構えておく</b></td></tr>
+            <tr><td class="m">m.322–325(4)</td><td class="tk">m.326 / 3声の和音</td><td class="role">中〜強奏で和音に入る</td></tr>
+            <tr><td class="m">m.339–345(<b>7</b>)</td><td class="tk">m.346(<span class="rl">Q</span>) / <b>unis. ppp</b></td><td class="role"><b>poco a poco rall. 進行中の7小節休み</b>。拍で数えるのではなく<b>指揮者を見て入る</b>しかない。この楽章で最も危険な入り</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:1.2em"><b>拍子変化は4か所</b>(m.125 / m.140 / m.300 / m.318)。それぞれ「Les temps ont exactement la même valeur」「Les temps ont toujours la même valeur」「Les temps de même valeur」「Toujours la même valeur aux temps」と、<b>言い回しは違うがすべて「拍の長さは変えない」という同じ意味</b>の但し書きが付いています。<b>調号変化は2か所</b>(m.72で♯5、m.98で♯2に復帰)。<br>
+      <b>pizz./arco の切替は m.146・153 で下声のみ pizz.、m.149・157 で arco 復帰</b>——短い区間で右手の持ち替えが2〜3回あるので、譜面に大きく丸で囲んでおくこと。</p>
+    </div>
+  </div>
+</section>
+
+<section id="cyclic">
+  <div class="wrap">
+    <span class="kicker">CYCLIC FORM</span>
+    <h2 class="h-title">循環主題マップ — モットーは全楽章をどう貫くか</h2>
+    <p class="lede">循環形式の要は「主題そのもの」ではなく、<b>主題が回帰するタイミングを弾き手が察知できるかどうか</b>です。チェロの場合、その多くは<b>自分が鳴らす</b>側にあります——<b>第1楽章だけで6回、主題を実音で弾きます</b>。4パート中で最多です。</p>
+
+    <div class="cyclic">
+      <div class="cyc-row">
+        <div class="cyc-label">第1楽章</div>
+        <div class="cyc-events">
+          <div class="cyc-evt"><span class="m">m.1–6</span><span class="d"><b>原型の提示 — チェロが全曲の起点</b>(ニ短調・Lento・p)。<b>d–cis–f</b>(付点4分→半音下の8分→跳躍上行の4分)。ヴィオラ・コントラバスと共に実音で鳴らし、両ヴァイオリンはここを休む。<b>技術より責任が重い6小節</b></span></div>
+          <div class="cyc-evt"><span class="m">m.29–32</span><span class="d"><b>Allegro変形 ①</b>(ニ短調・ff) — m.1 とまったく同じリズム型を速いテンポで</span></div>
+          <div class="cyc-evt"><span class="m">m.49–54</span><span class="d"><b>原型の反復</b>(ヘ短調・Lento・p) — 短3度上での再提示。<b>歌う低音線</b></span></div>
+          <div class="cyc-evt"><span class="m">m.77–80</span><span class="d"><b>Allegro変形 ②</b>(ヘ短調・ff)</span></div>
+          <div class="cyc-evt"><span class="m">m.331–336</span><span class="d"><b>原型の最強奏再現</b>(ニ短調・Lento・<b>ff</b>) — <b>楽章中もっとも壮麗な主題再現</b>。ヘ音記号に復帰した直後</span></div>
+          <div class="cyc-evt"><span class="m">m.349–352</span><span class="d"><b>Allegro変形 ③</b>(変ホ短調・ff) — 調号♭6つ。<b>6回目にして最後の主題提示</b></span></div>
+          <div class="cyc-evt"><span class="m">m.513–521</span><span class="d">楽章の終結 — 主題は他パート。チェロは<b>重音トレモロ</b>でコラール的に和声を支えて閉じる</span></div>
+        </div>
+      </div>
+      <div class="cyc-row">
+        <div class="cyc-label">第2楽章</div>
+        <div class="cyc-events">
+          <div class="cyc-evt"><span class="m">前半<br>(〜m.39)</span><span class="d">コーラングレが歌う<b>独自の主題</b>が中心。チェロは<b>低音のピチカート</b>で和声の最低音とリズムの土台を担う</span></div>
+          <div class="cyc-evt"><span class="m">m.41–47</span><span class="d"><b>チェロが旋律的な線(対旋律)に転じる</b> — テノール記号の中〜高音域で、m.45 で最高音域に到達</span></div>
+          <div class="cyc-evt"><span class="m">m.135–158</span><span class="d"><b>弱音器なしの「歌うカンタービレの対旋律」</b>。2分音符+4分音符を基本にした長いスラー、そして m.153 からは明確に旋律的</span></div>
+          <div class="cyc-evt"><span class="m">m.242–251</span><span class="d">三連符による上行走句から、<b>m.246 の ff がクライマックス</b></span></div>
+        </div>
+      </div>
+      <div class="cyc-row">
+        <div class="cyc-label">第3楽章</div>
+        <div class="cyc-events">
+          <div class="cyc-evt"><span class="m">m.7–18</span><span class="d"><b>チェロが主題を実音で歌う</b>(<i>dolce cantabile</i>)。6小節の刻みの直後で、<b>終楽章第1主題の提示位置</b>にあたる(※総譜未確認)</span></div>
+          <div class="cyc-evt"><span class="m">m.84–97</span><span class="d">調号が♯5に変わった領域。<b>持続和声＋対旋律</b>。終楽章第2主題(コラール風)の呈示位置と思われるが、チェロは支え役に見える(※総譜未確認)</span></div>
+          <div class="cyc-evt"><span class="m">m.98–120</span><span class="d"><b>この楽章でチェロが最も長く歌い続ける区間</b> — <i>molto legato</i> の長大な半音階カンタービレ(※総譜未確認)</span></div>
+          <div class="cyc-evt"><span class="m">m.212–227</span><span class="d">Più lento の瞑想的なフレーズとフェルマータ4か所。<b>循環主題の回想が置かれる可能性が最も高い位置</b>(※総譜未確認)。m.227 は「très long」の大フェルマータ</span></div>
+          <div class="cyc-evt"><span class="m">m.246–258</span><span class="d"><b>チェロが旋律を実音で歌う</b>(mf, poco a poco cresc.)。<b>主題の変形の可能性が高い</b>(※総譜未確認)</span></div>
+          <div class="cyc-evt"><span class="m">m.350–403</span><span class="d">54小節におよぶ2分音符スラーの伴奏 — <b>他パートで循環主題が回帰しているのを下から支えている</b>と思われる(※総譜未確認)</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">チェロは<b>「主題を最初に鳴らし、最後まで関わり続ける」パート</b>です。第1楽章の6回の提示に加え、第3楽章でも m.7・m.98・m.246 と<b>歌う場面が繰り返し訪れます</b>。「低音の支え」という一般的なイメージよりも、<b>実際にはずっと旋律的な役割を負っている</b>——それがこの曲のチェロの特徴です。<br>
+    なお、第3楽章の主題同定は<b>パート譜のみからの推定</b>です。書法の変化・発想標語という手がかりに基づいていますが、他パートが何を弾いているかは楽譜から読み取れないため、総譜での確認をお勧めします。とくに <b>m.212–227</b> は最重要の確認箇所です。</p>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <span class="kicker">5 PARTS COMPARED</span>
+    <h2 class="h-title">弦楽5パートの役割の違い</h2>
+    <p class="lede">合奏で「自分は今どの立場か」を判断しやすくするために、弦楽5パートの役割を並べました。ハイライトされた列があなたの担当です。<b>5パートすべて同じ新校訂版のパート譜を突き合わせて作成しているので、小節番号はそのまま共通の基準として使えます。</b></p>
+    <div class="compare">
+      <div class="compare-head"><div>観点</div><div>1stヴァイオリン</div><div>2ndヴァイオリン</div><div>ヴィオラ</div><div>チェロ</div><div>コントラバス</div></div>
+      <div class="compare-row"><div>第1楽章 m.1 の役割</div><div><b>休み</b>。譜面には「Va.」のキュー音符で主題が印刷されている</div><div><b>休み</b>。譜面には「Va.」のキュー音符で主題が印刷されている</div><div><b>実音で循環主題を提示</b>——全曲の起点</div><div class="me"><b>実音で循環主題を提示</b>——全曲の起点</div><div><b>実音で循環主題を提示</b>——全曲の起点</div></div>
+      <div class="compare-row"><div>循環主題を実音で弾く回数(第1楽章)</div><div><b>5回</b>(m.29/77/199/349/362)＋終結の拡大形(m.513)</div><div><b>4回</b>(m.29/77/349/362)——5パート中で最少</div><div><b>5回</b>(m.1/29/49/77/349)。すべて楽章の構造的な節目</div><div class="me"><b>6回</b>(m.1/29/49/77/331/349)</div><div><b>7回</b>(m.1/29/49/77/331/349/514)——最多。最後の回帰まで担当</div></div>
+      <div class="compare-row"><div>基本的な役割</div><div>主旋律の推進と、加線4本までの高音を歌い切ること</div><div>持続和音による和声の充填、対位法的な独立声部、pizz./ディヴィジによる音色作り</div><div>内声の和声的支えと、要所での主題提示。歌う場面は限られる</div><div class="me">低音の旋律線と和声基盤の両立。歌う場面が意外に多い</div><div>和声の最低音とリズムの土台。楽章の大半を狭い低音域で過ごす</div></div>
+      <div class="compare-row"><div>第2楽章の pizz.⇄arco 切替</div><div><b>5回</b>(最短1.5拍)——回数は最少だが、m.48 の切替直後が主旋律</div><div><b>14回</b>(最短0.5拍)。9回が1拍以内</div><div><b>17回</b>(最短0.5拍が2回)。冒頭から div. pizz. で始まる唯一のパート</div><div class="me"><b>20回</b>(0.5拍が5回)——最多。m.199 は1小節に3つの奏法指示</div><div><b>14回</b>(0.5拍が3回)。m.199 で arco が8分音符1つだけ</div></div>
+      <div class="compare-row"><div>第2楽章の弱音器</div><div>4回(m.94装着 / <b>m.135</b>解除 / m.174 / m.238)</div><div>4回(<b>m.96</b>装着 / m.133解除 / m.174 / m.238)</div><div>4回(m.94装着 / m.133解除 / m.174 / m.238)</div><div class="me">4回(m.94装着 / m.133解除 / m.174 / m.238)</div><div><b>指示なし</b>——5パート中でコントラバスだけ弱音器を使わない</div></div>
+      <div class="compare-row"><div>第3楽章の特殊指示</div><div>4ᵉ corde(G線指定、m.330)</div><div>4ᵉ corde(m.330)＋<b>double corde</b>(全員重音、m.360)</div><div>なし(div.＋non troppo dolce、m.331)</div><div class="me">なし(div./unis. と pizz./arco のみ)</div><div>なし(pizz. m.320 → arco m.330)</div></div>
+      <div class="compare-row"><div>音部記号の負荷</div><div>変更なし(全編ト音記号)</div><div>変更なし(全編ト音記号)</div><div><b>第1楽章で22回</b>アルト⇄ト音。m.63 と m.337/338 が最難。第3楽章は1か所だけだが<b>高音域もアルト記号のまま</b></div><div class="me">第1楽章でヘ音⇄テノールを4区間。<b>第3楽章は変更ゼロで、加線3〜4本もヘ音記号のまま</b></div><div><b>テノール記号は一度も出ない。</b>ト音記号はすべてキュー音符専用＝「ト音記号を見たら休み」</div></div>
+      <div class="compare-row"><div>キュー音符</div><div>第1楽章に6か所(Va./Fl.I/Fl.I,II/Vl.II/Kl.I)。第2楽章はゼロ</div><div>第1楽章に5か所(Va./Fl.I,II/Vl.I/Ob.I/Kl.I)。第2楽章はFl.I</div><div>第1・第2楽章にあり(Vl.I,II/Kl.I,II ほか)。<b>第3楽章はゼロ</b></div><div class="me">第1楽章にあり(Vl.I,II/Va./Kl.I)。<b>第2・第3楽章はゼロ</b></div><div>全楽章にあり。<b>第3楽章の Vc. と Eh. のキューが主題回帰の合図</b>になる</div></div>
+      <div class="compare-row"><div>最大の難所の性格</div><div><b>音域と持久力。</b>a‴ を ff で叩き込む場面が2度、ff sostenuto の16小節の歌が2度</div><div><b>持久力と身体コントロール。</b>16分音符16小節＋43小節のコーダ、そして切替の多さ</div><div><b>読譜と体力配分。</b>音部記号22回に加え、30小節のトレモロ直後に最難の高音走句が来る</div><div class="me"><b>持久力と読譜。</b>18小節ノンストップの8分音符と、♭6の調号で加線3〜4本を読むこと</div><div><b>制御と音域。</b>8小節かけて pp→ff を作るトレモロと、記譜G4への跳躍</div></div>
+    </div>
+    <p class="note">この比較は<b>パート譜5冊を突き合わせて分かったこと</b>だけで構成しています。弱音器の位置がパートごとにずれているのは誤植ではなく、<b>版元が各パートの実際の空き時間に合わせて指示位置を調整している</b>ためです。合奏で「何小節目で付ける」と確認し合うときは、この前提で話してください。</p>
+  </div>
+</section>
+
+<section id="theory">
+  <div class="wrap">
+    <span class="kicker">MUSIC THEORY BRIDGE</span>
+    <h2 class="h-title">お手元の音楽理論資料との橋渡し</h2>
+    <p class="lede">お手元の理論資料(「最短ルートで学ぶ音楽理論の基礎の基礎」)は、スケール・度数・ダイアトニックコード・進行というポップス寄りの基礎体系です。フランクの和声はこの基礎の延長線上にありながら、意図的にそこから「はみ出す」ことで独特の緊張感を作っています。実際の練習で役立つ橋渡しを4点にまとめます。</p>
+    <div class="theory-grid">
+      <div class="theory-card">
+        <h4>持続和音では「自分が何度の音か」を意識する</h4>
+        <p>チェロは和声の低音基盤として長い音を保持する場面が多く、第3楽章 m.350–403 の<b>54小節におよぶ2分音符スラー</b>はその極端な例です。資料の「度数」の考え方(<code>長3度・短3度・完全5度…</code>)で、自分の音が根音から見て3度なのか5度なのかを意識すると、単なる「ハモり」ではなく機能的なチューニングができます。<b>長3度は理論値よりわずかに低め、短3度はわずかに高め</b>に取ると和声が澄みます。</p>
+      </div>
+      <div class="theory-card">
+        <h4>フランクの和声は「ダイアトニックの外側」を多用する</h4>
+        <p>資料にある「スケール上で使える和音(Ⅰ・Ⅱm・Ⅲm・Ⅳ・Ⅴ・Ⅵm・Ⅶdim)」はポップスの基本ですが、フランクは<code>Ⅶdim(減7の和音)</code>や半音による転調を頻繁に使います。終楽章 m.162–186 の25小節にわたる半音階的な8分音符などは、まさに「ダイアトニックを外れ続ける」書法。<b>こうした箇所の音程は、機能和声のロジックではなく「隣の音との半音／全音関係」を頼りにした方が安全</b>です。</p>
+      </div>
+      <div class="theory-card">
+        <h4>循環形式 = 主題の「移調・変容」</h4>
+        <p>資料の「キーチェンジ(全ての音を同じ半音数だけズラす)」の考え方は、循環主題がニ短調のLentoから始まり、終楽章でニ長調へと移調・変容していく様子を理解する助けになります。<b>同じ主題が違う調・速度で出てきたときに「これはあの主題の変形だ」と気づける</b>ようになると、暗譜的な安心感が格段に上がります。終楽章では調号が2度切り替わる(♯2→♯5→♯2)ことも、この変容の道筋を示す手がかりです。</p>
+      </div>
+      <div class="theory-card">
+        <h4>和声語法の「タイプ」を意識する — フランクの"breaking points"論</h4>
+        <p>音楽学者ニコラ・コマトヴィッチの論文「Franck's Breaking Points」は、フランクの和声語法を大きく3タイプ(<code>Type 1</code>=初期の素朴なディアトニック和声、<code>Type 1A</code>=モーダルな要素を含む変種、<code>Type 2</code>=半音階的だが機能和声の骨格はまだ残る円熟期の基本語法、<code>Type 3</code>=機能和声そのものが崩壊し調性判定が困難な晩年のオルガン曲)に整理し、同じ曲の中でもこれらのタイプが急に切り替わる瞬間があると指摘しています。この交響曲では<b>第1・第3楽章がほぼ<code>Type 2</code>である一方、第2楽章は両端の楽章と比べて和声的にずっと平明</b>だと論文は述べています——「第2楽章は親しみやすい」という肌感覚を、和声語法の面から裏付ける知見です。チェロは和声の低音基盤としてこの切り替えを根音から支える立場にあるので、<b>いま支えているのが半音階的な緊張なのか、素朴で安定した和声なのかを意識する</b>と、音程の作り方(半音階部分は隣接音との関係を優先、機能和声部分は根音基準の度数を優先)を自然に切り替えられます。</p>
+      </div>
+    </div>
+    <p class="note">なお、同論文の譜例(第3楽章 mm.19–22、ピアノ編曲譜)の説明は、要約版と同じ著者の詳細論文(Komatović, "Evolution Through Synchronicity?", 2022)との間で食い違いがあります——要約版は「表面上は嬰ヘ長調でありながらロ(B)を中心としたミクソリディア旋法への小旅行」、詳細版は「嬰ヘ短調の和音が下属和音の第3音を上げて長和音化し、一時的に嬰系のドリア旋法へ転じる」とし、旋法の種類も調性も一致していません。演奏の指針というより、<b>専門家の間でも解釈が割れる複雑な書法である</b>ことを示す背景知識として捉えてください。</p>
+  </div>
+</section>
+
+<section id="glossary">
+  <div class="wrap">
+    <span class="kicker">GLOSSARY</span>
+    <h2 class="h-title">用語集 — パート譜とこのロードマップに登場する用語</h2>
+    <p class="lede">パート譜に実際に印刷されている指示と、このロードマップ中で使った専門用語を、演奏上の意味とともにまとめました。</p>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">テンポ・曲想</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>Lento</h4><p>「ゆっくりと」。第1楽章冒頭や循環主題が静かに回帰する場面で使われる、この曲の「原点」の速度。</p></div>
+      <div class="theory-card"><h4>Allegro non troppo</h4><p>「快速に、ただし度を越さずに」。第1・第3楽章の基本テンポ。「速いが走りすぎない」という抑制が求められる。</p></div>
+      <div class="theory-card"><h4>Allegretto</h4><p>「やや快速に」。第2楽章の基本テンポ。Allegroよりやや控えめな快活さ。</p></div>
+      <div class="theory-card"><h4>Tempo I.</h4><p>「最初のテンポで」。テンポが大きく動いたあと、楽章冒頭の速度に戻る指示。第3楽章 m.228 に登場する。</p></div>
+      <div class="theory-card"><h4>Più lento</h4><p>「より遅く」。フェルマータや静寂部の直前など、テンポが一段緩む箇所に登場する。</p></div>
+      <div class="theory-card"><h4>a tempo</h4><p>「もとの速さに戻って」。テンポの伸縮のあとに元のテンポへ復帰する指示。</p></div>
+      <div class="theory-card"><h4>rallentando (rall.) / poco a poco rall.</h4><p>「だんだん遅く」／「少しずつ、だんだん遅く」。第3楽章 m.341 の poco a poco rall. は、5小節の休符と重なるため特に注意が要る。</p></div>
+      <div class="theory-card"><h4>sostenuto / molto sostenuto</h4><p>「音を十分に保って」／「たっぷりと保って」。音価いっぱいまで途切れさせずに保持するニュアンス。</p></div>
+      <div class="theory-card"><h4>très long</h4><p>フランス語で「非常に長く」。第3楽章 m.226–227 のフェルマータに付され、楽章最大の「間」を作る。</p></div>
+      <div class="theory-card"><h4>Les temps ont la même valeur</h4><p>フランス語で「拍の長さは同じ」。拍子が変わっても<b>1拍の実時間は変わらない</b>ことを示す指示。第3楽章の4か所の拍子変換にすべて付いている。</p></div>
+      <div class="theory-card"><h4>cantabile / dolce / espressivo</h4><p>「歌うように」／「甘く柔らかに」／「表情豊かに」。いずれも音量ではなく、フレーズの歌わせ方を指定する曲想語。</p></div>
+      <div class="theory-card"><h4>sempre〜</h4><p>「常に〜」。既存の指示をそのまま継続・強調する(<code>sempre ff</code>=ずっと ff のまま、など)。</p></div>
+    </div>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">強弱記号</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>pp / ppp</h4><p>「非常に弱く」／「極めて弱く」。この曲では ppp が頻出し、ディヴィジや重音と組み合わさるため単に小さく弾くだけでは足りない。</p></div>
+      <div class="theory-card"><h4>f / ff</h4><p>「強く」／「非常に強く」。段階が上がるほど、音量以上に弓の重心とスピードのコントロールが要求される。</p></div>
+      <div class="theory-card"><h4>cresc. / dim.</h4><p>crescendo=「だんだん強く」、diminuendo=「だんだん弱く」。<code>molto cresc.</code>は「大きくクレッシェンド」。</p></div>
+      <div class="theory-card"><h4>sf / sfz (sforzando)</h4><p>「その音だけ特に強く」。前後の強弱の流れとは別に、単発でアクセントのように打ち込む指示。</p></div>
+      <div class="theory-card"><h4>marcato ( ^ )</h4><p>「はっきりと際立たせて」。音符の上の山形記号。一音一音の輪郭を明確に打ち込む。</p></div>
+    </div>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">奏法・技術用語</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>pizzicato (pizz.) / arco</h4><p>pizzicato=弓を使わず指で弦をはじく奏法。arco=通常の弓奏に戻る指示。第2楽章はこの切替が頻発する。</p></div>
+      <div class="theory-card"><h4>divisi (div.) / unisono (unis.)</h4><p>div.=パート内で複数のグループに分かれて別々の音を弾く指定。unis.=全員が同じ音に戻る指定。<b>誰が上声・下声を弾くかを事前に決めておく</b>必要がある。</p></div>
+      <div class="theory-card"><h4>double corde</h4><p>フランス語で「重音」。<b>ディヴィジとは異なり、奏者ひとりひとりが2音を同時に鳴らす</b>指定。第3楽章 m.360 に登場。勝手に分けると和音が痩せる。</p></div>
+      <div class="theory-card"><h4>4e corde(G線指定)</h4><p>フランス語で「第4弦」。最低音のG線だけを使って弾く指定。ポジション移動が増える代わりに、暗く太い独特の音色が得られる。第3楽章 m.330 に登場。</p></div>
+      <div class="theory-card"><h4>トレモロ (trem.)</h4><p>符尾に斜線を付けて示す、同じ音を細かく速く反復する奏法。第3楽章の刻みの大半がこれ。斜線の本数で細分の単位が決まる。</p></div>
+      <div class="theory-card"><h4>弱音器 (con sordino / senza sordino)</h4><p>駒に取り付けて音色をまろやかに変える器具(ミュート)。con=装着、senza=解除。第2楽章で着脱が頻発する。</p></div>
+      <div class="theory-card"><h4>ペダル音(保続音)</h4><p>和声が変化していく間、同じ音を長く保持し続ける低音・内声のこと。第3楽章 m.228以降の半音下行する全音符群が典型。</p></div>
+      <div class="theory-card"><h4>détaché / legato / スタッカート</h4><p>détaché=1音ごとに弓を返す奏法。legato=複数音を1弓で滑らかにつなぐ。スタッカート=音を短く切る。ボウイング統一の際に区別が問題になる。</p></div>
+      <div class="theory-card"><h4>三連符</h4><p>1拍を3等分して弾くリズム単位。第3楽章 m.257–267 では4分音符の3連符が重音で連続し、この曲有数の難所を作る。</p></div>
+      <div class="theory-card"><h4>プルト</h4><p>2人1組で1つの譜面台を共有する単位。ディヴィジの割り振りは通常このプルト単位(前プルト＝上声／後プルト＝下声)で決める。</p></div>
+    </div>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">形式・構造用語</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>ソナタ形式</h4><p>提示部・展開部・再現部からなる、古典派〜ロマン派の楽章で最も一般的な大規模構成。第1楽章がこれにあたる。</p></div>
+      <div class="theory-card"><h4>提示部 / 展開部 / 再現部 / コーダ</h4><p>ソナタ形式を構成する各部分。提示部=主題の初出、展開部=主題の分裂・変容、再現部=主題の回帰、コーダ=曲を締めくくる結尾部。</p></div>
+      <div class="theory-card"><h4>循環形式</h4><p>冒頭で提示される主題(モットー)が姿を変えながら全楽章を貫いて回帰する構成。この曲全体を貫く最重要のキーワード。</p></div>
+      <div class="theory-card"><h4>練習記号(リハーサルレター)</h4><p>スコアとパート譜に印刷された太字の大文字(A, B, C…)。合奏で指揮者が最も頻繁に使う箇所指示の単位。<b>慣例として I の次は J を飛ばして K になる</b>(I と J の混同を避けるため)。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="recordings">
+  <div class="wrap">
+    <span class="kicker">RECOMMENDED RECORDINGS</span>
+    <h2 class="h-title">おすすめ音源(YouTube)</h2>
+    <p class="lede">「名盤かどうか」ではなく、<b>チェロの練習に何の役に立つか</b>で並べました。内声は録音によって聴こえ方が最も変わるパートです。刻みが和音の一部として溶けている演奏と、輪郭が立って聴こえる演奏を弾き比べておくと、合奏で「どちらを求められているか」を判断しやすくなります。<b>掲載した動画はすべて2026年8月22日時点で再生可能なことを確認済み</b>です。</p>
+
+    <ol class="rec-list">
+      <li class="rec">
+        <div class="who">譜読み用・最優先</div>
+        <h4>ディミトリ・ミトロプーロス指揮 — <b>総譜スクロール付き</b>(全3楽章)</h4>
+        <p>画面に総譜が流れる形式の動画で、3つの楽章がそれぞれ別動画に分かれています。<b>チェロが「いま全体のどこにいるか」を目で確認しながら聴ける</b>ため、譜読み段階ではこれが最も実用的です。自分のパートが休んでいる長い小節で他パートが何をしているかを確認する用途にも使えます。ただし歴史的録音のため音質は現代のものに劣ります。
+        <span class="use"><b>使い方:</b> フェーズ1で全曲の地図を作るとき、そして長休符の前後で「何を聴いて入るか」を決めるときに。</span></p>
+        <p style="margin-top:.5em">
+          <a href="https://www.youtube.com/watch?v=ddfD-pla7aA" target="_blank" rel="noopener">第1楽章</a> ／
+          <a href="https://www.youtube.com/watch?v=m6IbfFXNsjA" target="_blank" rel="noopener">第2楽章</a> ／
+          <a href="https://www.youtube.com/watch?v=W3w04HPG6oY" target="_blank" rel="noopener">第3楽章</a>
+        </p>
+      </li>
+
+      <li class="rec">
+        <div class="who">基準となる1枚</div>
+        <h4>ピエール・モントゥー指揮 シカゴ交響楽団(1961)</h4>
+        <p>この曲の基準盤として長く挙げられてきた演奏です。モントゥーは生涯にわたってこの曲を最も多く指揮した指揮者の一人とされ、批評でも「力任せではなく響きの充実で押す」点が評価されています。<b>テンポ設計の基準</b>として、まずこれを体に入れておくと他の演奏の個性が分かります。
+        <span class="use"><b>使い方:</b> フェーズ1〜2で、自分の練習テンポの目標値を決める基準に。</span></p>
+        <p style="margin-top:.5em"><a href="https://www.youtube.com/watch?v=nfbOVwzyh20" target="_blank" rel="noopener">YouTubeで聴く</a></p>
+      </li>
+
+      <li class="rec">
+        <div class="who">映像・フランスのオーケストラ</div>
+        <h4>ルイ・ラングレ指揮 パリ管弦楽団</h4>
+        <p>演奏風景の映像付きです。<b>チェロの弓の位置・弓幅・ディヴィジの座り方が実際に見える</b>のが最大の利点。第3楽章 m.300以降の16分音符を、プロがどのくらいの弓幅で弾いているかを目で確認できます。フランスのオーケストラらしい明るめの音色も、この曲の管弦楽法を理解する助けになります。
+        <span class="use"><b>使い方:</b> フェーズ2で弓の使い方を決めるとき、音ではなく<b>映像</b>を見る資料として。</span></p>
+        <p style="margin-top:.5em"><a href="https://www.youtube.com/watch?v=UeLcH2nLshI" target="_blank" rel="noopener">YouTubeで観る</a></p>
+      </li>
+
+      <li class="rec">
+        <div class="who">作曲当時の響き</div>
+        <h4>フランソワ=グザヴィエ・ロト指揮 レ・シエクル(ピリオド楽器)</h4>
+        <p>時代ごとに楽器を使い分けるオーケストラによる演奏で、1888年当時のフランスの楽器・奏法に近い響きが聴けます。ガット弦寄りの弦の音色、ヴィブラートの少なさ、コルネットを含む金管の音色——<b>「フランクの管弦楽法が分厚い」という一般的な評価が、実は現代楽器での演奏による面もある</b>ことが分かります。内声の刻みが埋もれずに聴こえるのも特徴です。
+        <span class="use"><b>使い方:</b> フェーズ3以降、自分の刻みが「和音に溶ける」べきか「輪郭が立つ」べきかを考える材料に。</span></p>
+        <p style="margin-top:.5em"><a href="https://www.youtube.com/watch?v=Ir1bWTE0qDM" target="_blank" rel="noopener">YouTubeで観る</a>(DW Classical Music 公式)</p>
+      </li>
+
+      <li class="rec">
+        <div class="who">映像・現代の解釈</div>
+        <h4>マルク・ミンコフスキ指揮 フランクフルト放送交響楽団</h4>
+        <p>放送局の公式チャンネルによる高音質の映像。ピリオド演奏の出身であるミンコフスキが現代オーケストラを振ると何が変わるか、という点でロト盤との比較が面白い1本です。カメラが弦楽セクションを抜く場面も多く、<b>ディヴィジやトレモロの実際の処理</b>を確認できます。
+        <span class="use"><b>使い方:</b> フェーズ4のパート内合わせの前に、ディヴィジの配分イメージを掴む資料として。</span></p>
+        <p style="margin-top:.5em"><a href="https://www.youtube.com/watch?v=uRWFjK11lfw" target="_blank" rel="noopener">YouTubeで観る</a>(hr-Sinfonieorchester 公式)</p>
+      </li>
+
+      <li class="rec">
+        <div class="who">映像・もう1つの比較対象</div>
+        <h4>マルタイン・ダンディヴェル指揮 WDR交響楽団</h4>
+        <p>こちらも放送局公式の映像。若い指揮者による近年の演奏で、テンポや強弱の設計が上記の演奏とどう違うかを比べられます。解釈の幅を知っておくと、指揮者から自分の想定と違う指示が来たときに戸惑わずに済みます。
+        <span class="use"><b>使い方:</b> フェーズ5、オーケストラ合わせでテンポの伸縮に対応する練習の下準備に。</span></p>
+        <p style="margin-top:.5em"><a href="https://www.youtube.com/watch?v=st_D6J1B02Q" target="_blank" rel="noopener">YouTubeで観る</a>(ARD Klassik 公式)</p>
+      </li>
+    </ol>
+
+    <p class="note">補足: 曲全体の構造解説を扱った<a href="https://www.youtube.com/watch?v=bzp4e7NM5Tc" target="_blank" rel="noopener">分析動画</a>もあり、循環主題の追跡には役立ちます。<br>
+    なお、上記の演奏者・録音年に関する記述は批評記事・検索結果に基づくもので、こちらで全曲を試聴したうえでの評価ではありません。<b>実際に聴いて自分の耳で確かめてから</b>練習の基準にしてください。動画の概要欄で演奏者情報を確認することも勧めます。</p>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <span class="kicker">FINAL CHECK</span>
+    <h2 class="h-title">本番までの総チェックリスト</h2>
+    <p class="lede">本番の1ヶ月前を目安に、ひとつずつ確認してください。技術的な項目より<b>「事故が起きやすい箇所の段取りが決まっているか」</b>を重視した構成にしています。</p>
+    <div class="checklist">
+      <div class="check-item"><span class="check-box"></span><p><b>m.1 の1音目を、冷えた状態で出せる。</b>d–cis–f の音程が安定し、p の発音が「置き弓スタート」で統一されている。<b>ここでオーケストラ全体の音程が決まります。</b></p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>循環主題を弾く6か所</b>(第1楽章 m.1 / 29 / 49 / 77 / <b>331</b> / 349)を、伴奏のときとは違う音の出し方で弾き分けられる。m.331 は最強奏での再現。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>音部記号が変わる4区間に印が入っている。</b>とくに <b>m.65 と m.321 は小節の途中</b>で変わる——直前に縦線と記号名を大書きしてある。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>第3楽章の加線3〜4本の箇所に、テノール記号を書き足してある。</b>m.201–202 / m.263–267 / m.421–426。この版の第3楽章は<b>全編ヘ音記号</b>です。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>各楽章の難所(第1楽章7・第2楽章5・第3楽章7＝計19箇所)</b>を、単独で止まらずに弾ける。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>第1楽章 m.417–434(18小節の ff 8分音符)を、弓を持たせて弾き切れる。</b>弓幅の上限が決まっていて、m.417 から通しで練習してある。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>第2楽章の pizz.⇄arco 20か所</b>を本番のテンポで切り替えられる。とくに <b>m.199 の「arco→pizz.→arco」(各0.5拍)</b>。<b>「弓を持ったまま人差し指で撥弦する」方式に統一</b>してある。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>弱音器の着脱4か所</b>(m.94 装着 / m.133 解除 / m.174 装着 / <b>m.238 解除＝猶予約6拍、直後が f の2声</b>)を、本番で使う器具で音を立てずに行える。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>ディヴィジの上下が全箇所で決まっている。</b>第1楽章 m.21 / 69 / <b>282</b> / 456、第3楽章 m.145 / 153 / <b>203(3声)</b> / 293 / 318 / 330 / 347。<b>m.282–286 は下声が完全な保続音で、動かない分だけ音程が露呈します。</b></p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>第3楽章 m.268–279 の6度重音を、div. するかどうか決めてある。</b>全員重音だと音程の濁りと消耗が大きい箇所です。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>キュー音符を耳で覚えている。</b>第1楽章 m.183–194 は<b>フェルマータ3つで拍が数えられず、Vn.I → Vn.II → Va. のキューが唯一の手がかり</b>——「ヴィオラの2小節が終わったら自分」。他に m.307–308(Vn. I)、m.469–472(Kl. I)。<b>第2・第3楽章にはキュー音符が1つもありません。</b></p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>第3楽章 m.339–345 の7小節休みを、指揮を見て数えられる。</b>poco a poco rall. の最中でキューもないため、拍では数えられません。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>拍子と調号が変わる箇所を全部把握している。</b>第1楽章の調号5回(とくに m.349 の♭6つ)、第2楽章の調号7回(とくに m.222 の♯5つ)、第3楽章の拍子4回・調号2回。</p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>3楽章を通しで演奏しても、第3楽章の終結まで体力が持つ。</b></p></div>
+      <div class="check-item"><span class="check-box"></span><p><b>練習記号で即座に該当箇所を開ける。</b>第1楽章 A〜V、第2楽章 A〜Q、第3楽章 A〜S——いずれも<b>Jは欠番</b>(Iの次はK)。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>参照楽譜:</b> César Franck, <i>Symphonie d-moll</i> — Breitkopf &amp; Härtel, Orchester-Bibliothek 5328, <b>Violoncello</b>, herausgegeben von Peter Jost, © 1999 (全15ページ)。第1楽章 p.1–7 / 第2楽章 p.8–10 / 第3楽章 p.11–15。第1楽章 521小節(練習記号A〜V)、第2楽章 262小節(A〜Q)、第3楽章 440小節(A〜S)。いずれもJは欠番。<br>
+    <b>解析方法:</b> パート譜PDFを200dpiでページ画像化し、全15ページを1枚ずつ視覚解析。小節番号・練習記号は譜面に印刷された値を基準とし、練習記号の位置は印刷小節番号と各段の小節線を突き合わせて確定しています。<b>これはパート譜であり総譜ではないため</b>、他パートの動きに関する記述(とくに第3楽章の循環主題の同定)は推定を含み、該当箇所には「※総譜未確認」と明記しています。<br>
+    <b>小節番号について:</b> 本ロードマップの番号はすべて上記ウアテクスト版のものです。IMSLPで入手できるパブリックドメインの旧パート譜とは一致しない箇所があります(例: 第3楽章のG線指定は本版では m.330、旧版に基づく従来のロードマップでは m.325 としていました)。<br>
+    <b>理論的な橋渡し:</b> 「最短ルートで学ぶ音楽理論の基礎の基礎」「応用と練習問題」、および Nikola Komatović, "Franck's Breaking Points: Some Thoughts About the Critical Moments in Franck's Œuvre and Individual Works that Re-shaped the Composer's Harmonic Language", <i>Revue belge de Musicologie</i>／同著者 "Evolution Through Synchronicity? Types of César Franck's Harmonic Language and Categorization of His Tonality", <i>Časopis Srpskog društva za muzičku teoriju</i> (2022)。<br>
+    <b>作曲背景の出典:</b> Wikipedia "Symphony in D minor (Franck)"、American Symphony Orchestra 演奏会解説、Breitkopf &amp; Härtel 出版情報ほか。<br>
+    2026年8月22日作成。
+  </div>
+</footer>
