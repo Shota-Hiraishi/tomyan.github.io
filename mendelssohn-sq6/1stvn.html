@@ -191,15 +191,15 @@ td.role{min-width:22ch}
 .cyc-evt .d{color:var(--ink-soft)}
 
 .compare{margin-top:26px;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-raised);box-shadow:var(--shadow)}
-.compare-row{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr 1.15fr;border-top:1px solid var(--rule)}
+.compare-row{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,1.15fr));border-top:1px solid var(--rule)}
 .compare-row:first-child{border-top:none}
-.compare-row > div{padding:12px 16px;font-size:.87rem;border-right:1px solid var(--rule)}
+.compare-row > div{padding:12px 16px;font-size:.87rem;border-right:1px solid var(--rule);overflow-wrap:anywhere}
 .compare-row > div:last-child{border-right:none}
 .compare-row > div:first-child{color:var(--ink-soft);font-size:.82rem}
 .compare-row > div:not(:first-child){color:var(--ink-soft)}
 .compare-row > div.me{color:var(--accent);font-weight:600;background:color-mix(in srgb, var(--accent-soft) 40%, transparent)}
-.compare-head{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr 1.15fr;background:var(--brass-soft)}
-.compare-head div{padding:10px 16px;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:.85rem;border-right:1px solid var(--rule)}
+.compare-head{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,1.15fr));background:var(--brass-soft)}
+.compare-head div{padding:10px 16px;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:.85rem;border-right:1px solid var(--rule);overflow-wrap:anywhere}
 .compare-head div:last-child{border-right:none}
 
 .theory-grid{display:grid;gap:18px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
