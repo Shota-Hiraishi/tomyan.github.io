@@ -5,161 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>練習ロードマップ — 弦楽パートのためのアナリーゼ</title>
-<style>
-:root{
-  --paper:#eef0ec;
-  --paper-raised:#ffffff;
-  --ink:#1c2530;
-  --ink-soft:#4b5563;
-  --rule:#c9cdc4;
-  --accent:#2f5e8c;
-  --accent-ink:#ffffff;
-  --accent-soft:#dde7f1;
-  --brass:#8a6a30;
-  --brass-soft:#eee2c4;
-  --shadow: 0 1px 2px rgba(28,37,48,.06), 0 6px 20px rgba(28,37,48,.06);
-  color-scheme:light dark;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#141920;
-    --paper-raised:#1b212b;
-    --ink:#e7e6df;
-    --ink-soft:#a7aeb8;
-    --rule:#333c48;
-    --accent:#7fb0dd;
-    --accent-ink:#0d1620;
-    --accent-soft:#1f2f3d;
-    --brass:#d1b064;
-    --brass-soft:#3a3220;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#141920;
-  --paper-raised:#1b212b;
-  --ink:#e7e6df;
-  --ink-soft:#a7aeb8;
-  --rule:#333c48;
-  --accent:#7fb0dd;
-  --accent-ink:#0d1620;
-  --accent-soft:#1f2f3d;
-  --brass:#d1b064;
-  --brass-soft:#3a3220;
-  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font:16px/1.75 system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%}
-[hidden]{display:none!important}
-
-.wrap{max-width:920px;margin:0 auto;padding:0 22px}
-
-.masthead{
-  background:var(--paper-raised);
-  border-bottom:1px solid var(--rule);
-  padding:56px 0 40px;
-}
-.eyebrow{
-  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-soft);font-weight:600;margin-bottom:16px;
-}
-.masthead h1{
-  margin:0 0 14px;
-  font-size:clamp(28px,4.6vw,42px);
-  line-height:1.28;
-  letter-spacing:.01em;
-  font-weight:700;
-}
-.masthead .sub{
-  margin:0;max-width:64ch;
-  color:var(--ink-soft);font-size:15.5px;
-}
-
-.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.meta-chip{
-  background:var(--accent-soft);color:var(--accent);
-  border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:600;
-}
-
-section{padding:44px 0}
-.kicker{
-  display:inline-block;font-size:11.5px;letter-spacing:.16em;
-  font-weight:700;color:var(--brass);margin-bottom:10px;
-}
-.h-title{
-  margin:0 0 6px;font-size:clamp(21px,3vw,27px);line-height:1.35;font-weight:700;
-}
-.lede{margin:0 0 26px;color:var(--ink-soft);max-width:62ch}
-
-.work{
-  background:var(--paper-raised);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:26px 24px 24px;
-  box-shadow:var(--shadow);
-  margin-bottom:26px;
-}
-.work-head{
-  border-bottom:1px solid var(--rule);
-  padding-bottom:18px;margin-bottom:20px;
-}
-.work-head .composer{
-  font-size:12.5px;letter-spacing:.08em;color:var(--brass);font-weight:700;
-  margin-bottom:6px;
-}
-.work-head h3{margin:0 0 10px;font-size:21px;line-height:1.4;font-weight:700}
-.work-head p{margin:0;color:var(--ink-soft);font-size:14.5px;max-width:60ch}
-
-.parts{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(178px,1fr));
-  gap:12px;
-}
-.part{
-  display:block;text-decoration:none;color:inherit;
-  border:1px solid var(--rule);border-radius:10px;
-  padding:15px 16px;background:var(--paper);
-  transition:border-color .16s ease, transform .16s ease, box-shadow .16s ease;
-}
-.part:hover,.part:focus-visible{
-  border-color:var(--accent);
-  transform:translateY(-2px);
-  box-shadow:var(--shadow);
-  outline:none;
-}
-.part .role{
-  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-soft);font-weight:600;
-}
-.part .name{font-size:17px;font-weight:700;margin:4px 0 5px}
-.part .note{font-size:12.5px;color:var(--ink-soft);line-height:1.55}
-.part.is-own{border-color:var(--accent);background:var(--accent-soft)}
-.part.is-own .role,.part.is-own .note{color:var(--accent)}
-
-.callout{
-  background:var(--brass-soft);
-  border-left:3px solid var(--brass);
-  border-radius:0 10px 10px 0;
-  padding:16px 18px;margin-top:8px;
-}
-.callout p{margin:0;font-size:14px;color:var(--ink)}
-.callout b{color:var(--brass)}
-
-footer{
-  border-top:1px solid var(--rule);
-  padding:28px 0 44px;
-  color:var(--ink-soft);font-size:13px;
-}
-footer p{margin:0 0 6px}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -167,11 +13,10 @@ footer p{margin:0 0 6px}
   <div class="wrap">
     <div class="eyebrow">Practice Roadmaps &nbsp;·&nbsp; Orchestral &amp; Chamber Strings</div>
     <h1>本番までの<br>練習ロードマップ</h1>
-    <p class="sub">スコアとパート譜を1ページずつ精読し、各弦楽パートが担う役割・難所・練習の順序を、本番から逆算して整理したものです。パートごとに独立した1ページになっています。</p>
+    <p class="sub">スコアとパート譜を1ページずつ精読し、各弦楽パートが担う役割・難所・練習の順序を、本番から逆算して整理したものです。作品を選ぶと、その作品のパート一覧に進みます。</p>
     <div class="meta-row">
       <span class="meta-chip">2作品</span>
       <span class="meta-chip">9パート</span>
-      <span class="meta-chip">オーケストラ / 弦楽四重奏</span>
     </div>
   </div>
 </header>
@@ -180,75 +25,38 @@ footer p{margin:0 0 6px}
   <div class="wrap">
     <span class="kicker">WORKS</span>
     <h2 class="h-title">収録している作品</h2>
-    <p class="lede">読みたいパートを選んでください。各ページには作曲背景、楽章ごとの難所、パート間の役割比較、理論との橋渡し、本番までのチェックリストが含まれます。</p>
+    <p class="lede">各ページには作曲背景、楽章ごとの難所、パート間の役割比較、理論との橋渡し、おすすめ音源、本番までのチェックリストが含まれます。</p>
 
-    <article class="work">
-      <div class="work-head">
+    <div class="works">
+
+      <a class="work-card" href="franck/">
         <div class="composer">César Franck &nbsp;·&nbsp; 1822–1890</div>
-        <h3>交響曲 ニ短調 FWV 48 (1888)</h3>
-        <p>循環形式で書かれた全3楽章を、ほぼ初見の状態から舞台に載せるまでの道筋。ブライトコプフ新校訂版(Peter Jost, 1999／OB 5328 Urtext)のパート譜に印刷された小節番号・練習記号に基づいています。想定期間は4〜6ヶ月以上。</p>
-      </div>
-      <div class="parts">
-        <a class="part is-own" href="franck/1stvn.html">
-          <div class="role">Violin I</div>
-          <div class="name">第1ヴァイオリン</div>
-          <div class="note">主旋律と循環主題の提示を担う</div>
-        </a>
-        <a class="part is-own" href="franck/2ndvn.html">
-          <div class="role">Violin II</div>
-          <div class="name">第2ヴァイオリン</div>
-          <div class="note">内声の推進力とハーモニーの芯</div>
-        </a>
-        <a class="part" href="franck/viola.html">
-          <div class="role">Viola</div>
-          <div class="name">ヴィオラ</div>
-          <div class="note">循環主題の第一声と内声の連結</div>
-        </a>
-        <a class="part" href="franck/cello.html">
-          <div class="role">Violoncello</div>
-          <div class="name">チェロ</div>
-          <div class="note">低音の歌と和声進行の土台</div>
-        </a>
-        <a class="part" href="franck/bass.html">
-          <div class="role">Contrabass</div>
-          <div class="name">コントラバス</div>
-          <div class="note">和声の根音とオルガン的な支え</div>
-        </a>
-      </div>
-    </article>
+        <h3>交響曲 ニ短調 FWV 48</h3>
+        <p>循環形式で書かれた全3楽章を、ほぼ初見の状態から舞台に載せるまでの道筋。ブライトコプフ新校訂版のパート譜に印刷された小節番号・練習記号に基づいています。</p>
+        <div class="tags">
+          <span class="tag">1888</span>
+          <span class="tag">オーケストラ</span>
+          <span class="tag">弦楽5パート</span>
+          <span class="go">パートを選ぶ →</span>
+        </div>
+      </a>
 
-    <article class="work">
-      <div class="work-head">
+      <a class="work-card" href="mendelssohn-sq6/">
         <div class="composer">Felix Mendelssohn &nbsp;·&nbsp; 1809–1847</div>
-        <h3>弦楽四重奏曲 第6番 ヘ短調 Op.80 (1847)</h3>
-        <p>姉ファニーの死の直後に書かれ、四重奏曲としては異例の激情をたたえた作品。第1・第4楽章を約1ヶ月で仕上げるための道筋と、各パートの役割・難所をスコアから読み解いて整理しています。</p>
-      </div>
-      <div class="parts">
-        <a class="part is-own" href="mendelssohn-sq6/1stvn.html">
-          <div class="role">Violin I</div>
-          <div class="name">第1ヴァイオリン</div>
-          <div class="note">激情の主旋律と高音域の跳躍</div>
-        </a>
-        <a class="part is-own" href="mendelssohn-sq6/2ndvn.html">
-          <div class="role">Violin II</div>
-          <div class="name">第2ヴァイオリン</div>
-          <div class="note">トレモロの持続と内声の緊張</div>
-        </a>
-        <a class="part" href="mendelssohn-sq6/viola.html">
-          <div class="role">Viola</div>
-          <div class="name">ヴィオラ</div>
-          <div class="note">中声部の厚みと対旋律</div>
-        </a>
-        <a class="part" href="mendelssohn-sq6/cello.html">
-          <div class="role">Violoncello</div>
-          <div class="name">チェロ</div>
-          <div class="note">低声の推進とバスラインの明晰さ</div>
-        </a>
-      </div>
-    </article>
+        <h3>弦楽四重奏曲 第6番 ヘ短調 Op.80</h3>
+        <p>姉ファニーの死の直後に書かれ、四重奏曲としては異例の激情をたたえた作品。第1・第4楽章を約1ヶ月で仕上げるための道筋を整理しています。</p>
+        <div class="tags">
+          <span class="tag">1847</span>
+          <span class="tag">弦楽四重奏</span>
+          <span class="tag">4パート</span>
+          <span class="go">パートを選ぶ →</span>
+        </div>
+      </a>
+
+    </div>
 
     <div class="callout">
-      <p><b>ヴァイオリン奏者へ</b> — 青く強調したカードが第1・第2ヴァイオリンです。まず自分のパートを読んだうえで、他パートのページにある「パートの違い」の節を併せて見ると、合わせのときに自分の音がどの声部と噛み合うのかが掴みやすくなります。</p>
+      <p><b>ヴァイオリン奏者へ</b> — 各作品のページでは第1・第2ヴァイオリンを青く強調しています。まず自分のパートを読んだうえで、他パートのページにある「パートの違い」の節を併せて見ると、合わせのときに自分の音がどの声部と噛み合うのかが掴みやすくなります。</p>
     </div>
   </div>
 </section>
