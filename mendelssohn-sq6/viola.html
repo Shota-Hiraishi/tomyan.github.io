@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>メンデルスゾーン 弦楽四重奏曲第6番 — ヴィオラ練習ロードマップ</title>
+<style>
+:root{color-scheme:light dark}
+body{margin:0;font:14px/1.6 system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;background:#f7f6f3;color:#1c2530}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<style>
+:root{
+  --paper:#eef0ec;
+  --paper-raised:#ffffff;
+  --ink:#1c2530;
+  --ink-soft:#4b5563;
+  --rule:#c9cdc4;
+  --accent:#6b4c9a;
+  --accent-ink:#ffffff;
+  --accent-soft:#e6dcf1;
+  --brass:#8a6a30;
+  --brass-soft:#eee2c4;
+  --good:#3f6b4a;
+  --good-soft:#dbe7dd;
+  --shadow: 0 1px 2px rgba(28,37,48,.06), 0 6px 20px rgba(28,37,48,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#141920;
+    --paper-raised:#1b212b;
+    --ink:#e7e6df;
+    --ink-soft:#a7aeb8;
+    --rule:#333c48;
+    --accent:#b79ce0;
+    --accent-ink:#241a33;
+    --accent-soft:#2c2338;
+    --brass:#d1b064;
+    --brass-soft:#3a3220;
+    --good:#7fae8c;
+    --good-soft:#213229;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141920; --paper-raised:#1b212b; --ink:#e7e6df; --ink-soft:#a7aeb8;
+  --rule:#333c48; --accent:#b79ce0; --accent-ink:#241a33; --accent-soft:#2c2338;
+  --brass:#d1b064; --brass-soft:#3a3220; --good:#7fae8c; --good-soft:#213229;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --paper:#eef0ec; --paper-raised:#ffffff; --ink:#1c2530; --ink-soft:#4b5563;
+  --rule:#c9cdc4; --accent:#6b4c9a; --accent-ink:#ffffff; --accent-soft:#e6dcf1;
+  --brass:#8a6a30; --brass-soft:#eee2c4; --good:#3f6b4a; --good-soft:#dbe7dd;
+  --shadow: 0 1px 2px rgba(28,37,48,.06), 0 6px 20px rgba(28,37,48,.06);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Hiragino Sans","Yu Gothic",Meiryo,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent-soft)}
+h1,h2,h3,h4{
+  font-family:Iowan,"Iowan Old Style","Palatino Linotype",Palatino,"Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  font-weight:600;
+  color:var(--ink);
+  text-wrap:balance;
+  margin:0;
+}
+a{color:var(--accent)}
+p{margin:.6em 0}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.tabnum{font-variant-numeric:tabular-nums}
+
+.masthead{
+  border-bottom:1px solid var(--rule);
+  padding:56px 0 34px;
+  background: linear-gradient(var(--paper),var(--paper));
+}
+.masthead .eyebrow{
+  font-family:Iowan,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-style:italic;
+  color:var(--ink-soft);
+  font-size:.95rem;
+  letter-spacing:.02em;
+}
+.masthead h1{
+  font-size:clamp(1.9rem,4.2vw,2.7rem);
+  margin-top:.25em;
+  line-height:1.15;
+}
+.masthead .sub{
+  font-size:1.05rem;
+  color:var(--ink-soft);
+  margin-top:.6em;
+  max-width:60ch;
+}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.meta-chip{
+  border:1px solid var(--rule);
+  background:var(--paper-raised);
+  border-radius:3px;
+  padding:6px 12px;
+  font-size:.82rem;
+  color:var(--ink-soft);
+  display:flex;gap:6px;align-items:baseline;
+}
+.meta-chip b{color:var(--ink);font-weight:600}
+
+.toc{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+}
+.toc .wrap{display:flex;gap:2px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:thin}
+.toc a{white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:.82rem;padding:6px 10px;border-radius:3px;border:1px solid transparent}
+.toc a:hover{border-color:var(--rule);color:var(--ink)}
+
+section{padding:52px 0}
+section + section{border-top:1px solid var(--rule)}
+.kicker{display:inline-block;font-size:.75rem;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:.5em}
+h2.h-title{font-size:clamp(1.4rem,3vw,1.85rem);margin-bottom:.3em}
+.lede{color:var(--ink-soft);max-width:66ch;font-size:1.02rem}
+
+.rl{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.5em;height:1.5em;
+  border:1.3px solid currentColor;
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;
+  font-weight:700;font-size:.8rem;
+  margin-right:.35em;color:var(--ink);border-radius:2px;vertical-align:-.25em;
+}
+
+.roadmap{list-style:none;margin:34px 0 0;padding:0;position:relative}
+.roadmap::before{content:"";position:absolute;left:19px;top:6px;bottom:6px;width:1px;background:var(--rule)}
+.phase{position:relative;padding:0 0 34px 56px}
+.phase:last-child{padding-bottom:0}
+.phase-num{
+  position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
+  background:var(--paper-raised);border:1.5px solid var(--accent);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:1.05rem;
+}
+.phase h3{font-size:1.12rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.6em}
+.phase h3 .when{font-family:inherit;font-weight:400;font-size:.78rem;color:var(--ink-soft);border:1px solid var(--rule);border-radius:3px;padding:2px 8px}
+.phase p.goal{color:var(--ink-soft);margin-top:.3em;font-size:.96rem}
+.phase ul{margin:.7em 0 0;padding-left:1.15em}
+.phase li{margin:.28em 0;font-size:.96rem}
+.phase li b{color:var(--ink)}
+
+.mvt-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:10px}
+.mvt-head .tag{font-family:Iowan,"Iowan Old Style",Georgia,serif;font-style:italic;color:var(--ink-soft);font-size:1rem}
+.mvt-key{font-size:.85rem;color:var(--ink-soft)}
+
+.tbl-scroll{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:4px;background:var(--paper-raised);box-shadow:var(--shadow)}
+table.form-map{border-collapse:collapse;width:100%;min-width:680px;font-size:.88rem}
+table.form-map th{text-align:left;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:600;background:var(--brass-soft);color:var(--ink);padding:10px 12px;border-bottom:1px solid var(--rule);white-space:nowrap;font-size:.8rem;letter-spacing:.02em}
+table.form-map td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.form-map tr:last-child td{border-bottom:none}
+table.form-map tr:hover td{background:color-mix(in srgb, var(--accent-soft) 55%, transparent)}
+td.m{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+td.tk{white-space:nowrap;color:var(--ink-soft)}
+td.role{min-width:22ch}
+
+.callout{margin-top:26px;border:1px solid var(--accent);border-left-width:4px;background:var(--accent-soft);border-radius:3px;padding:18px 20px}
+.callout h4{font-size:1rem;color:var(--ink);margin-bottom:.3em}
+.diff-list{list-style:none;margin:.6em 0 0;padding:0;display:grid;gap:10px}
+.diff-item{display:flex;gap:12px;align-items:flex-start}
+.diff-rank{flex:none;width:1.7em;height:1.7em;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;margin-top:.1em}
+.diff-item p{margin:0;font-size:.93rem}
+.diff-item p b{display:block;color:var(--ink);font-size:.95rem;margin-bottom:.15em}
+
+.note{margin-top:18px;font-size:.9rem;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:12px}
+
+.cyclic{margin-top:30px;display:grid;gap:0;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-raised);box-shadow:var(--shadow)}
+.cyc-row{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--rule)}
+.cyc-row:first-child{border-top:none}
+.cyc-label{padding:14px 14px;background:var(--brass-soft);font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:600;font-size:.88rem;display:flex;align-items:center}
+.cyc-events{padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.cyc-evt{display:flex;gap:10px;align-items:baseline;font-size:.88rem}
+.cyc-evt .m{flex:none;width:5.5em;color:var(--brass);font-variant-numeric:tabular-nums;font-weight:700}
+.cyc-evt .d{color:var(--ink-soft)}
+
+.compare{margin-top:26px;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-raised);box-shadow:var(--shadow)}
+.compare-row{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr 1.15fr;border-top:1px solid var(--rule)}
+.compare-row:first-child{border-top:none}
+.compare-row > div{padding:12px 16px;font-size:.87rem;border-right:1px solid var(--rule)}
+.compare-row > div:last-child{border-right:none}
+.compare-row > div:first-child{color:var(--ink-soft);font-size:.82rem}
+.compare-row > div:not(:first-child){color:var(--ink-soft)}
+.compare-row > div.me{color:var(--accent);font-weight:600;background:color-mix(in srgb, var(--accent-soft) 40%, transparent)}
+.compare-head{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr 1.15fr;background:var(--brass-soft)}
+.compare-head div{padding:10px 16px;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:.85rem;border-right:1px solid var(--rule)}
+.compare-head div:last-child{border-right:none}
+
+.theory-grid{display:grid;gap:18px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.theory-card{background:var(--paper-raised);border:1px solid var(--rule);border-radius:4px;padding:18px 20px;box-shadow:var(--shadow)}
+.theory-card h4{font-size:.98rem;margin-bottom:.5em;color:var(--accent)}
+.theory-card p{font-size:.9rem;color:var(--ink-soft);margin:0}
+.theory-card code{font-family:Cambria,Georgia,serif;font-style:italic;color:var(--ink);background:none;padding:0}
+
+.checklist{margin-top:24px;display:grid;gap:10px}
+.check-item{display:flex;gap:12px;align-items:flex-start;background:var(--paper-raised);border:1px solid var(--rule);border-radius:4px;padding:12px 16px}
+.check-box{flex:none;width:1.1em;height:1.1em;border:1.4px solid var(--good);border-radius:3px;margin-top:.2em}
+.check-item p{margin:0;font-size:.92rem}
+
+footer{padding:40px 0 70px;color:var(--ink-soft);font-size:.82rem}
+footer .wrap{border-top:1px solid var(--rule);padding-top:20px}
+
+@media (max-width:600px){
+  .cyc-row{grid-template-columns:1fr}
+  .cyc-label{padding:10px 14px}
+  .compare-row,.compare-head{grid-template-columns:1fr}
+  .compare-row > div,.compare-head div{border-right:none !important;border-bottom:1px solid var(--rule)}
+}
+
+@media print{
+  .toc{display:none}
+  section{padding:22px 0}
+  section + section{break-before:page}
+  .tbl-scroll{overflow-x:visible;box-shadow:none}
+  table.form-map{min-width:0;width:100%;table-layout:fixed;font-size:.72rem}
+  table.form-map td,table.form-map th{padding:6px 8px;word-break:break-word;white-space:normal}
+  td.m,td.tk,td.role{white-space:normal}
+  .callout,.theory-card,.check-item,.cyclic,.compare{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Felix Mendelssohn &nbsp;·&nbsp; String Quartet No.6 in F minor, Op.80 (1847)</div>
+    <h1>ヴィオラ奏者のための<br>本番までの練習ロードマップ</h1>
+    <p class="sub">姉ファニー・メンデルスゾーンの死の直後に書かれ、四重奏曲としては異例の激情をたたえたこの作品の第1・4楽章を、1ヶ月後の本番に向けて仕上げるための道筋と、ヴィオラが担う役割・難所をスコアから読み解いて整理しました。</p>
+    <div class="meta-row">
+      <span class="meta-chip">対象パート &nbsp;<b>Viola</b></span>
+      <span class="meta-chip">楽章 &nbsp;<b>第1・第4楽章</b></span>
+      <span class="meta-chip">本番まで &nbsp;<b>1ヶ月</b></span>
+      <span class="meta-chip">現状 &nbsp;<b>個人練習進行中</b></span>
+      <span class="meta-chip">参照資料 &nbsp;<b>総譜(フルスコア) + 2ndVnパート譜の練習番号</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#background">作曲背景</a>
+    <a href="#overview">曲の概要</a>
+    <a href="#roadmap">練習ロードマップ</a>
+    <a href="#mvt1">第1楽章</a>
+    <a href="#mvt4">第4楽章</a>
+    <a href="#link">楽章間のつながり</a>
+    <a href="#compare">4パートの役割比較</a>
+    <a href="#theory">理論との橋渡し</a>
+    <a href="#glossary">用語集</a>
+    <a href="#recordings">おすすめ音源</a>
+    <a href="#checklist">本番までの総チェック</a>
+  </div>
+</nav>
+
+<section id="background">
+  <div class="wrap">
+    <span class="kicker">BACKGROUND</span>
+    <h2 class="h-title">「姉への鎮魂歌」— 作曲の背景</h2>
+    <p class="lede">
+      1847年5月14日、フェリックス・メンデルスゾーンの最大の理解者であった姉<b>ファニー</b>が41歳で急死した。悲しみの中、弟パウルと妻セシルとともに療養に訪れたスイスで、フェリックスは同年7月6日、Op.44の3曲以来9年ぶりとなる弦楽四重奏曲の作曲に着手し、9月にインターラーケンで完成させる。<b>これが彼が生前に完成させた最後の主要作品となった</b>。私的初演(1847年10月5日)を自ら聴いた約1ヶ月後の11月4日、フェリックス自身もファニーの死からちょうど半年後にライプツィヒで38歳の生涯を閉じた。
+    </p>
+    <p class="lede">
+      「ロマン派の中の古典主義者」と評されるほど形式の均整と抑制されたリリシズムを保ち続けたメンデルスゾーンの作品群の中で、本作は<b>例外的に激情的・悲劇的な性格</b>を持つ。全4楽章中3楽章がヘ短調で貫かれ(第3楽章Adagioのみ変イ長調)、疾走する16分音符・鋭いsfアクセント・半音階的な緊張が全編を支配する、私的で切実な「姉への鎮魂歌」として位置づけられている。
+    </p>
+    <p class="lede">
+      全編を支配する疾走感やアクセントは、技巧的な見せ場である以上に<b>喪失感・不安・激情の音楽的表出</b>として捉えると解釈の軸が定まる。第1楽章終盤のアッチェレランドを指揮者なしで4人だけで加速し切るという最大の難所も、単なる技術的挑戦ではなく、この曲の切迫した性格そのものの表れとして向き合いたい。
+    </p>
+    <div class="tbl-scroll">
+      <table class="form-map" style="margin-top:8px">
+        <thead><tr><th>楽章</th><th>調・形式</th><th>特徴</th></tr></thead>
+        <tbody>
+          <tr><td class="m">I. Allegro vivace assai</td><td class="tk">ヘ短調、ソナタ形式</td><td>序奏なしで開始。16分音符のfigurationが全体を駆動し、終盤のアッチェレランド〜Prestoが最大の見せ場(本ロードマップの対象)</td></tr>
+          <tr><td class="m">II. Allegro assai</td><td class="tk">ヘ短調、3部形式</td><td>疾走感のある緊迫したスケルツォ的楽章(本ロードマップの対象外)</td></tr>
+          <tr><td class="m">III. Adagio</td><td class="tk">変イ長調</td><td>全曲中唯一の長調楽章。暗く激しい他楽章に挟まれた「慰めの場」(本ロードマップの対象外)</td></tr>
+          <tr><td class="m">IV. Finale: Allegro molto</td><td class="tk">ヘ短調、ソナタ形式</td><td>全奏のシンコペーション、pizzicato⇄arcoの高速切替、"con fuoco"で全曲を閉じる(本ロードマップの対象)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">詳細な参考文献は <code>Documents/Study_Material/mendelssohn_sq6_study_material.md</code> を参照。</p>
+  </div>
+</section>
+
+<section id="overview">
+  <div class="wrap">
+    <span class="kicker">OVERVIEW</span>
+    <h2 class="h-title">ヴィオラが背負うもの</h2>
+    <p class="lede">
+      本ロードマップの区切りは<b>2ndヴァイオリンパート譜に印刷された練習番号(A, B, C…)</b>を基準にしています(総譜には練習番号が印刷されていないため)。総譜上での該当箇所は、上から3段目(アルト記号)を照合して特定しました。
+    </p>
+    <p class="lede">
+      ヴィオラは1st/2ndヴァイオリンの下、チェロの上という<b>中声部</b>に位置し、多くの場面で2ndヴァイオリンと近いリズム(刻み和音・シンコペーション)を、より低い音域で重ねています。旋律を単独で歌う場面はほとんどありませんが、和声の厚みと色彩を決定づける「四重奏の内声」としての存在感が常に問われるパートです。
+    </p>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <span class="kicker">ROADMAP</span>
+    <h2 class="h-title">本番までの4フェーズ(1ヶ月)</h2>
+    <p class="lede">既に個人練習が進んでいる前提で、「音を出せる」段階から「アンサンブルとして機能する」段階へ引き上げることに時間を使うロードマップです。</p>
+
+    <ol class="roadmap">
+      <li class="phase">
+        <div class="phase-num">1</div>
+        <h3>全体像の確認と難所の洗い出し <span class="when">目安:1週目</span></h3>
+        <p class="goal">練習番号ごとに曲を区切り、自分の難所を具体的にリストアップする段階。</p>
+        <ul>
+          <li>第1・4楽章それぞれを通して弾き、2ndVnパート譜の練習番号(A, B, C…)を自分のパート譜に書き込んで区切りを可視化する。</li>
+          <li>第1楽章冒頭の刻み和音、第4楽章冒頭のオフビート punctuation を、まず遅いテンポで正確なタイミングを確認する。</li>
+          <li>下記「難所トップ5」を自分の演奏と照らし合わせ、優先順位をつける。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">2</div>
+        <h3>難所の分解練習 <span class="when">目安:2週目</span></h3>
+        <p class="goal">メトロノームを使い、難所を単独で確実に弾けるようにする段階。</p>
+        <ul>
+          <li>第1楽章 F直前〜Prestoの<b>書き出しアッチェレランド</b>を、内声として全体のテンポ感を保ちながら加速できるよう単独で設計する。</li>
+          <li>第4楽章 E〜Fの<b>pizzicato⇄arco高速切替</b>を、右手の動作だけを取り出して反復する(このパッセージは全パート共通の技術的核心)。</li>
+          <li>両楽章に頻出する中低音域での弦移動を伴う音型を、音程を優先してゆっくり固める。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">3</div>
+        <h3>合奏を意識した練習 <span class="when">目安:3週目</span></h3>
+        <p class="goal">「一人で弾ける」から「4人の中で機能する」へ引き上げる段階。</p>
+        <ul>
+          <li>可能であれば実際に4人で合わせ、2ndヴァイオリンとのリズムの重なり、和声の受け渡しを確認する。</li>
+          <li>ヴァイオリン2声を覆わず、かつチェロに埋もれない中声部としての音量バランスを、実際の音の重なりの中で調整する(オーケストラのヴァイオリン奏者としての経験があれば、内声バランス感覚として応用しやすい)。</li>
+          <li>両楽章を止まらずに通す練習を始め、崩れた箇所はフェーズ2に戻って個別に潰す。</li>
+        </ul>
+      </li>
+      <li class="phase">
+        <div class="phase-num">4</div>
+        <h3>仕上げ・本番直前調整 <span class="when">目安:4週目</span></h3>
+        <p class="goal">新しい課題を増やさず、再現性とコンディションを整える段階。</p>
+        <ul>
+          <li>第1楽章→第4楽章の順に本番同様に通し、第4楽章終盤(H〜I〜con fuoco〜終結)まで体力が持つかを確認する。</li>
+          <li>難所トップ5だけを短時間・高頻度で確認する「メンテナンス練習」に切り替える。</li>
+          <li>本番の並び・距離感に近い環境で最終リハーサルを行い、練習番号を指で即座に開けることを確認する。</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="mvt1">
+  <div class="wrap">
+    <div class="mvt-head">
+      <div>
+        <span class="kicker">MOVEMENT I</span>
+        <h2 class="h-title">第1楽章 — Allegro vivace assai</h2>
+      </div>
+      <div class="mvt-key">ヘ短調 &nbsp;|&nbsp; 4/4 &nbsp;|&nbsp; 練習番号 冒頭〜A〜B〜C〜D〜E〜F〜Presto(コーダ)</div>
+    </div>
+    <p class="lede">ヴィオラは楽章冒頭から、ヴァイオリン2声の16分音符figurationを下支えする刻み和音を担います。中間部では2ndVnと近いリズムでの模倣的な受け渡しに加わり、終盤は指揮者なしで4人だけが呼吸を合わせて加速する<b>書き出しのアッチェレランド〜Presto</b>で、内声としての持久力が試されます。</p>
+
+    <div class="tbl-scroll">
+      <table class="form-map">
+        <thead><tr><th>区間</th><th>文字</th><th>テンポ・調</th><th>出来事</th><th>ヴィオラの動き</th></tr></thead>
+        <tbody>
+          <tr><td class="m">冒頭〜A</td><td></td><td class="tk">Allegro vivace assai / ヘ短調</td><td>楽章開始。16分音符の駆け上がり・駆け下がり figuration</td><td class="role"><b>チェロと共に刻み和音でp→cresc.、和声の骨格を提示</b>。要注意①</td></tr>
+          <tr><td class="m">A〜B</td><td><span class="rl">A</span></td><td class="tk">継続、sf多用</td><td>3連符を伴う模倣的な受け渡しが増える</td><td class="role">2ndVnに近いリズムを中低音域で重ねる、imitativeな受け渡し。要注意②</td></tr>
+          <tr><td class="m">B〜C</td><td><span class="rl">B</span></td><td class="tk">fp/長い保続音</td><td>全音符の保続と punctuated な和音が交替</td><td class="role">保続和音でヴァイオリン2声を支える、埋もれないバランス。要注意③</td></tr>
+          <tr><td class="m">C〜D</td><td><span class="rl">C</span></td><td class="tk">sempre più f</td><td>緊張が持続的に高まる</td><td class="role">sfアクセントを保ちながらの音量拡大</td></tr>
+          <tr><td class="m">D〜E</td><td><span class="rl">D</span></td><td class="tk">ff到達</td><td>模倣的な受け渡しが継続</td><td class="role">2ndVnと近い音型での和声充填</td></tr>
+          <tr><td class="m">E〜F</td><td><span class="rl">E</span></td><td class="tk">cresc./dim.の交替</td><td>8分3連符系の音型</td><td class="role">figurationの受け渡しを継続</td></tr>
+          <tr><td class="m">F〜Presto</td><td><span class="rl">F</span></td><td class="tk">pp→<b>sempre più accelerando poco a poco sino al Presto</b></td><td><b>楽章最大の聴かせどころ</b>:指揮者なしで全員が加速しPrestoへ突入</td><td class="role">中声部として和声の厚みを保ちながら加速に追随。要注意④</td></tr>
+          <tr><td class="m">Presto〜終結</td><td></td><td class="tk">Presto, ff</td><td>高速で駆け抜けてヘ短調で終止</td><td class="role">中音域での高速パッセージ、弦移動の精度。要注意⑤</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <h4>第1楽章:難所トップ5</h4>
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>冒頭 — チェロと共に担う刻み和音</b>ウォームアップの余地なく、和声の骨格をチェロと一体になって示す最初の緊張場面。</p></li>
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>A〜B — 全パート同時進行の3連符</b>中低音域での正確な音程と、全員のタイミングを寸分違わず揃える一体感が問われる。</p></li>
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>B〜C — fp保続和音のバランス</b>ヴァイオリン2声を覆わず、かつ埋もれずに和声を支える音量コントロール。</p></li>
+        <li class="diff-item"><span class="diff-rank">4</span><p><b>F〜Presto — 書き出しアッチェレランド</b>内声として全体のテンポ感を保ちながら加速し切る、楽章最大の合奏的難所。</p></li>
+        <li class="diff-item"><span class="diff-rank">5</span><p><b>Presto区間の高速パッセージ</b>中音域での弦移動を伴う運指の精度と、疲労が出やすいタイミングでの正確性。</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="mvt4">
+  <div class="wrap">
+    <div class="mvt-head">
+      <div>
+        <span class="kicker">MOVEMENT IV</span>
+        <h2 class="h-title">第4楽章 — Finale: Allegro molto</h2>
+      </div>
+      <div class="mvt-key">ヘ短調 &nbsp;|&nbsp; 2/4 &nbsp;|&nbsp; 練習番号 冒頭〜A〜B〜C〜D〜E〜F〜G〜H〜I〜終結</div>
+    </div>
+    <p class="lede">第1楽章と同じく序奏なしで開始し、ヴィオラはヴァイオリン2声のモート・ペルペトゥオに対してオフビートの刻み和音で応じます。中間のE〜F付近では全パート揃ってのpizzicato⇄arcoの高速切替があり、終盤(H〜I)はsempre ffが持続する体力の総決算区間、そして"con fuoco"の指示とともに全曲を閉じます。</p>
+
+    <div class="tbl-scroll">
+      <table class="form-map">
+        <thead><tr><th>区間</th><th>文字</th><th>テンポ・調</th><th>出来事</th><th>ヴィオラの動き</th></tr></thead>
+        <tbody>
+          <tr><td class="m">冒頭〜A</td><td></td><td class="tk">Allegro molto / ヘ短調, 2/4</td><td>序奏なしでシンコペーションを伴う推進が始まる</td><td class="role"><b>オフビートの刻み和音でヴァイオリン2声の16分音符に応答</b>。要注意①</td></tr>
+          <tr><td class="m">A〜B</td><td><span class="rl">A</span></td><td class="tk">p、模倣的な受け渡し</td><td>対照的な旋律的動機が現れる</td><td class="role">中声部としての和声充填、旋律線の受け渡しに参加</td></tr>
+          <tr><td class="m">B〜C</td><td><span class="rl">B</span></td><td class="tk">f/p交替、半音階的下降</td><td>動的な対比が続く</td><td class="role">急な強弱の切替への即応</td></tr>
+          <tr><td class="m">C〜D</td><td><span class="rl">C</span></td><td class="tk">ff到達</td><td>短い爆発的クライマックス</td><td class="role">ffへの跳躍的な音量アップ</td></tr>
+          <tr><td class="m">D〜E</td><td><span class="rl">D</span></td><td class="tk">cresc./f、半音階的figuration</td><td>展開的な推移</td><td class="role">中音域での半音階パッセージ、正確な音程</td></tr>
+          <tr><td class="m">E〜F</td><td><span class="rl">E</span></td><td class="tk">pp、<b>pizzicato⇄arco高速切替</b></td><td>全パート揃って pizz./arco を短い間隔で往復</td><td class="role">4人全員が同じタイミングで切替。要注意②</td></tr>
+          <tr><td class="m">F〜G</td><td><span class="rl">F</span></td><td class="tk">cresc.</td><td>主題的素材の回帰</td><td class="role">figurationの再構築、クレッシェンドの牽引</td></tr>
+          <tr><td class="m">G〜H</td><td><span class="rl">G</span></td><td class="tk">cresc./f、continued build</td><td>クライマックスへの助走</td><td class="role">中声部としての持続的な音量構築。要注意③</td></tr>
+          <tr><td class="m">H〜I</td><td><span class="rl">H</span></td><td class="tk"><b>sempre ff</b></td><td>楽章の体力的頂点</td><td class="role">内声としての厚みをffで持続。要注意④</td></tr>
+          <tr><td class="m">I〜終結</td><td><span class="rl">I</span></td><td class="tk">ff→<b>con fuoco</b>→終結</td><td>3連符と16分音符が交錯しながら全曲を閉じる</td><td class="role">疲労困憊した状態でのアンサンブル精度が最終試練。要注意⑤</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <h4>第4楽章:難所トップ5</h4>
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>冒頭のオフビート刻み和音</b>ヴァイオリンの16分音符モーションに対して独立したリズム感覚で応答し続ける、楽章全体を貫く根本課題。</p></li>
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>E〜F — pizzicato⇄arco高速切替</b>右手の動作切替を4人全員で完全に同期させる必要がある、四重奏らしい合奏的難所。</p></li>
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>G〜Hのcresc./ff構築</b>中音域での持続的な音量コントロールと、周囲の音に埋もれない存在感。</p></li>
+        <li class="diff-item"><span class="diff-rank">4</span><p><b>H〜I — sempre ff持続区間</b>内声としての厚みを保ちながら音を痩せさせない体力配分。</p></li>
+        <li class="diff-item"><span class="diff-rank">5</span><p><b>I〜終結 — con fuocoの3連符群</b>疲労が蓄積した状態での最終アンサンブル精度、全曲最後のスタミナ勝負。</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="link">
+  <div class="wrap">
+    <span class="kicker">MOVEMENT I ⇄ IV</span>
+    <h2 class="h-title">第1楽章と第4楽章のつながり</h2>
+    <p class="lede">この2つの楽章はモチーフを直接引用し合う循環形式ではありませんが、演奏される2楽章として並べたときに共有している「身振り」があります。</p>
+
+    <div class="cyclic">
+      <div class="cyc-row">
+        <div class="cyc-label">始まり方</div>
+        <div class="cyc-events">
+          <div class="cyc-evt"><span class="m">両楽章とも</span><span class="d">序奏なしでいきなり動きの中に飛び込む。聴き手にも奏者にも「助走」が与えられない点が共通</span></div>
+        </div>
+      </div>
+      <div class="cyc-row">
+        <div class="cyc-label">推進の身振り</div>
+        <div class="cyc-events">
+          <div class="cyc-evt"><span class="m">第1楽章</span><span class="d">F直前〜Prestoで書き出しのアッチェレランドにより加速そのものをクライマックスにする</span></div>
+          <div class="cyc-evt"><span class="m">第4楽章</span><span class="d">終始モート・ペルペトゥオを持続させ、con fuocoでさらに熱量を上げて全曲を閉じる — 「加速・疾走」という同じ身振りの拡大版</span></div>
+        </div>
+      </div>
+      <div class="cyc-row">
+        <div class="cyc-label">調的な統一</div>
+        <div class="cyc-events">
+          <div class="cyc-evt"><span class="m">共通</span><span class="d">ヘ短調を基調とし、開幕楽章と終幕楽章として作品全体を激情的な性格で額装している</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">今回は第2・3楽章を演奏しませんが、第1楽章と第4楽章を続けて演奏する場合は「同じ性格・同じ調の楽章に挟まれた作品の骨格」として、テンポ設定やキャラクターの統一感を意識すると説得力が増します。</p>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <span class="kicker">4 PARTS COMPARED</span>
+    <h2 class="h-title">4パートの役割比較(Vn1 / Vn2 / Va / Vc)</h2>
+    <p class="lede">合奏練習の効率を上げるために、四重奏4パートの役割の違いを整理しておきます。ハイライトされた列(ヴィオラ)が自分の担当箇所です。</p>
+    <div class="compare">
+      <div class="compare-head"><div>観点</div><div>1stヴァイオリン</div><div>2ndヴァイオリン</div><div>ヴィオラ</div><div>チェロ</div></div>
+      <div class="compare-row"><div>基本的な役割</div><div>16分音符figurationによる推進役。旋律線を明瞭に運ぶ「表」の存在</div><div>模倣的な応答、シンコペーション、和声の充填による「裏」からの支え</div><div class="me">内声としての和声の厚みづけ。しばしば2ndVnと近いリズムを別の音域で重ねる中声部の要</div><div>低声部からの推進力(ベースライン)、全奏の縦のリズムを支える土台</div></div>
+      <div class="compare-row"><div>冒頭の入り方</div><div>両楽章とも、序奏なしで完全に露出した状態から単独で始動</div><div>1stVnに一拍(あるいはそれ以下)遅れて模倣的に応答して入る</div><div class="me">2ndVnと近いタイミングで刻み和音に参加し、和声の骨格を示す</div><div>Va同様、刻み和音・保続低音で全奏の基礎を築く</div></div>
+      <div class="compare-row"><div>音域</div><div>高音域中心、跳躍とポジション移動が多い</div><div>中音域中心、Va/Vcとハーモニーの橋渡し役</div><div class="me">中低音域、ヴァイオリン2声とチェロの間を埋める橋渡し</div><div>最低音域、和声の根音を明確に示すベースライン</div></div>
+      <div class="compare-row"><div>リズム的な役割</div><div>表拍・主旋律線の推進</div><div>裏拍・シンコペーションでの独立性が問われる</div><div class="me">2ndVnに準じるが、中声部としての和声的な充填が中心</div><div>全奏の縦のリズムの基準点。他3声が寄りかかれる土台</div></div>
+      <div class="compare-row"><div>第1楽章の核心</div><div>F〜Prestoのアッチェレランドを主導することが多い</div><div>1stVnと完全に同期しながら加速を追随する</div><div class="me">加速の中でも和声の厚みを保ち続ける、他3声を支える持久力</div><div>加速全体のテンポ感覚の基準を刻み続ける最重要ポジション</div></div>
+      <div class="compare-row"><div>第4楽章の核心</div><div>冒頭からのモート・ペルペトゥオを弾き通すスタミナ</div><div>E〜Fのpizzicato⇄arco切替でのリズムの下支えと敏捷性</div><div class="me">中声部としてのpizz.⇄arco切替と、内声での和声変化の明瞭な提示</div><div>低声部からのpizz.⇄arco切替、全奏の縦を最後まで支えるベースライン</div></div>
+      <div class="compare-row"><div>最大の難所の性格</div><div>高音域保持・スタミナ持久型</div><div>模倣的な受け渡しの精度・pizz/arco切替の敏捷性型</div><div class="me">中声部としての存在感の主張と、頻繁な音域移動への対応型</div><div>低音域での駆動力とpizz/arco切替の正確性、全奏を支える持久力型</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="theory">
+  <div class="wrap">
+    <span class="kicker">MUSIC THEORY BRIDGE</span>
+    <h2 class="h-title">お手元の音楽理論資料との橋渡し</h2>
+    <p class="lede">この楽章群のヘ短調・激しい半音階進行を、お手元の理論資料の考え方で整理すると次の3点が特に役立ちます。</p>
+    <div class="theory-grid">
+      <div class="theory-card">
+        <h4>保続和音は「和音の何度の音か」で支える先を決める</h4>
+        <p>第1楽章B〜Cのfp保続和音は、その瞬間の和音の<code>長3度・完全5度・第7音…</code>のどれを担っているかを意識すると、ヴァイオリン2声を覆わず、かつ埋もれずに和声を支える音量バランスが判断しやすくなります。</p>
+      </div>
+      <div class="theory-card">
+        <h4>半音階的パッセージは「隣の音との関係」で捉える</h4>
+        <p>第4楽章D〜Eやコーダ付近の半音階的figurationは、機能和声よりも隣接音との半音/全音関係を頼りに指を運ぶ方が実戦的です。ダイアトニックを外れる音の連続として意識すると音程が安定します。</p>
+      </div>
+      <div class="theory-card">
+        <h4>ヘ短調の維持がもたらす統一感</h4>
+        <p>第1・4楽章はどちらもヘ短調を基調に据えたまま激情的な性格を貫きます。転調によって色を変えるのではなく、同じ調を保つことでキャラクターの一貫性を作る、という逆方向の使い方として理解すると解釈の指針になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="glossary">
+  <div class="wrap">
+    <span class="kicker">GLOSSARY</span>
+    <h2 class="h-title">用語集 — ロードマップに登場する音楽用語</h2>
+    <p class="lede">スコア・パート譜やこのロードマップ中に出てくるイタリア語・専門用語を、演奏に関わる意味合いとともに日本語でまとめました。</p>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">テンポ・曲想</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>Allegro vivace assai</h4><p>「非常に速く、生き生きと」。第1楽章の速度指示。Allegro(速く)にvivace(活発に)assai(非常に)が重なり、単に速いだけでなく前へ前へと駆り立てられるような性格を要求する。</p></div>
+      <div class="theory-card"><h4>Allegro assai</h4><p>「非常に速く」。第2楽章(スケルツォ的楽章、本ロードマップの対象外)の速度指示。</p></div>
+      <div class="theory-card"><h4>Adagio</h4><p>「ゆっくりと、くつろいで」。緩徐楽章の代表的な速度標語。第3楽章(本ロードマップの対象外)の指示。</p></div>
+      <div class="theory-card"><h4>Allegro molto</h4><p>「非常に速く」。第4楽章フィナーレの速度指示。</p></div>
+      <div class="theory-card"><h4>Presto</h4><p>「急速に」。Allegroよりもさらに速い、曲中で最速の部類のテンポ。第1楽章終盤で到達する。</p></div>
+      <div class="theory-card"><h4>accelerando</h4><p>「だんだん加速して」。"poco a poco sino al Presto"(少しずつ、Prestoに至るまで)のように到達点とセットで書かれることが多い。指揮者のいない四重奏では、全員の呼吸だけで加速の度合いを揃える必要がある。</p></div>
+      <div class="theory-card"><h4>con fuoco</h4><p>「火のように、情熱的に」。速度指示というより性格指示で、燃えるような激しさを求める。第4楽章終盤に登場。</p></div>
+      <div class="theory-card"><h4>sempre più〜</h4><p>「常により〜」。既存の指示をさらに強調・継続する際に付く。sempre più f なら「常により強く」、sempre più accelerando なら「常により加速して」の意味。</p></div>
+    </div>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">強弱記号</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>pp (pianissimo)</h4><p>「非常に弱く」</p></div>
+      <div class="theory-card"><h4>f / ff (forte / fortissimo)</h4><p>「強く」/「非常に強く」</p></div>
+      <div class="theory-card"><h4>sf (sforzando)</h4><p>「その音だけ特に強く」。前後の強弱の流れとは別に、単発でアクセントのように強く打ち込む指示。</p></div>
+      <div class="theory-card"><h4>fp (fortepiano)</h4><p>「強く弾いた直後にすぐ弱く」。アタックだけ強く打ち、そのあと急速に音量を落とす奏法。</p></div>
+      <div class="theory-card"><h4>cresc. / dim.</h4><p>crescendo=「だんだん強く」、diminuendo=「だんだん弱く」</p></div>
+      <div class="theory-card"><h4>sempre ff</h4><p>「常にffで(強く保ったまま)」。長い区間にわたってffを持続させる指示で、音を痩せさせない体力配分が課題になる。</p></div>
+    </div>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">奏法・技術用語</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>pizzicato (pizz.) / arco</h4><p>pizzicato=弓を使わず指(通常は右手人差し指)で弦をはじく奏法。arco=通常の弓奏に戻る指示。pizzicato⇄arcoの高速切替は、右手のフォームを一瞬で切り替える技術が必要。</p></div>
+      <div class="theory-card"><h4>figuration</h4><p>「音型」。旋律というより、駆け上がり・駆け下がりなど型として繰り返される音符の連なりを指す。</p></div>
+      <div class="theory-card"><h4>モート・ペルペトゥオ (moto perpetuo)</h4><p>「無窮動」。休みなく同じ音価の音符(多くは16分音符)が絶え間なく続く書法・曲想。第4楽章冒頭の1stVnがこれにあたる。</p></div>
+      <div class="theory-card"><h4>保続音(ペダルポイント)</h4><p>和声が変化する間、同じ音(多くは根音)を持続させる技法。この曲ではチェロ・ヴィオラが刻み和音や保続低音として担うことが多い。</p></div>
+      <div class="theory-card"><h4>シンコペーション</h4><p>拍の強弱を意図的にずらし、弱拍側にアクセントを置くリズム技法。</p></div>
+    </div>
+
+    <h3 style="margin-top:28px;font-size:1.05rem">形式・構造用語</h3>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>ソナタ形式</h4><p>提示部・展開部・再現部からなる、古典派〜ロマン派の楽章で最も一般的な大規模構成。第1・第4楽章がこれにあたる。</p></div>
+      <div class="theory-card"><h4>3部形式(スケルツォ的)</h4><p>主部→中間部→主部の再現、という3つのまとまりからなる形式。第2楽章がこれにあたる。</p></div>
+      <div class="theory-card"><h4>循環形式</h4><p>複数の楽章にわたって同一の主題・動機を形を変えて再登場させ、全曲に統一感を持たせる技法。この曲は厳密な循環形式ではないが、「楽章間のつながり」セクションで触れている「始まり方」「推進の身振り」の共有はこれに近い発想。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="recordings">
+  <div class="wrap">
+    <span class="kicker">RECOMMENDED RECORDINGS</span>
+    <h2 class="h-title">おすすめ音源(YouTube)</h2>
+    <p class="lede">批評記事(The Guardian, BBC Music Magazine/Classical-music.com, AllMusic, Hyperion Records等)を横断比較し、中声部(ヴィオラ)の存在感やVn2・Vcとの橋渡し役がどう表現されているかを基準に選んだYouTube音源です。</p>
+    <div class="callout">
+      <h4>優先度順</h4>
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>Takács Quartet</b> — <a href="https://www.youtube.com/watch?v=9nktroEXQLA" target="_blank" rel="noopener">YouTubeで視聴</a><br>BBC Music Magazineが「disruptive inner voices(かき乱すような内声)」と評するほど、内声の動きが埋没せず前面に出る。フルスピードでもイントネーションとアンサンブルの精度が卓越しており、中声部パートの学習教材として最適。</p></li>
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>Artemis Quartet</b> — <a href="https://www.youtube.com/watch?v=7epVd81pc5U" target="_blank" rel="noopener">YouTubeで視聴</a><br>技術的完成度は「high-octane, technically immaculate」と評者一致。The Guardianは感情表現の深みに物足りなさを指摘する一方、BBC Music Magazineは「Op.80でこそ真価を発揮」と正反対の評価。強弱の対比が極端で、聴き比べる価値あり。</p></li>
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>Gewandhaus-Quartett</b> — <a href="https://www.youtube.com/watch?v=knTirm26nFY" target="_blank" rel="noopener">YouTubeで視聴</a><br>メンデルスゾーン自身が指揮したゲヴァントハウス管弦楽団の首席奏者による、現存する世界最古のカルテット(1808年創設)。歴史的な文脈込みで聴く価値があるが、AllMusicによると録音の高音域がやや強調され気味との指摘も。</p></li>
+        <li class="diff-item"><span class="diff-rank">4</span><p><b>ChamberFest Cleveland</b>(Alexi Kenney, Nathan Meltzer, Hsin-Yun Huang, Nicholas Canellakis) — <a href="https://www.youtube.com/watch?v=0s7A4Iy0Ba8" target="_blank" rel="noopener">YouTubeで視聴</a> / <b>Jupiter String Quartet</b>(Bowdoin音楽祭ライブ) — <a href="https://www.youtube.com/watch?v=ebtNUeSrHmQ" target="_blank" rel="noopener">YouTubeで視聴</a><br>音源としての完成度はスタジオ盤に譲るが、映像から弓使いやパート間のアイコンタクトが見える実演。本番前の視覚的な参考におすすめ。</p></li>
+      </ol>
+    </div>
+    <p class="note">2026-08-10、NotebookLM経由でのリサーチ(批評記事横断比較)とYouTube検索の結果に基づく。動画自体を試聴した上での評価ではないため、必ず自分の耳で聴き比べてから練習の参考にすること。</p>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <span class="kicker">FINAL CHECK</span>
+    <h2 class="h-title">本番までの総チェックリスト</h2>
+    <div class="checklist">
+      <div class="check-item"><span class="check-box"></span><p>第1・4楽章それぞれの冒頭で、チェロ/2ndVnと呼吸を合わせて刻み和音を入れられる。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>第1楽章 F〜Prestoのアッチェレランドを、他の3人と完全に同期して加速できる。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>第4楽章 E〜Fのpizzicato⇄arco切替を、テンポを落とさず全員で揃えられる。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>両楽章の難所トップ5(合計10箇所)を単独で止まらずに弾ける。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>第4楽章H〜I〜終結まで、通しで演奏しても体力が持つ。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>練習番号(A, B, C…)をすぐに開けて、周囲の合図に即応できる。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    参照資料: <code>Documents/Score/Mendelssohn-String_Quartet_No.6_score.pdf</code>(総譜、第1楽章 p.242–248 / 第4楽章 p.256–263、上から3段目のアルト記号譜表を参照)、<code>Documents/Score/Mendelssohn-String_Quartet_No.6_Vn2.pdf</code>(2ndVnパート譜、練習番号の基準)。理論的な橋渡しは <code>Documents/Method/</code> の理論資料を参照。1st/2ndヴァイオリン版・チェロ版ロードマップと対になる資料です。
+  </div>
+</footer>
+</body>
+</html>
