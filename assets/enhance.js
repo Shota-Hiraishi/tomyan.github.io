@@ -8,6 +8,26 @@
 
   var root = document.documentElement;
 
+  /* ---------- アクセス計測（GoatCounter） ----------
+     GoatCounter の Code をここに入れると計測が有効になる。
+     空のままなら何も読み込まず、何も送らない。 */
+  var GOATCOUNTER_CODE = 'tomyan';
+
+  function loadAnalytics() {
+    if (!GOATCOUNTER_CODE) { return; }
+
+    // ローカル確認（python -m http.server / file://）は数えない
+    var host = location.hostname;
+    if (location.protocol === 'file:' || host === 'localhost' || host === '127.0.0.1' || host === '') { return; }
+
+    var endpoint = 'https://' + GOATCOUNTER_CODE + '.goatcounter.com/count';
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://gc.zgo.at/count.js';
+    s.setAttribute('data-goatcounter', endpoint);
+    document.body.appendChild(s);
+  }
+
   /* ---------- localStorage（プライベートモード等で例外を投げる） ---------- */
   function readStore(key) {
     try { return window.localStorage.getItem(key); } catch (e) { return null; }
@@ -230,6 +250,8 @@
   /* ---------- 起動 ---------- */
   function init() {
     applyTheme(currentTheme());
+
+    loadAnalytics();
 
     var topBtn = buildFab();
     buildSkipLink();
