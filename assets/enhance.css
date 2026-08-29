@@ -19,7 +19,12 @@ a:focus-visible,button:focus-visible{
   border-radius:3px;
 }
 
-/* --- 3. スキップリンク --- */
+/* --- 3. 長いファイルパス等でページが横に広がるのを防ぐ ---
+   <code> 内のパス（例 Documents/Study_Material/..._study_material.md）は
+   折り返し位置がないため、狭い画面ではページ全体を横スクロールさせてしまう。 */
+code{overflow-wrap:anywhere}
+
+/* --- 4. スキップリンク --- */
 .ux-skip{
   position:absolute;left:-9999px;top:0;z-index:100;
   background:var(--accent,#2f5e8c);color:#fff;
@@ -28,7 +33,7 @@ a:focus-visible,button:focus-visible{
 }
 .ux-skip:focus{left:0}
 
-/* --- 4. 読み進みバー --- */
+/* --- 5. 読み進みバー --- */
 .ux-progress{
   position:fixed;top:0;left:0;height:3px;width:0;
   background:var(--accent,#2f5e8c);
@@ -36,7 +41,7 @@ a:focus-visible,button:focus-visible{
   pointer-events:none;
 }
 
-/* --- 5. 目次の現在位置 --- */
+/* --- 6. 目次の現在位置 --- */
 .toc a.is-active{
   color:var(--accent-ink,#fff)!important;
   background:var(--accent,#2f5e8c);
@@ -44,7 +49,7 @@ a:focus-visible,button:focus-visible{
   font-weight:700;
 }
 
-/* --- 6. 横スクロールする表の合図 --- */
+/* --- 7. 横スクロールする表の合図 --- */
 .ux-scrollable{
   position:relative;
   /* insetの影はスクロールしても要素の枠に留まる */
@@ -69,7 +74,61 @@ a:focus-visible,button:focus-visible{
 }
 .ux-hint.is-done{opacity:0;transition:opacity .3s ease}
 
-/* --- 7. 右下の操作ボタン --- */
+/* --- 8. パート比較表：狭い画面では「観点ごとのカード」に組み直す ---
+   元のCSSは1列に潰すだけなので、値だけが縦に並びパート名が失われる。
+   各セルに data-label（パート名）を付け、観点を見出しにしたカードにする。 */
+@media (max-width:600px){
+  .compare{
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:visible;
+    border-radius:0;
+  }
+  .compare-head{display:none}
+
+  .compare-row{
+    display:block;
+    min-width:0;
+    border:1px solid var(--rule,#c9cdc4)!important;
+    border-radius:10px;
+    background:var(--paper-raised,#fff);
+    margin-bottom:14px;
+    overflow:hidden;
+  }
+  .compare-row > div{
+    border-right:0!important;
+    border-top:1px solid var(--rule,#c9cdc4);
+    padding:12px 14px;
+  }
+
+  /* 先頭セル（観点）をカードの見出しにする */
+  .compare-row > div:first-child{
+    border-top:0;
+    background:var(--brass-soft,#eee2c4);
+    color:var(--ink,#1c2530);
+    font-weight:700;
+    font-size:.95rem;
+  }
+
+  /* 値のセルにパート名を添える */
+  .compare-row > div[data-label]::before{
+    content:attr(data-label);
+    display:block;
+    font-size:.7rem;
+    letter-spacing:.06em;
+    font-weight:700;
+    color:var(--ink-soft,#4b5563);
+    margin-bottom:4px;
+  }
+  /* 自分のパートは色を強めて見つけやすくする */
+  .compare-row > div.me{
+    border-left:3px solid var(--accent,#2f5e8c);
+  }
+  .compare-row > div.me::before{color:var(--accent,#2f5e8c)}
+}
+
+/* --- 9. 右下の操作ボタン --- */
 .ux-fab{
   position:fixed;right:16px;bottom:16px;z-index:55;
   display:flex;flex-direction:column;gap:8px;
@@ -95,7 +154,7 @@ a:focus-visible,button:focus-visible{
   .ux-fab button{width:42px;height:42px}
 }
 
-/* --- 8. 印刷時は操作系を隠す --- */
+/* --- 10. 印刷時は操作系を隠す --- */
 @media print{
   .ux-fab,.ux-progress,.ux-skip,.ux-hint,.site-crumb,.crumb{display:none!important}
   .ux-scrollable{box-shadow:none!important}

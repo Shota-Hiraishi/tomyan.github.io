@@ -155,6 +155,28 @@
     return boxes;
   }
 
+  /* ---------- パート比較表：各セルにパート名を持たせる ----------
+     狭い画面では表が1列に潰れて「どのパートの記述か」が分からなくなる。
+     ヘッダーの見出しを data-label として各セルに写しておき、
+     CSS 側（@media max-width:600px）で ::before として表示する。 */
+  function labelCompareCells() {
+    Array.prototype.forEach.call(document.querySelectorAll('.compare'), function (table) {
+      var head = table.querySelector('.compare-head');
+      if (!head) { return; }
+
+      var labels = Array.prototype.map.call(head.children, function (c) {
+        return c.textContent.trim();
+      });
+
+      Array.prototype.forEach.call(table.querySelectorAll('.compare-row'), function (row) {
+        Array.prototype.forEach.call(row.children, function (cell, i) {
+          // 先頭セルは「観点」そのものなのでラベルを付けない
+          if (i > 0 && labels[i]) { cell.setAttribute('data-label', labels[i]); }
+        });
+      });
+    });
+  }
+
   /* ---------- 目次の現在位置 ---------- */
   function setupTocHighlight() {
     var toc = document.querySelector('.toc');
@@ -211,6 +233,7 @@
 
     var topBtn = buildFab();
     buildSkipLink();
+    labelCompareCells();
 
     var isLongPage = !!document.querySelector('.toc');
     var bar = isLongPage ? buildProgress() : null;
