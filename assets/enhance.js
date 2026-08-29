@@ -20,6 +20,14 @@
     var host = location.hostname;
     if (location.protocol === 'file:' || host === 'localhost' || host === '127.0.0.1' || host === '') { return; }
 
+    // このサイトはリポジトリ名のサブパス配下で配信されるため、
+    // そのままだと /tomyan.github.io/franck/2ndvn.html と記録されて読みにくい。
+    // 先頭のリポジトリ名を落として /franck/2ndvn.html にする。
+    window.goatcounter = window.goatcounter || {};
+    window.goatcounter.path = function (p) {
+      return p.replace(/^\/tomyan\.github\.io/, '') || '/';
+    };
+
     var endpoint = 'https://' + GOATCOUNTER_CODE + '.goatcounter.com/count';
     var s = document.createElement('script');
     s.async = true;
