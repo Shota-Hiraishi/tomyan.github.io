@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>ボロディン 弦楽四重奏曲第2番 — ヴィオラ練習ロードマップ</title>
+<style>
+:root{color-scheme:light dark}
+body{margin:0;font:14px/1.6 system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;background:#f7f6f3;color:#1c2530}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<style>
+:root{
+  --paper:#eef0ec;
+  --paper-raised:#ffffff;
+  --ink:#1c2530;
+  --ink-soft:#4b5563;
+  --rule:#c9cdc4;
+  --accent:#6b4c9a;
+  --accent-ink:#ffffff;
+  --accent-soft:#e6dcf2;
+  --brass:#8a6a30;
+  --brass-soft:#eee2c4;
+  --good:#3f6b4a;
+  --good-soft:#dbe7dd;
+  --shadow: 0 1px 2px rgba(28,37,48,.06), 0 6px 20px rgba(28,37,48,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#141920;
+    --paper-raised:#1b212b;
+    --ink:#e7e6df;
+    --ink-soft:#a7aeb8;
+    --rule:#333c48;
+    --accent:#b79ce0;
+    --accent-ink:#170f22;
+    --accent-soft:#2a2135;
+    --brass:#d1b064;
+    --brass-soft:#3a3220;
+    --good:#7fae8c;
+    --good-soft:#213229;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141920; --paper-raised:#1b212b; --ink:#e7e6df; --ink-soft:#a7aeb8;
+  --rule:#333c48; --accent:#b79ce0; --accent-ink:#170f22; --accent-soft:#2a2135;
+  --brass:#d1b064; --brass-soft:#3a3220; --good:#7fae8c; --good-soft:#213229;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --paper:#eef0ec; --paper-raised:#ffffff; --ink:#1c2530; --ink-soft:#4b5563;
+  --rule:#c9cdc4; --accent:#6b4c9a; --accent-ink:#ffffff; --accent-soft:#e6dcf2;
+  --brass:#8a6a30; --brass-soft:#eee2c4; --good:#3f6b4a; --good-soft:#dbe7dd;
+  --shadow: 0 1px 2px rgba(28,37,48,.06), 0 6px 20px rgba(28,37,48,.06);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,"Segoe UI","Hiragino Sans","Yu Gothic",Meiryo,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent-soft)}
+h1,h2,h3,h4{
+  font-family:Iowan,"Iowan Old Style","Palatino Linotype",Palatino,"Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  font-weight:600;
+  color:var(--ink);
+  text-wrap:balance;
+  margin:0;
+}
+a{color:var(--accent)}
+p{margin:.6em 0}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.tabnum{font-variant-numeric:tabular-nums}
+
+.masthead{
+  border-bottom:1px solid var(--rule);
+  padding:56px 0 34px;
+  background: linear-gradient(var(--paper),var(--paper));
+}
+.masthead .eyebrow{
+  font-family:Iowan,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-style:italic;
+  color:var(--ink-soft);
+  font-size:.95rem;
+  letter-spacing:.02em;
+}
+.masthead h1{
+  font-size:clamp(1.9rem,4.2vw,2.7rem);
+  margin-top:.25em;
+  line-height:1.15;
+}
+.masthead .sub{
+  font-size:1.05rem;
+  color:var(--ink-soft);
+  margin-top:.6em;
+  max-width:60ch;
+}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.meta-chip{
+  border:1px solid var(--rule);
+  background:var(--paper-raised);
+  border-radius:3px;
+  padding:6px 12px;
+  font-size:.82rem;
+  color:var(--ink-soft);
+  display:flex;gap:6px;align-items:baseline;
+}
+.meta-chip b{color:var(--ink);font-weight:600}
+
+.toc{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+}
+.toc .wrap{display:flex;gap:2px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:thin}
+.toc a{white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:.82rem;padding:6px 10px;border-radius:3px;border:1px solid transparent}
+.toc a:hover{border-color:var(--rule);color:var(--ink)}
+
+section{padding:52px 0}
+section + section{border-top:1px solid var(--rule)}
+.kicker{display:inline-block;font-size:.75rem;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:.5em}
+h2.h-title{font-size:clamp(1.4rem,3vw,1.85rem);margin-bottom:.3em}
+.lede{color:var(--ink-soft);max-width:66ch;font-size:1.02rem}
+
+.rl{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.5em;height:1.5em;
+  border:1.3px solid currentColor;
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;
+  font-weight:700;font-size:.8rem;
+  margin-right:.35em;color:var(--ink);border-radius:2px;vertical-align:-.25em;
+}
+
+.roadmap{list-style:none;margin:34px 0 0;padding:0;position:relative}
+.roadmap::before{content:"";position:absolute;left:19px;top:6px;bottom:6px;width:1px;background:var(--rule)}
+.phase{position:relative;padding:0 0 34px 56px}
+.phase:last-child{padding-bottom:0}
+.phase-num{
+  position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
+  background:var(--paper-raised);border:1.5px solid var(--accent);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:1.05rem;
+}
+.phase h3{font-size:1.12rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.6em}
+.phase h3 .when{font-family:inherit;font-weight:400;font-size:.78rem;color:var(--ink-soft);border:1px solid var(--rule);border-radius:3px;padding:2px 8px}
+.phase p.goal{color:var(--ink-soft);margin-top:.3em;font-size:.96rem}
+.phase ul{margin:.7em 0 0;padding-left:1.15em}
+.phase li{margin:.28em 0;font-size:.96rem}
+.phase li b{color:var(--ink)}
+
+.mvt-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:10px}
+.mvt-head .tag{font-family:Iowan,"Iowan Old Style",Georgia,serif;font-style:italic;color:var(--ink-soft);font-size:1rem}
+.mvt-key{font-size:.85rem;color:var(--ink-soft)}
+
+.tbl-scroll{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:4px;background:var(--paper-raised);box-shadow:var(--shadow)}
+table.form-map{border-collapse:collapse;width:100%;min-width:680px;font-size:.88rem}
+table.form-map th{text-align:left;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:600;background:var(--brass-soft);color:var(--ink);padding:10px 12px;border-bottom:1px solid var(--rule);white-space:nowrap;font-size:.8rem;letter-spacing:.02em}
+table.form-map td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.form-map tr:last-child td{border-bottom:none}
+table.form-map tr:hover td{background:color-mix(in srgb, var(--accent-soft) 55%, transparent)}
+td.m{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+td.tk{white-space:nowrap;color:var(--ink-soft)}
+td.role{min-width:22ch}
+
+.callout{margin-top:26px;border:1px solid var(--accent);border-left-width:4px;background:var(--accent-soft);border-radius:3px;padding:18px 20px}
+.callout h4{font-size:1rem;color:var(--ink);margin-bottom:.3em}
+.diff-list{list-style:none;margin:.6em 0 0;padding:0;display:grid;gap:10px}
+.diff-item{display:flex;gap:12px;align-items:flex-start}
+.diff-rank{flex:none;width:1.7em;height:1.7em;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;margin-top:.1em}
+.diff-item p{margin:0;font-size:.93rem}
+.diff-item p b{display:block;color:var(--ink);font-size:.95rem;margin-bottom:.15em}
+
+.note{margin-top:18px;font-size:.9rem;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:12px}
+
+.cyclic{margin-top:30px;display:grid;gap:0;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-raised);box-shadow:var(--shadow)}
+.cyc-row{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--rule)}
+.cyc-row:first-child{border-top:none}
+.cyc-label{padding:14px 14px;background:var(--brass-soft);font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:600;font-size:.88rem;display:flex;align-items:center}
+.cyc-events{padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.cyc-evt{display:flex;gap:10px;align-items:baseline;font-size:.88rem}
+.cyc-evt .m{flex:none;width:5.5em;color:var(--brass);font-variant-numeric:tabular-nums;font-weight:700}
+.cyc-evt .d{color:var(--ink-soft)}
+
+.compare{margin-top:26px;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-raised);box-shadow:var(--shadow)}
+.compare-row{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,1.15fr));border-top:1px solid var(--rule)}
+.compare-row:first-child{border-top:none}
+.compare-row > div{padding:12px 16px;font-size:.87rem;border-right:1px solid var(--rule);overflow-wrap:anywhere}
+.compare-row > div:last-child{border-right:none}
+.compare-row > div:first-child{color:var(--ink-soft);font-size:.82rem}
+.compare-row > div:not(:first-child){color:var(--ink-soft)}
+.compare-row > div.me{color:var(--accent);font-weight:600;background:color-mix(in srgb, var(--accent-soft) 40%, transparent)}
+.compare-head{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,1.15fr));background:var(--brass-soft)}
+.compare-head div{padding:10px 16px;font-family:Iowan,"Iowan Old Style",Georgia,serif;font-weight:700;font-size:.85rem;border-right:1px solid var(--rule);overflow-wrap:anywhere}
+.compare-head div:last-child{border-right:none}
+
+.theory-grid{display:grid;gap:18px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.theory-card{background:var(--paper-raised);border:1px solid var(--rule);border-radius:4px;padding:18px 20px;box-shadow:var(--shadow)}
+.theory-card h4{font-size:.98rem;margin-bottom:.5em;color:var(--accent)}
+.theory-card p{font-size:.9rem;color:var(--ink-soft);margin:0}
+.theory-card code{font-family:Cambria,Georgia,serif;font-style:italic;color:var(--ink);background:none;padding:0}
+
+.checklist{margin-top:24px;display:grid;gap:10px}
+.check-item{display:flex;gap:12px;align-items:flex-start;background:var(--paper-raised);border:1px solid var(--rule);border-radius:4px;padding:12px 16px}
+.check-box{flex:none;width:1.1em;height:1.1em;border:1.4px solid var(--good);border-radius:3px;margin-top:.2em}
+.check-item p{margin:0;font-size:.92rem}
+
+footer{padding:40px 0 70px;color:var(--ink-soft);font-size:.82rem}
+footer .wrap{border-top:1px solid var(--rule);padding-top:20px}
+
+@media (max-width:600px){
+  .cyc-row{grid-template-columns:1fr}
+  .cyc-label{padding:10px 14px}
+  .compare-row,.compare-head{grid-template-columns:1fr}
+  .compare-row > div,.compare-head div{border-right:none !important;border-bottom:1px solid var(--rule)}
+}
+
+@media print{
+  .toc{display:none}
+  section{padding:22px 0}
+  section + section{break-before:page}
+  .tbl-scroll{overflow-x:visible;box-shadow:none}
+  table.form-map{min-width:0;width:100%;table-layout:fixed;font-size:.72rem}
+  table.form-map td,table.form-map th{padding:6px 8px;word-break:break-word;white-space:normal}
+  td.m,td.tk,td.role{white-space:normal}
+  .callout,.theory-card,.check-item,.cyclic,.compare{box-shadow:none}
+}
+table.form-map.wide{min-width:1040px}@media print{table.form-map.wide{min-width:0}}</style>
+<style>
+.site-crumb{background:var(--paper-raised,#fff);border-bottom:1px solid var(--rule,#ccc);padding:12px 0;font-size:13px}
+.site-crumb a{color:var(--accent,#2f5e8c);text-decoration:none;font-weight:600}
+.site-crumb a:hover{text-decoration:underline}
+.site-crumb .sep{color:var(--ink-soft,#666);margin:0 8px}
+.site-crumb .here{color:var(--ink-soft,#666)}
+@media print{.site-crumb{display:none}}
+</style>
+</head>
+<body>
+<nav class="site-crumb">
+  <div class="wrap">
+    <a href="../">練習ロードマップ</a>
+    <span class="sep">/</span>
+    <a href="./">ボロディン 弦楽四重奏曲第2番</a>
+    <span class="sep">/</span>
+    <span class="here">ヴィオラ</span>
+  </div>
+</nav>
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Alexander Borodin &nbsp;·&nbsp; String Quartet No.2 in D major (1881)</div>
+    <h1>ヴィオラ奏者のための<br>本番までの練習ロードマップ</h1>
+    <p class="sub">妻への愛の告白から20年を記念して書かれた、ロシア室内楽で最も愛される四重奏曲。全4楽章を12月6日の本番に向けて仕上げるための道筋と、ヴィオラが担う役割・難所を、1894年のBelaieff初版総譜から読み解いて整理しました。</p>
+    <div class="meta-row">
+      <span class="meta-chip">対象パート &nbsp;<b>Viola</b></span>
+      <span class="meta-chip">楽章 &nbsp;<b>全4楽章</b></span>
+      <span class="meta-chip">本番 &nbsp;<b>2026年12月6日</b></span>
+      <span class="meta-chip">現状 &nbsp;<b>初見大会を実施済み</b></span>
+      <span class="meta-chip">参照 &nbsp;<b>Belaieff 1894年初版 総譜</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#background">作曲背景</a>
+    <a href="#overview">パートの概要</a>
+    <a href="#roadmap">練習ロードマップ</a>
+    <a href="#mvti">第1楽章</a>
+    <a href="#mvtii">第2楽章</a>
+    <a href="#mvtiii">第3楽章</a>
+    <a href="#mvtiv">第4楽章</a>
+    <a href="#theory">理論との橋渡し</a>
+    <a href="#glossary">用語集</a>
+    <a href="#recordings">おすすめ音源</a>
+    <a href="#checklist">本番までの総チェック</a>
+  </div>
+</nav>
+
+<section id="background">
+  <div class="wrap">
+    <span class="kicker">BACKGROUND</span>
+    <h2 class="h-title">「愛の告白から20年」— 作曲の背景</h2>
+    <p class="lede">
+      アレクサンドル・ボロディンは、サンクトペテルブルク医科外科アカデミーの化学教授を本職とし、作曲は休日と病臥の合間にしかできなかった。そのため作品の完成には何年もかかるのが常で、《イーゴリ公》は未完のまま遺された。ところがこの弦楽四重奏曲第2番だけは例外で、<b>1881年7月23日に着手し、同年9月19日に完成している</b>。モスクワ南東ジートヴォにある作曲家ニコライ・ロディジェンスキーの邸宅に滞在した夏のあいだに、ほぼ一気に書き上げられた。
+    </p>
+    <p class="lede">
+      楽譜には<b>「エカテリーナ・ボロディナに捧ぐ」</b>と記されている。妻エカテリーナ・プロトポポヴァのことである。伝記作者セルゲイ・ディアニンは、この作品が<b>二人が愛を確かめ合ってから20年の記念</b>であり、出会いの地ハイデルベルクの記憶が反映されていると述べた。全編を貫く旋律の甘さと、対立や葛藤をほとんど持たない構成は、この由来を知ると腑に落ちる。ロシア五人組の一員でありながら、ここには民族主義的な誇示よりも私的な抒情がある。
+    </p>
+    <p class="lede">
+      初演は1882年2月7日（ロシア暦1月26日）、サンクトペテルブルクのロシア音楽協会の演奏会で行われた。とりわけ第3楽章「夜想曲」は独立して愛され、弦楽合奏用の編曲で単独に演奏される機会が多い。さらにその副次主題は、1953年のブロードウェイ・ミュージカル《キスメット》で <i>Baubles, Bangles, and Beads</i> という歌に転用され、翌年のトニー賞受賞作となった。<b>この曲は「難曲を征服する」種類の作品ではなく、4人が同じ歌を歌い継ぐ作品である</b>。技術的な課題も、そのための手段として捉えると位置づけが定まる。
+    </p>
+    <div class="tbl-scroll">
+      <table class="form-map" style="margin-top:8px">
+        <thead><tr><th>楽章</th><th>調・拍子・形式</th><th>特徴</th></tr></thead>
+        <tbody>
+          <tr><td class="m">I. Allegro moderato</td><td class="tk">ニ長調 / 2/2 / ソナタ形式<br>約304小節</td><td>チェロが高音域で第1主題を提示し、4小節後に1stVnが1オクターヴ上で受け継ぐ。第2主題では3声がpizz.に転じ、セレナードのような音色になる</td></tr>
+          <tr><td class="m">II. Scherzo: Allegro</td><td class="tk">ヘ長調 / 3/4 / ソナタ形式<br>約299小節</td><td>第2楽章にスケルツォを置く配置。三部形式ではなくソナタ形式で書かれる。無窮動的な主部と、ワルツ風の中間部が交替する</td></tr>
+          <tr><td class="m">III. Notturno: Andante</td><td class="tk">イ長調 / 3/4<br>約180小節</td><td>全曲で最も有名な楽章。チェロのSoloで始まる主題が4パートを巡る。中間部はヘ長調（第47〜110小節）、その後カノンによる再現</td></tr>
+          <tr><td class="m">IV. Finale: Andante — Vivace</td><td class="tk">ニ長調 / 2/4 / ソナタ形式<br>約671小節</td><td>2つのヴァイオリン＋ヴィオラとチェロの「問いと答え」の対話20小節が序奏。VivaceとAndanteが交替し、最後は両方の主題を組み合わせて閉じる</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">総小節数・調・形式は各種文献による。譜面上の推定小節番号と数小節の差があるため、本ロードマップでは<b>リハーサル記号を主、小節番号を従</b>として扱っている。</p>
+  </div>
+</section>
+
+
+<section id="overview">
+  <div class="wrap">
+    <span class="kicker">OVERVIEW</span>
+    <h2 class="h-title">ヴィオラ が背負うもの</h2>
+    <p class="lede">ヴィオラはこの曲で<b>動きの供給者</b>です。第1楽章は冒頭の連続8分音符でこの曲のテンポそのものを定義し、第2楽章の展開部では両ヴァイオリンが交替で休む中ただ一人途切れない8分音符を持ち、第3楽章の E 以降では弓で拍を刻む唯一のパートになります。同時に、第3楽章の Solo. cantabile と低声部主題、第1楽章 F の cantabile という明確な見せ場も与えられています。<b>アルト記号と広い指の間隔を抱えたまま、抑えた刻みと前に出る歌を切り替えること</b>が課題です。</p>
+    <p class="lede">本ロードマップの区切りは<b>総譜に印刷されたリハーサル記号（A, B, C…）</b>を基準にしています。小節番号はシステムごとの積算による推定値で、文献の総小節数と数小節から数十小節の差があります。<b>練習では記号を主、小節番号を従として扱ってください。</b></p>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <span class="kicker">ROADMAP</span>
+    <h2 class="h-title">本番までの5フェーズ（約13週）</h2>
+    <p class="lede">初見大会で全4楽章を一度通した状態を出発点とし、12月6日の本番から逆算した割り振りです。1回1〜2時間の練習を想定しています。</p>
+    <ol class="roadmap">
+      <li class="phase"><div class="phase-num">1</div>
+        <h3>土台づくり <span class="when">9月8日〜9月28日（3週）</span></h3>
+        <p class="goal">初見大会で一度通した状態から、「最後まで止まらずに弾ける」状態へ。</p><ul>
+          <li>第1楽章冒頭と第3楽章 A 以降の連続8分を、分離弓で均等さだけ確認する。</li>
+          <li>第4楽章の切り替えゾーンで、自分がチェロと2人で f risoluto を担う箇所に印を付ける。</li>
+          <li>第3楽章 m.85 の Solo. cantabile と第1楽章 F の cantabile を、見せ場として譜面上で確認する。</li>
+        </ul></li>
+      <li class="phase"><div class="phase-num">2</div>
+        <h3>難所の分解 <span class="when">9月29日〜10月19日（3週）</span></h3>
+        <p class="goal">難所を単独で取り出し、遅いテンポから確実に積み上げる。</p><ul>
+          <li>第2楽章 m.106–119 の「一人だけ途切れない8分」を、移動を最小にする運指で固める。</li>
+          <li>第3楽章 Solo. の弦の選択（A線かD線か）を2案作り、録音で聴き比べて決める。</li>
+          <li>第4楽章の連続8分音符のモーター区間を、2nd・3rdポジションを併用して移弦を減らす。</li>
+        </ul></li>
+      <li class="phase"><div class="phase-num">3</div>
+        <h3>合奏への接続 <span class="when">10月20日〜11月9日（3週）</span></h3>
+        <p class="goal">「一人で弾ける」から「4人の中で機能する」へ引き上げる。</p><ul>
+          <li>第4楽章の f risoluto をチェロと2人だけで、どちらの弓を見るかを決めて合わせる。</li>
+          <li>第3楽章 E の leggiero を、チェロの pizz. とわずかに前に出る意識で合わせる。</li>
+          <li>第1楽章 H 直前の走句を2ndVnと2人で、音で同型かを確認する。</li>
+        </ul></li>
+      <li class="phase"><div class="phase-num">4</div>
+        <h3>通しと再現性 <span class="when">11月10日〜11月30日（3週）</span></h3>
+        <p class="goal">本番同様に通し、崩れた箇所だけをフェーズ2に戻して潰す。</p><ul>
+          <li>全4楽章を通し、20小節超の刻みが4回ある持久を確認する。</li>
+          <li>cantabile の場面で「意識的に前へ出る」切り替えができているかを録音で検証する。</li>
+          <li>難所を短時間・高頻度で確認するメンテナンス練習に切り替える。</li>
+        </ul></li>
+      <li class="phase"><div class="phase-num">5</div>
+        <h3>本番直前調整 <span class="when">12月1日〜12月6日（本番週）</span></h3>
+        <p class="goal">新しい課題を増やさず、再現性とコンディションを整える。</p><ul>
+          <li>本番の並びで最終リハーサルを行い、チェロとの低音側ユニットの息を合わせる。</li>
+          <li>第4楽章コーダのト音記号への持ち替えを、疲労した状態で数回確認する。</li>
+          <li>新しい課題を増やさず、当日の体力配分を確認する。</li>
+        </ul></li>
+    </ol>
+  </div>
+</section>
+<section id="mvti">
+  <div class="wrap">
+    <div class="mvt-head"><div><span class="kicker">MOVEMENT I</span><h2 class="h-title">第1楽章 — Allegro moderato</h2></div><div class="mvt-key">ニ長調 / 2/2 / ソナタ形式 / 約304小節</div></div>
+    <p class="lede">チェロが高音域で第1主題を歌い、4小節後に1stVnが1オクターヴ上で引き継ぐ「対の歌」で始まります。提示部100小節、展開部77小節、再現部91小節、コーダ36小節という配分で、<b>再現部が提示部より長い</b>のがこの楽章の骨格です。第2主題では3声がpizz.に転じ、ギター伴奏のセレナードのような響きになります。この楽章で最も音色の企みが強い場所です。</p>
+    <h3 style="margin-top:30px;font-size:1.06rem">フォームマップ</h3>
+    <div class="tbl-scroll"><table class="form-map"><thead><tr><th>小節</th><th>記号</th><th>テンポ・調</th><th>出来事</th><th>Va の動き</th></tr></thead><tbody>
+      <tr><td class="m">1–7</td><td class="tk">—</td><td class="tk">𝅗𝅥=84 / ニ長調</td><td><b>チェロが高音域で第1主題。</b>1stVnは4小節休み、m.5から1オクターヴ上で継承</td><td class="role"><b>冒頭から連続する8分音符（スラー付き）の伴奏音型。</b>チェロの主題と2ndVnの持続音の間で、<b>この楽章の推進力を一人で作る</b></td></tr>
+      <tr><td class="m">8–14</td><td class="tk">—</td><td class="tk">ニ長調</td><td>1stVnが16分音符の流れる音型へ</td><td class="role">8分の連続から4分音符主体へ。1stVnの16分の下で和声を刻む</td></tr>
+      <tr><td class="m">15–20</td><td class="tk">—</td><td class="tk">ニ長調</td><td>声部が絡み合い密度が上がる</td><td class="role">4分音符と8分を交えた内声。臨時記号が増え、半音階的に動く</td></tr>
+      <tr><td class="m">21–33</td><td class="tk">—</td><td class="tk">cresc. poco a poco → mf</td><td>第1主題群の頂点へ向かう長いクレッシェンド</td><td class="role">cresc. poco a poco に乗って4分音符で刻む。m.27付近からは2ndVnと同じ裏拍の和音に転じ、リズムの弾みを作る</td></tr>
+      <tr><td class="m">34–39</td><td class="tk">—</td><td class="tk">移行</td><td>p から cresc. → mf で第2主題を準備</td><td class="role">p の持続音・タイ。cresc. → mf</td></tr>
+      <tr><td class="m">40–47</td><td class="tk"><span class="rl">A</span></td><td class="tk">ニ長調 → 属調系</td><td><b>第2主題。1stVnが cantabile、他の3声が全員 pizz.</b></td><td class="role"><b>pizz. に転じ、和音で拍を置く。</b>1stVnの cantabile を2ndVn・チェロとともに支える</td></tr>
+      <tr><td class="m">48–55</td><td class="tk"><span class="rl">B</span>&nbsp;53</td><td class="tk">m.53 で arco</td><td>arco へ復帰。f／fz の和音で場面転換</td><td class="role"><b>arco 復帰。fz の和音。</b>持ち替えの直後に強奏</td></tr>
+      <tr><td class="m">56–71</td><td class="tk">—</td><td class="tk">marcato → fz cresc.</td><td>4声が marcato で性格を共有し高揚</td><td class="role">marcato の重音・4分音符。fz cresc. で高揚に加わる</td></tr>
+      <tr><td class="m">72–80</td><td class="tk"><span class="rl">C</span></td><td class="tk">mf</td><td>1stVnが16分音符、チェロが mf cantabile、ヴィオラは全音符</td><td class="role"><b>長い白玉（全音符）の保続。</b>1stVnの16分とチェロの cantabile の下で、和声の枠だけを保つ静的な役割</td></tr>
+      <tr><td class="m">81–93</td><td class="tk"><span class="rl">D</span></td><td class="tk"><b>Animato 𝅗𝅥=104</b> / f</td><td>提示部の頂点。付点リズムとアクセントの総奏</td><td class="role">Animato で f。<b>和音の4分音符と付点リズム</b>で総奏に加わる</td></tr>
+      <tr><td class="m">94–100</td><td class="tk">—</td><td class="tk">dim. / poco a poco rit. → ♭系へ</td><td>提示部が静まり、展開部へ</td><td class="role">dim.、poco a poco rit.。半音階的に下行して静まる</td></tr>
+      <tr><td class="m">101–116</td><td class="tk">—</td><td class="tk"><b>Tempo I.</b> / ♭1つ</td><td><b>展開部開始。第1主題がチェロに p で回帰</b></td><td class="role"><b>展開部冒頭は p の長い白玉・タイ。</b>冒頭の推進役から一転して静止する。m.109以降は4分音符・和音で刻みに復帰</td></tr>
+      <tr><td class="m">117–131</td><td class="tk"><span class="rl">E</span>&nbsp;122</td><td class="tk">♭系</td><td>16分の走句を1stVnと2ndVnが受け渡す</td><td class="role">4分・2分音符（♯の臨時記号多め）。m.125付近からは8分音符の動きが戻り f へ</td></tr>
+      <tr><td class="m">132–151</td><td class="tk"><span class="rl">F</span>&nbsp;141</td><td class="tk">♭系 / p cantabile</td><td>1stVnとヴィオラが cantabile。展開部の内省的な中心</td><td class="role"><b>F で p cantabile。1stVnと歌を分け合う、この楽章でヴィオラがもっとも旋律的になる場所。</b>16分音符の音型を含む</td></tr>
+      <tr><td class="m">152–169</td><td class="tk">—</td><td class="tk">♭系</td><td>16分モチーフを2ndVnとヴィオラが模倣で受け渡す</td><td class="role"><b>16分音符のモチーフを2ndVnと模倣で受け渡す。</b>チェロの保続音の上で、2つの内声が対話する</td></tr>
+      <tr><td class="m">170–177</td><td class="tk">—</td><td class="tk">rall. → ♯2つへ復帰</td><td>展開部の閉じ</td><td class="role">4分音符と白玉。rall.</td></tr>
+      <tr><td class="m">178–202</td><td class="tk">—</td><td class="tk"><b>a tempo</b> / ニ長調</td><td><b>再現部。冒頭同様1stVnが4小節休む</b></td><td class="role"><b>再現部。冒頭と同じ p の刻みの伴奏音型。</b>冒頭より音価がやや大きく、m.192以降は p の4分音符</td></tr>
+      <tr><td class="m">203–223</td><td class="tk"><span class="rl">G</span>&nbsp;213</td><td class="tk">ニ長調（臨時記号が多い）</td><td>G で pp の和音 → 半音階的に上昇する緊張の区画</td><td class="role">2分・4分音符。G で和音の4分音符 → 休符。cresc. poco a poco</td></tr>
+      <tr><td class="m">224–236</td><td class="tk">—</td><td class="tk">転調感の強い区画</td><td>ヴィオラが mf cantabile、その下で内声が動く</td><td class="role"><b>mf cantabile。16分音符の音型を伴う旋律的な線</b>を担当。1stVnは持続音／pizz. に回るので、ここはヴィオラが前に出る</td></tr>
+      <tr><td class="m">237–250</td><td class="tk"><span class="rl">H</span></td><td class="tk">arco / fp</td><td>H直前に2ndVnとヴィオラの速い走句、H で fp</td><td class="role"><b>H の直前2小節、2ndVnとほぼ並行する速い16分／32分の走句。</b>H で fp の8分音型</td></tr>
+      <tr><td class="m">251–259</td><td class="tk">—</td><td class="tk">cresc. poco a poco</td><td>第2主題の主調回帰を準備</td><td class="role">p の8分音型。cresc. poco a poco</td></tr>
+      <tr><td class="m">260–268</td><td class="tk"><span class="rl">I</span></td><td class="tk">ニ長調 / f</td><td><b>第2主題が f cantabile で主調回帰</b>。A の pizz. の静けさに対しここは総奏の輝き</td><td class="role"><b>裏拍の4分音符和音（f）。</b>1stVnとチェロの f cantabile を、2ndVnとともに支える</td></tr>
+      <tr><td class="m">269–284</td><td class="tk">—</td><td class="tk"><b>Animato</b> / f</td><td>コーダ突入。付点と長い音価の広がり</td><td class="role"><b>Animato。f の8分音符から付点リズムへ。</b>内声として推進を担当し、和音の色を動かす</td></tr>
+      <tr><td class="m">285–290</td><td class="tk"><span class="rl">K</span>&nbsp;286</td><td class="tk">dim. / poco a poco rit.</td><td>大きな減速</td><td class="role">dim. poco a poco。8分音符の音型で下行</td></tr>
+      <tr><td class="m">291–297</td><td class="tk">—</td><td class="tk"><b>Tranquillo</b> / sempre dim.</td><td>沈静</td><td class="role"><b>Tranquillo。</b>半音階的な8分・4分の動きを保ち、<b>静止した外声の中で唯一動き続ける</b></td></tr>
+      <tr><td class="m">298–304</td><td class="tk">—</td><td class="tk">dim. → p → pp、フェルマータ</td><td>終結。チェロが下から上行し、和音が消える</td><td class="role">dim. → pp。白玉で消える</td></tr>
+    </tbody></table></div>
+    <p class="note">リハーサル記号は A・B・C・D・E・F・G・H・I・K の10個。当時の慣習で <b>J は使われていません</b>。テンポ表示は2/2拍子で <b>2分音符＝84</b>（Animato は104）と読むのが妥当です。小節番号は総数304小節に合わせた推定値で、±5〜8小節の誤差を含みます。<b>練習では記号を主、小節番号を従として扱ってください。</b></p>
+    <h3 style="margin-top:30px;font-size:1.06rem">リハーサル記号の位置</h3>
+    <div class="cyclic"><div class="cyc-row"><div class="cyc-label">記号＝小節</div><div class="cyc-events">
+      <div class="cyc-evt"><span class="m"><span class="rl">A</span>40</span><span class="d">cantabile ＋ 3声の pizz.</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">B</span>53</span><span class="d">arco 復帰、fz</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">C</span>72</span><span class="d">mf、チェロの mf cantabile</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">D</span>81</span><span class="d">Animato 𝅗𝅥=104 と同位置</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">E</span>122</span><span class="d">dim. の直後に cresc.</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">F</span>141</span><span class="d">p cantabile（1stVn・ヴィオラ）</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">G</span>213</span><span class="d">pp → cresc. poco</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">H</span>237</span><span class="d">arco、fp</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">I</span>260</span><span class="d">f cantabile</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">K</span>286</span><span class="d">dim. poco a poco ＋ poco a poco rit.</span></div>
+    </div></div></div>
+    <div class="callout"><h4>Va の難所トップ5</h4><ol class="diff-list" style="list-style:none;padding:0">
+      <li class="diff-item"><span class="diff-rank">1</span><p><b>m.1–20 と m.178–197 — 冒頭／再現部の連続8分音符の推進</b><b>この楽章の最初の音から、ヴィオラだけが動いています。</b>チェロが高音域で歌い、1stVnは休み、2ndVnは白玉。テンポと拍の感覚はヴィオラの8分音符が唯一の情報源です。ここが少しでも不均等だと、チェロの歌が支えられていないように聞こえます。しかも p で、スラーが掛かっており、出しすぎてはいけない。ヴィオラは弦が太く反応が遅いため、<b>p で発音を揃えること自体が難しい</b>のです。<br><b>対策：</b>8分音符1つあたりの弓の長さを決め（中弓で3〜4cm）、そこから動かさない。スラーの中で弓速が変わると不均等に聞こえます。p は圧を抜くのではなく<b>接点を指板寄りに</b>。ヴィオラは圧を抜くと発音しません。左手はレガート最優先で、指を叩くのではなく置き換える。さらう順番は、すべて分離弓で均等さを確認→スラーを付ける→チェロの主題と2人で合わせて録音で確認。</p></li>
+      <li class="diff-item"><span class="diff-rank">2</span><p><b>m.235–241（H 直前）— 2ndVnと並行する速い走句</b>H の直前2小節で、ヴィオラと2ndVnが同型の速い走句をほぼ並行して弾きます。<b>ヴィオラはアルト記号、2ndVnはト音記号</b>なので、譜面を見比べても同じ音型かが直感的に分かりません。この確認を怠ったまま速度だけ上げると、本番で初めて食い違いに気づきます。ヴィオラは弦の反応が遅いため、速い走句では音の頭が遅れるのも構造的な不利です。<br><b>対策：</b>まず2ndVnと2人でゆっくり弾き、ユニゾンか3度違いかを<b>音で</b>確認する。楽譜の見比べは不可。後退練習で着地点を先に固定。走句の中で移動する箇所を1か所に絞り、そこだけ単独で反復。発音の遅れ対策として、<b>わずかに早く弓を動かし始める</b>意識を持ってください。</p></li>
+      <li class="diff-item"><span class="diff-rank">3</span><p><b>m.141–169（F 以降）— cantabile と2ndVnとの模倣</b><b>F でヴィオラは p cantabile を与えられます。この楽章でヴィオラがもっとも旋律的になる場所</b>です。ところが調号は♭系で、しかも1stVnと歌を分け合うため、同じフレーズを2人で受け渡す音程の一致が要求されます。ヴィオラの cantabile は音量を出そうとすると鼻にかかった音になり、抑えると消える。<b>音色の幅が狭い音域で歌う</b>のが本質的な難しさです。<br><b>対策：</b>A線の第1〜3ポジションで処理し、可能なら<b>開放弦を避けて</b>音色を統一する（開放弦だけ音色が浮きます）。p cantabile は弓圧を上げずに、ビブラートを幅広くゆっくり、接点を駒寄りに。1stVnと2人で受け渡しの継ぎ目のフレージングを先に決める。模倣部分は2ndVnと2人だけで、チェロの保続音を共通の拍の基準にしてください。</p></li>
+      <li class="diff-item"><span class="diff-rank">4</span><p><b>m.40–55（A → B）— pizz. の和音と B での arco 復帰</b>3声が pizz. になり誰も線を持たない構造です。ヴィオラの pizz. は弦が太いぶん減衰が長く、<b>弾いた音が次の和音まで残る</b>ため、和音が変わったときに濁りやすい。さらに B（m.53）で arco に戻った直後が fz の和音で、持ち替えの猶予がありません。<br><b>対策：</b>次の和音の直前に左手をわずかに緩め、前の音を止める。これをやるかやらないかで A の透明度が変わります。弾く位置は<b>指板の端</b>に固定。駒寄りでは硬く、指板の奥すぎると芯が無くなり、ヴィオラは指板の端がもっとも豊かに鳴ります。持ち替えは方法を1つに固定して m.50〜54 を20回反復。ヴィオラ・2ndVn・チェロの3人で pizz. の縦を揃えてから1stVnを入れてください。</p></li>
+      <li class="diff-item"><span class="diff-rank">5</span><p><b>m.224–236（G 後）と m.269–284（Animato）— 前に出る内声</b>m.224付近でヴィオラは <b>mf cantabile</b> を与えられ、1stVnが持続音や pizz. に退くため、実質的にこの区画の旋律になります。ヴィオラ奏者は普段「出過ぎない」訓練をしているので、<b>必要なときに前に出る切り替えができない</b>のがもっとも多い失敗です。コーダの Animato では逆に f の総奏の中で8分音符の推進を担い、出過ぎずに前へ押す必要があります。Tranquillo では外声が静止する中でヴィオラだけが半音階的に動き続け、音程が完全に露出します。<br><b>対策：</b>mf cantabile は「1stVnより前に出る」と決めてから弾き、録音で旋律として聴こえるか確認する。聴こえなければ接点を駒に寄せ、弓を長く。Animato の8分は弓の中央で短く、f でも使いすぎない。Tranquillo の半音階は音を抜き出して音階として並べ、ゆっくり音程だけを確認してからリズムに戻してください。</p></li>
+    </ol></div>
+    <h3 style="margin-top:34px;font-size:1.08rem">この楽章で Va が担うもの</h3>
+    <p class="lede">ヴィオラはこの楽章の<b>推進力の発生源</b>です。冒頭 m.1 から連続する8分音符を刻み、チェロの歌と2ndVnの持続音の間で<b>唯一動いている声部</b>として、この楽章のテンポそのものを定義します。再現部でも同じ役割で入り直すので、<b>楽章の2つの入口はどちらもヴィオラの刻みから始まる</b>と言えます。一方で完全な脇役ではなく、F（m.141）の p cantabile と G 後（m.224）の mf cantabile という2つの明確な見せ場を与えられ、さらに展開部後半では16分モチーフを2ndVnと模倣で交換します。技術的な核心は難しい音符を弾くことよりも、<b>アルト記号の広い指の間隔と反応の遅い弦を抱えたまま、p の均等な刻み・前に出る歌・総奏の内声という3つのモードを切り替えること</b>にあります。</p>
+    <h3 style="margin-top:34px;font-size:1.08rem">4パートの役割比較</h3>
+    <div class="compare"><div class="compare-head"><div>観点</div><div>Vn1</div><div>Vn2</div><div>Va</div><div>Vc</div></div>
+      <div class="compare-row"><div>第1主題での機能（m.1–33）</div><div>m.1–4 は休み。<b>m.5 で主題を1オクターヴ上で継承</b>する「第2の歌い手」。以降は16分の走句で輝きを添える</div><div><b>全音符・2分音符の持続音</b>で和声の芯だけを保つ</div><div class="me"><b>連続する8分音符でこの楽章の推進力を発生させる</b>。唯一動いている声部でテンポを定義</div><div><b>高音域で第1主題を提示する主役</b>。m.5 で主題を渡した直後、白玉の低音バスへ降りる</div></div>
+      <div class="compare-row"><div>第2主題（A, m.40）での機能</div><div><b>cantabile で第2主題を独りで歌う</b>。伴奏に線が無いため、ルバートとテンポの責任を同時に負う</div><div><b>pizz. の和音</b>で拍を置く。中音域の和声を担当</div><div class="me"><b>pizz. の和音</b>。2ndVnと組んで内声の和音を作る</div><div><b>pizz. のバス</b>。減衰が最も長く根音を持つため、テンポと音程の実質的な基準</div></div>
+      <div class="compare-row"><div>展開部での機能（m.101–177）</div><div>長い16分走句を2ndVnと受け渡し、<b>F（m.141）で cantabile</b> をヴィオラと分け合う</div><div><b>16分走句を1stVnと分担</b>し、さらに16分モチーフをヴィオラと模倣で交換。伴奏役から対位法の当事者へ</div><div class="me"><b>F で p cantabile＝この楽章で最も旋律的になる場所</b>。以降は2ndVnと16分モチーフを交換</div><div>冒頭のヴィオラの役を引き受け、続いて<b>長い保続音</b>で2つの内声の模倣の土台になる</div></div>
+      <div class="compare-row"><div>最大の見せ場</div><div><b>A（m.40）の第2主題</b>。他3声が pizz. に退く中での独唱</div><div><b>展開部 E 周辺の16分走句</b>と、<b>m.152–169 のヴィオラとの模倣</b></div><div class="me"><b>F（m.141）の p cantabile</b> と <b>G 後（m.224）の mf cantabile</b>。加えて冒頭の推進</div><div><b>m.1 の冒頭主題</b>と <b>C（m.72）の mf cantabile</b>、<b>I（m.260）で1stVnと第2主題を共有</b></div></div>
+      <div class="compare-row"><div>技術的な核心</div><div>歌う場面と装飾に徹する場面の<b>音量設計の切り替え</b>を、長い16分走句の持久力を保ったまま行うこと</div><div><b>動かない持続音の音程の純度</b>と、重音の刻みで正確なテンポを供給し続けること</div><div class="me"><b>アルト記号・広い指の間隔・反応の遅い弦</b>を抱えたまま、3つのモードを切り替えること</div><div><b>記譜と音域の往復</b>を音色ごと切り替えること。冒頭の露出した第一音</div></div>
+      <div class="compare-row"><div>音量設計上の注意</div><div><b>C ではチェロの旋律より上に出ない</b>。A では逆に、支えが無いぶん自分で音量の起伏を作る</div><div>常に「小さく」ではなく「丸く」。F の刻みは出過ぎると和声が濁り、引きすぎると土台が消える</div><div class="me"><b>普段は抑え、cantabile の2か所では意識的に前へ出る</b>——この切り替えができないのが最頻の失敗</div><div><b>f で押すと音程が下がる</b>。前に出るときは弓圧ではなく接点と弓速、ビブラートで</div></div>
+      <div class="compare-row"><div>他パートとの縦の合わせ方</div><div>A では<b>自分が基準</b>。C・E では2ndVnと走句の継ぎ目を、I ではチェロと歌を合わせる</div><div><b>A ではヴィオラ・チェロと3人で pizz. の縦を作る</b>（1stVnを入れる前に）。E で1stVn、H 直前でヴィオラと</div><div class="me"><b>冒頭はチェロの主題を支える</b>のが基準。m.152〜 と H 直前は2ndVnと2人で、記号が違うので必ず音で確認</div><div><b>A の pizz. は自分が基準</b>だが、低音は聴こえが遅れるので録音でタイミングを実測する</div></div>
+      <div class="compare-row"><div>弓・右手の特殊事項</div><div>m.79–80 のトレモロ、m.229 の pizz. と H の arco 復帰＋fp</div><div>A の pizz. と B の arco 復帰＋fz。持ち替えの猶予がほぼ無い</div><div class="me">A の pizz.（減衰が長く濁りやすい）と B の arco＋fz。冒頭の p は圧を抜かず接点で作る</div><div>A の pizz.、H の fp の長い全音符、終結 m.298 の上行句と pp</div></div>
+    </div>
+  </div>
+</section>
+<section id="mvtii">
+  <div class="wrap">
+    <div class="mvt-head"><div><span class="kicker">MOVEMENT II</span><h2 class="h-title">第2楽章 — Scherzo: Allegro</h2></div><div class="mvt-key">ヘ長調 / 3/4 / ソナタ形式 / 約299小節</div></div>
+    <p class="lede">第2楽章にスケルツォを置く配置で、しかも三部形式ではなく<b>ソナタ形式</b>で書かれています。無窮動的な主部（第1主題）と、Meno mosso のワルツ風の中間部（第2主題）が交替し、m.183 で主題・調・書法が同時に戻る二重再現がソナタ形式の最も強い証拠です。1stVnの下行音階型の走句は、各グループの頭にアクセントが置かれてそのまま減衰する書法で、メンデルスゾーンの『真夏の夜の夢』に通じる「軽く落ちていく」性格を持ちます。</p>
+    <h3 style="margin-top:30px;font-size:1.06rem">フォームマップ</h3>
+    <div class="tbl-scroll"><table class="form-map"><thead><tr><th>小節</th><th>記号</th><th>テンポ・調</th><th>出来事</th><th>Va の動き</th></tr></thead><tbody>
+      <tr><td class="m">1–14</td><td class="tk">—</td><td class="tk">Allegro（1小節=80）/ ヘ長調</td><td>主部提示。1stVnが下行音階型の8分走句。チェロは pizz.、ヴィオラは和音の刻み</td><td class="role">m.1–4 はアクセント付きの持続音（2分音符系）＋ヘアピンで和声の骨格。m.5からスタッカートの4分音符による拍の刻みに移行</td></tr>
+      <tr><td class="m">15–21</td><td class="tk"><span class="rl">A</span>&nbsp;17</td><td class="tk">Allegro / ヘ長調</td><td>音量が p に落ち、テクスチュアが薄くなる。ヴィオラとチェロが pizz. と arco を交替</td><td class="role">m.17–18 は休符でテクスチュアを空ける。m.19付近で pizz.（p）に持ち替え4分音符。m.21 で arco に戻り重音へ</td></tr>
+      <tr><td class="m">22–28</td><td class="tk">—</td><td class="tk">Allegro / 半音階的、m.26 rall.</td><td>fz を伴う f の高潮。m.26から rall.、全パートが同型リズムで f</td><td class="role">fz の重音・和音で高潮に参加。m.25付近に♯の音型。m.26 rall. では全パートと同型のリズム</td></tr>
+      <tr><td class="m">29–42</td><td class="tk">—</td><td class="tk"><b>Meno mosso</b>（1小節=60）</td><td><b>第2主題（中間部）開始。</b>1stVnが p molto cantabile e dolce のワルツ風旋律</td><td class="role"><b>付点2分音符（白玉）の持続音のみ。</b>p。動きはチェロに任せ、和声の中間層を埋める役に徹する</td></tr>
+      <tr><td class="m">43–56</td><td class="tk">—</td><td class="tk">Meno mosso / ♯系へ転調</td><td>cresc.、和声が半音階的に上昇。m.50付近からヴィオラが32分の装飾的走句</td><td class="role">白玉の持続を継続しつつ cresc.。<b>m.50付近から16分〜32分の走句（スラー付き）が登場</b>し、mf で装飾的に浮かび上がる</td></tr>
+      <tr><td class="m">57–70</td><td class="tk">—</td><td class="tk">Meno mosso / poco rit.–a tempo</td><td>m.58 poco rit.、m.59 a tempo で p に戻る。ヴィオラにトリル</td><td class="role"><b>m.57–58付近にトリル。</b>m.59–60 で16分音符のグループ。以後は再びタイの掛かった白玉へ</td></tr>
+      <tr><td class="m">71–83</td><td class="tk">—</td><td class="tk">Meno mosso / dim.</td><td>旋律が下降し dim.。中間部の終息</td><td class="role">長いタイの持続音。m.82–83 で4分音符の音型に戻る</td></tr>
+      <tr><td class="m">84–91</td><td class="tk"><span class="rl">B</span>&nbsp;84</td><td class="tk">Meno mosso → 加速</td><td>B で pp。直後から <b>sempre cresc. ed accel.</b> で ff まで一気に押し上げ、主部へ橋渡し</td><td class="role">B 以降、sempre cresc. ed accel. に白玉から参加し、m.91 の ff に合流</td></tr>
+      <tr><td class="m">92–105</td><td class="tk">—</td><td class="tk"><b>Tempo I.</b>（1小節=80）/ ヘ長調</td><td><b>展開部開始。</b>m.92 は ff の和音＋チェロ pizz.、m.94 から p で仕切り直し</td><td class="role">m.92 ff。m.94 から p で8分音符の走句グループを担当。ここでは2ndVnとともに主部の動力側に回る</td></tr>
+      <tr><td class="m">106–119</td><td class="tk">—</td><td class="tk">Tempo I. / 半音階的展開</td><td>marcato の指示。各パートが走句を受け渡しながら cresc.</td><td class="role"><b>両ヴァイオリンが1小節おきに交替する中、ヴィオラだけが全小節に8分音符の音型を持つ。</b>実質この区間の唯一の連続的推進力</td></tr>
+      <tr><td class="m">120–133</td><td class="tk"><span class="rl">C</span>&nbsp;121</td><td class="tk">Tempo I.</td><td><b>ff＞mf の急な音量段差</b>が繰り返し出る最も激しい区間。8分休符を挟むオフビート和音</td><td class="role">C。m.122–125 は<b>休符</b>で一度抜け、m.126 から復帰。ff＞mf の段差に参加</td></tr>
+      <tr><td class="m">134–156</td><td class="tk">—</td><td class="tk">Tempo I. / rall.–a tempo</td><td>m.136 rall.、m.137 a tempo で p の静かな区間へ</td><td class="role">音型 →休符 →和音。m.145–147 で f の和音。<b>m.151–154 は ff の連続8分走句</b></td></tr>
+      <tr><td class="m">157–175</td><td class="tk"><span class="rl">D</span>&nbsp;157</td><td class="tk">Tempo I.</td><td><b>fp scherzando</b>（全パートに明記）。軽い跳ねるスタッカート</td><td class="role">D。fp scherzando。m.158–160 は休符、その後スタッカートの8分音型。m.171 から p の4分音符音型で cresc. ed animato</td></tr>
+      <tr><td class="m">176–182</td><td class="tk">—</td><td class="tk"><b>stringendo → rall.</b></td><td>stringendo で ff、フェルマータで一旦停止、rall. → p</td><td class="role">stringendo で ff の音型 → フェルマータ → rall. → p</td></tr>
+      <tr><td class="m">183–198</td><td class="tk">—</td><td class="tk"><b>Tempo I.</b> / ヘ長調</td><td><b>再現部。主題・調・書法が同時に戻る二重再現。</b>チェロが pizz. p で冒頭と同じ骨格</td><td class="role"><b>再現部。冒頭と同じくアクセント付きの4分・2分音符</b>で拍の骨格。m.193付近から♯の音型</td></tr>
+      <tr><td class="m">199–210</td><td class="tk"><span class="rl">E</span>&nbsp;199</td><td class="tk">Tempo I. → rall.</td><td>ヴィオラ・チェロが pizz.、テクスチュアが軽くなる。m.209 から rall. で中間部再現へ</td><td class="role">m.199–200 休符、m.201 で pizz.（p）、m.203 で arco。m.208 f、m.209 rall. で p の4分音符</td></tr>
+      <tr><td class="m">211–234</td><td class="tk">—</td><td class="tk"><b>Meno mosso</b></td><td><b>第2主題の再現。両ヴァイオリンに p molto cantabile が付く</b></td><td class="role"><b>役割が激変。両ヴァイオリンが歌う下で、チェロとともに連続8分音符の分散和音伴奏を担当</b>（1回目の白玉とは正反対）。m.225 cresc. poco a poco</td></tr>
+      <tr><td class="m">235–257</td><td class="tk">—</td><td class="tk">Meno mosso / rit.–a tempo</td><td>m.240 rit.、m.241 a tempo、m.243 から pp。その後 f へ</td><td class="role"><b>m.235・236・239・240 にトリル</b>、m.237–238 は8分音型。m.241 から p、m.244 pp の白玉。m.253以降で f の走句</td></tr>
+      <tr><td class="m">258–265</td><td class="tk">—</td><td class="tk"><b>p sempre più animato e cresc.</b></td><td><b>加速区間。1stVnは休符</b>、内声が動力になる</td><td class="role"><b>p sempre più animato の中、スタッカートの反復和音（3つ組）</b>を全小節にわたって刻み続ける。加速のリズム基盤</td></tr>
+      <tr><td class="m">266–271</td><td class="tk"><span class="rl">F</span>&nbsp;266</td><td class="tk"><b>Vivace（1小節=96）</b></td><td>コーダのクライマックス。1stVnが輝かしいスタッカート走句</td><td class="role"><b>Vivace（F）。2ndVnとともにアクセント付きの和音</b>で1stVnの走句を支える</td></tr>
+      <tr><td class="m">272–285</td><td class="tk">—</td><td class="tk">calando → <b>Tempo I.</b> → pizz.</td><td>急速に沈静。fp の断片を経て、全パート pizz. の pp で終止</td><td class="role">calando → m.274付近で pizz. → m.276–277 fp → 終結は pp の和音</td></tr>
+    </tbody></table></div>
+    <p class="note">リハーサル記号は A〜F の6つ。冒頭の速度表示は 3/4 拍子であることから「付点2分音符＝1小節」を基準にした表記、つまり<b>1小節を80／60／96で振る</b>と読むのが自然です。版によって解釈が分かれうるため、合わせの前に必ず確認してください。小節番号は総数299小節に対する推定値で、<b>楽章後半ほど実数より小さく出ている可能性</b>があります。</p>
+    <h3 style="margin-top:30px;font-size:1.06rem">リハーサル記号の位置</h3>
+    <div class="cyclic"><div class="cyc-row"><div class="cyc-label">記号＝小節</div><div class="cyc-events">
+      <div class="cyc-evt"><span class="m"><span class="rl">A</span>17</span><span class="d">音量が p に落ち、2ndVnがレガート線に転じる</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">B</span>84</span><span class="d">pp。直後に sempre cresc. ed accel.</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">C</span>121</span><span class="d">ff＞mf の段差が始まる</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">D</span>157</span><span class="d">fp scherzando（全パートに明記）</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">E</span>199</span><span class="d">ヴィオラ・チェロが pizz.、p に落ちる</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">F</span>266</span><span class="d">Vivace（1小節=96）と同時</span></div>
+    </div></div></div>
+    <div class="callout"><h4>Va の難所トップ5</h4><ol class="diff-list" style="list-style:none;padding:0">
+      <li class="diff-item"><span class="diff-rank">1</span><p><b>m.106–119（展開部の marcato 区間）— 一人だけ途切れない8分音符</b><b>両ヴァイオリンが1小節おきに交替して休む中、ヴィオラだけが全小節に音型を持ちます。</b>実質この14小節の推進力を一人で担います。ヴァイオリンより弦長が長く指の間隔が広いため、同じ8分音符でも左手の移動距離が大きく、速いテンポでの精度が落ちやすい。marcato の指示があり輪郭を立てる必要がありますが、そこで弓を使いすぎるとヴァイオリンの交替を消してしまいます。<br><b>対策：</b>運指はポジション移動を最小化する方向で。開放弦を積極的に使い、移動が必要なら同弦シフトを1小節に1回までに制限する。<b>ヴィオラでは「4指を伸ばして届かせる」より「ポジションを上げる」方が音程が安定します。</b>中弓から中弓下部、弓幅3cm 程度のデタシェで、marcato は弓幅ではなく<b>弓の初速</b>で作る。合奏では「自分が拍を出している」意識を持ってください。ここで揺れると誰も支えがありません。</p></li>
+      <li class="diff-item"><span class="diff-rank">2</span><p><b>m.211–257（第2主題再現）— 連続8分音符の分散和音伴奏とトリル</b><b>1回目の中間部では白玉だけだったのに、再現では約45小節にわたって連続8分音符の伴奏に回ります。</b>役割が正反対になるため、1回目の感覚のままだと入り方を間違えます。p から pp で長時間刻み続ける持久戦で、ヴィオラの太い弦を弱音で滑らかに鳴らすのはヴァイオリンより難しい。トリルが伴奏の流れの中に突然挟まり、ヴィオラの弦長では回転が重くなりやすい。<br><b>対策：</b>中弓、弓幅を小さく（2〜3cm）、弦を離さない連続デタシェ。分散和音で弦を跨ぐ箇所は<b>右肘の高さを跨ぎの中間位置に固定</b>して上下動を減らす。これがヴィオラでは特に効きます。トリルは1指と2指、または2指と3指の組み合わせを優先し、3–4指のトリルは可能ならポジションを変えて回避する。♯系の区間はチェロの分散和音と二人で合わせてください。二人が揃えばヴァイオリンの歌は自然に乗ります。</p></li>
+      <li class="diff-item"><span class="diff-rank">3</span><p><b>m.50–63（第1中間部）— 32分音符の走句とトリル</b><b>中間部で唯一ヴィオラが表に出る箇所</b>です。白玉ばかりの中に突然速い装飾走句が来るため、手が温まっていない状態で技巧を要求されます。♯系の転調の最中で、アルト記号＋臨時記号の読譜が重い。<br><b>対策：</b>走句は「装飾」であって「主役」ではありません。1stVnの旋律を消さない音量設計が必要で、<b>mf は書いてあるが、弓量ではなく明瞭さで存在感を出す</b>——駒寄りの接点で弓幅は小さく。運指は1つのポジションに収めることを最優先に。走句の途中でシフトすると32分音符では確実に間に合いません。白玉区間からこの走句に入る直前に、左手を準備する小節を決めておいてください。前の小節の白玉を弾きながら指を配置します。</p></li>
+      <li class="diff-item"><span class="diff-rank">4</span><p><b>m.151–154 と m.120–133（C）— ff の連続8分走句と休符からの復帰</b>ff で8分音符の走句を4小節続けます。<b>ヴィオラの弦は反応が遅いため、ff で速く弾くと発音が遅れて聴こえます。</b>C では m.122–125 が休符で、m.126 に単独で ff の中へ復帰します。長い休符の後の入りは外しやすい。<br><b>対策：</b>ff の発音は<b>圧をかけてから弓を動かす</b>。ヴィオラでは弓を動かしてから圧をかけると必ず発音が遅れます。弦を弓の毛でつかんでから引く動作を各音に入れる。接点は駒寄り、弓幅4〜5cm、中弓下部から元。弓幅を広げすぎると4小節持ちません。休符は数えるのではなく、<b>他パートの何を聴くかを決めておく</b>。この区間はチェロが記号を往復しながら動いているので、チェロの音型を目印にするのが確実です。</p></li>
+      <li class="diff-item"><span class="diff-rank">5</span><p><b>m.157–175（D）と m.258–271（コーダ）— fp scherzando と反復和音</b>D の fp scherzando は<b>アクセントを付けた直後に消す</b>という制御で、ヴィオラの重い弦でこれを軽くやるのが難しい。休符を挟むため、入るたびに fp をゼロから作り直します。コーダではスタッカートの反復和音を7小節以上刻み続け、加速しながら、しかも重音なので<b>弓の角度が固定されて疲労が早い</b>。<br><b>対策：</b>fp は<b>弓速で作る</b>。元弓で圧をかけるとヴィオラでは重くなりすぎます。中弓やや上で初速を速く、すぐ減速する。これが scherzando の指示に合います。反復和音は腕の重さを乗せたまま手首で刻む。腕全体で刻むと7小節持ちません。重音は<b>下の弦を確実に鳴らす角度</b>を優先してください。両方を均等に狙うと角度が中途半端になり、加速すると片方が抜けます。Vivace は2ndVnと完全に同型のリズムなので、二人だけで先に合わせてから四人で通してください。</p></li>
+    </ol></div>
+    <h3 style="margin-top:34px;font-size:1.08rem">この楽章で Va が担うもの</h3>
+    <p class="lede">ヴィオラはこの楽章で<b>和声の中間層とリズムの基盤を場面ごとに切り替える</b>役を担います。主部ではアクセント付きの持続音と4分音符の刻みで拍の骨格を作り、展開部の m.106–119 では<b>両ヴァイオリンが1小節おきに交替する中、ただ一人途切れない8分音符</b>を持つことで、この区間の推進力を実質的に単独で支えます。第1中間部では付点2分音符の白玉に徹し、m.50–63 の32分音符走句とトリルだけが唯一表に出る瞬間です。ところが<b>第2中間部の再現では、両ヴァイオリンが歌う下でチェロとともに連続8分音符の分散和音伴奏に回り、役割が完全に反転します</b>。同じ主題の1回目と2回目で真逆の書法を与えられているのは、4パート中ヴィオラが最も顕著です。技術的な核心は、アルト記号＋多量の臨時記号という読譜負荷と、広い指の間隔・反応の遅い弦で8分音符の連続を p でも ff でも均質に鳴らすことにあります。</p>
+    <h3 style="margin-top:34px;font-size:1.08rem">4パートの役割比較</h3>
+    <div class="compare"><div class="compare-head"><div>観点</div><div>Vn1</div><div>Vn2</div><div>Va</div><div>Vc</div></div>
+      <div class="compare-row"><div>主部（第1主題）での機能</div><div><b>旋律。</b>下行音階型の8分走句でスケルツォの輪郭そのものを描く。メンデルスゾーン風と評される音型はここ</div><div><b>動力。</b>sempre stacc. の8分音符を休みなく刻み、1stVnの走句を下から均質に支える</div><div class="me"><b>拍の骨格。</b>アクセント付きの持続音と4分音符の刻みで、和声の中間層と拍の重心を作る</div><div><b>土台。</b>pizz. の4分音符が拍と和声の基準点。他が弓で刻む中、唯一「点」を明示</div></div>
+      <div class="compare-row"><div>中間部（第2主題）での機能</div><div><b>独唱 → 二重唱。</b>1回目は molto cantabile e dolce の単独主題。2回目は2ndVnと並ぶ二重唱の上声に変わる</div><div><b>内声 → 旋律。</b>1回目は3度・6度の白玉で支えるだけ。<b>2回目は molto cantabile が付き旋律側に昇格</b>——4パート中最も役割変化が大きい</div><div class="me"><b>白玉 → 伴奏。</b>1回目は付点2分の持続音のみ。<b>2回目は連続8分の分散和音伴奏に反転</b></div><div><b>一貫して伴奏の全責任。</b>1回目は約55小節を単独で連続8分。2回目はヴィオラと分担して負担が軽くなる</div></div>
+      <div class="compare-row"><div>最大の見せ場</div><div><b>m.266–271（Vivace, F）。</b>楽章最速で華麗なスタッカート走句を単独で。技術的頂点</div><div><b>m.258–265。</b>1stVnが休む中、半音階の連続音型を単独で刻み、楽章を Vivace へ運ぶ。露出度が最も高い</div><div class="me"><b>m.106–119（marcato）。</b>両ヴァイオリンが1小節おきに交替する中、ただ一人途切れない8分音符で推進力を独占</div><div><b>m.29–91</b>（第1中間部の全伴奏）と <b>m.178–181</b>（stringendo の ff ペダル）。前者は持久、後者は支配力</div></div>
+      <div class="compare-row"><div>技術的な核心</div><div>「軽く落ちる走句」と「悠々と歌う旋律」という<b>両極端な語法の往復</b>。および Vivace の極小デタシェ</div><div><b>どの機能を担っているかを小節単位で把握し、弓の位置・量・接点を切り替えること</b>。伴奏・内声・旋律・テンポ主導の4役</div><div class="me"><b>アルト記号＋多量の臨時記号の読譜負荷</b>と、広い指間隔・反応の遅い弦での8分音符の均質化</div><div><b>pizz. と arco の頻繁な持ち替え</b>、高音域での譜表切替、発音の遅れを見越した先行</div></div>
+      <div class="compare-row"><div>音量設計上の注意</div><div>p でも指板寄りに逃げない。m.243–257 の pp 最高音域は最も許容範囲が狭い</div><div>ff＞mf と fp を<b>1本の弓の中で位置と量を切り替えて</b>作る。弓を離して戻すと間に合わない</div><div class="me">fp は弓圧ではなく<b>弓速</b>で作る。mf の走句は音量でなく明瞭さで存在感を出す</div><div>ff は弓を長く使わず<b>駒寄り＋圧</b>で作る。pizz. は指板寄りで暖かく</div></div>
+      <div class="compare-row"><div>他パートとの縦の合わせ方</div><div>主部では自分が旋律の基準。m.86–91 の走句交替は2ndVnと<b>数値でテンポを共有</b>してから合わせる</div><div>主部では<b>チェロの pizz. と同時に弓が動き出している</b>状態を作る。「1拍目」でなく<b>小節の頭で合わせる</b></div><div class="me">m.106–119 は<b>自分が拍を出している</b>意識を持つ。中間部再現は<b>チェロと二人で先に合わせる</b></div><div>全体の拍の基準だが、<b>耳で合っていると感じたら既に遅れている</b>。ヴィオラの刻みよりわずかに前へ置く</div></div>
+      <div class="compare-row"><div>休符・数え間違いの危険箇所</div><div>m.141–144（4小節休）、m.258–265（ほぼ全休）、m.275 前後の calando</div><div>m.71–83 の断片的な入り、C 周辺のオフビート（拍の頭に音がない）</div><div class="me">m.17–18、<b>m.122–125（4小節休、単独で ff へ復帰）</b>、m.158–160、m.199–200</div><div>m.6–7、m.13–14、m.134–135、m.187–188。<b>pizz. 区間の直後の休符が多い</b></div></div>
+      <div class="compare-row"><div>テンポ変更点での責任</div><div>Meno mosso への移行と Tempo I への復帰で旋律側から示す。フェルマータの長さを決める</div><div><b>m.84–91 と m.258–265 の2つの加速区間で実質的な主導権を持つ。</b>数値を決めて他パートと共有する義務がある</div><div class="me">加速区間では反復和音でリズムの基盤を提供。<b>自分が揺れると1stVnの走句が支えを失う</b></div><div><b>加速の物理的なエンジン。</b>Vivace では唯一 sempre legato の線として動く</div></div>
+    </div>
+  </div>
+</section>
+<section id="mvtiii">
+  <div class="wrap">
+    <div class="mvt-head"><div><span class="kicker">MOVEMENT III</span><h2 class="h-title">第3楽章 — Notturno: Andante</h2></div><div class="mvt-key">イ長調 / 3/4 / 三部形式＋コーダ / 約180小節</div></div>
+    <p class="lede">全曲で最も有名な楽章です。冒頭でチェロが Solo の指示付きで主題を歌い、1stVnは23小節にわたって完全に沈黙します。<b>4人全員が必ず主題を歌う「回り持ち」の楽章</b>で、主題が楽器を替えるたびに伴奏の書法が丸ごと入れ替わります。中間部はヘ長調（第47〜110小節）、そこからカノンによる再現へ向かいます。副次主題は1953年のミュージカル『キスメット』で <i>Baubles, Bangles, and Beads</i> に転用されました。</p>
+    <h3 style="margin-top:30px;font-size:1.06rem">主題の受け渡しマップ</h3>
+    <p class="lede">この楽章の核心です。主題が4パートを巡るたびに、伴奏の書法が丸ごと入れ替わります。</p>
+    <div class="tbl-scroll"><table class="form-map"><thead><tr><th>小節</th><th>主題を持つパート</th><th>伴奏側の書法</th><th>2ndVn の位置づけ</th></tr></thead><tbody>
+      <tr><td class="m">1–23</td><td class="tk">チェロ（Solo.）</td><td>2ndVn＋ヴィオラが同型の反復和音。1stVnは完全に休み</td><td class="role">伴奏の上半分。ヴィオラと2人で1台の楽器を作る</td></tr>
+      <tr><td class="m">24（A）</td><td class="tk">1stVn（オクターヴ上）</td><td>ヴィオラが連続8分に交代、チェロが低音</td><td class="role">付点2分の持続重音＝和声の芯</td></tr>
+      <tr><td class="m">47（B）</td><td class="tk">1stVn（appassionato）</td><td>ヴィオラ・チェロが cresc. で mf</td><td class="role">休み。次の入りの準備</td></tr>
+      <tr><td class="m">52前後</td><td class="tk">2ndVn（appass. e risoluto）</td><td>1stVnが主題を継続、ヴィオラ・チェロが刻み</td><td class="role">2ndVnの第1の歌</td></tr>
+      <tr><td class="m">69（C）</td><td class="tk">チェロ（p cantab.）</td><td>2ndVn・ヴィオラが fp のあと長い持続和音</td><td class="role">持続和音。fp を強くしすぎない</td></tr>
+      <tr><td class="m">77–83</td><td class="tk">1stVn（p cantabile）</td><td>2ndVn持続和音、チェロ持続低音</td><td class="role">持続和音</td></tr>
+      <tr><td class="m">84–90</td><td class="tk">ヴィオラ（Solo.）</td><td>2ndVnが和音、1stVnが risoluto／dim. の走句</td><td class="role">和音支え。ヴィオラを立てる</td></tr>
+      <tr><td class="m">91–104</td><td class="tk">全員（走句がヴィオラ→2ndVn→チェロ→1stVnと巡る）</td><td>主題は1stVnとチェロがトリル付きで重ねる</td><td class="role">走句の一部ののち ff で推進役</td></tr>
+      <tr><td class="m">115（D）</td><td class="tk">1stVnとチェロのカノン</td><td>2ndVn＝連続8分、ヴィオラ＝分散した支え</td><td class="role">カノンを支える絨毯</td></tr>
+      <tr><td class="m">138（E）</td><td class="tk">1stVn ⇄ 2ndVn の掛け合い</td><td>チェロが pizz.、ヴィオラが mf leggiero</td><td class="role">2ndVnの最重要の見せ場</td></tr>
+      <tr><td class="m">159（F）</td><td class="tk">ヴィオラ（＋チェロ arco 復帰）</td><td>1stVnは p の和音のあと休み</td><td class="role">和音支え</td></tr>
+      <tr><td class="m">168（G）</td><td class="tk">1stVn＋チェロの二重唱</td><td>ヴィオラが pp の8分</td><td class="role">risoluto の走句で場面転換を作り退場</td></tr>
+    </tbody></table></div>
+    <h3 style="margin-top:30px;font-size:1.06rem">フォームマップ</h3>
+    <div class="tbl-scroll"><table class="form-map"><thead><tr><th>小節</th><th>記号</th><th>テンポ・調</th><th>出来事</th><th>Va の動き</th></tr></thead><tbody>
+      <tr><td class="m">1–23</td><td class="tk">—</td><td class="tk">Andante ♩=60 / イ長調</td><td><b>チェロ Solo が主題を提示。1stVnは23小節間まったく休み</b></td><td class="role"><b>2ndVnと同型の反復和音（p）。</b>チェロ Solo の伴奏の下半分。m.15前後から8分の動きがやや独立し始める</td></tr>
+      <tr><td class="m">24–35</td><td class="tk"><span class="rl">A</span></td><td class="tk">Andante / イ長調</td><td><b>主題が1stVnへ</b>（オクターヴ上、p cant. ed espress.）</td><td class="role"><b>連続8分の走る伴奏に交代</b>（p）。2ndVnの持続重音の内側で、動きの全てを担当</td></tr>
+      <tr><td class="m">36–42</td><td class="tk">—</td><td class="tk">イ長調 → 経過</td><td>1stVnが高音域で装飾を伴い歌い上げる</td><td class="role">連続8分を継続。1stVnの高音の歌の下で、途切れなく回り続ける</td></tr>
+      <tr><td class="m">43–46</td><td class="tk">—</td><td class="tk">dim. → <b>rall.</b> → a tempo</td><td>第1部の終結、音量が落ちる</td><td class="role">dim. を明記されつつ8分を継続、rall. に乗る。<b>rall. は動いている自分が作るもの</b></td></tr>
+      <tr><td class="m">47–51</td><td class="tk"><span class="rl">B</span></td><td class="tk"><b>più mosso</b>, appass. e risoluto / ヘ長調系へ</td><td>1stVnが情熱的な第2の表情を提示（トリル多数）</td><td class="role">cresc. → mf。4分音符主体の推進する内声へ。フラット系の臨時記号が増える</td></tr>
+      <tr><td class="m">52–56</td><td class="tk">—</td><td class="tk">più mosso / 転調継続</td><td><b>2ndVnが appass. e risoluto で参入</b>、1stVnの素材を模倣</td><td class="role">2本のヴァイオリンの絡みの下で、4分＋8分の和声的な支え</td></tr>
+      <tr><td class="m">57–68</td><td class="tk">—</td><td class="tk">più mosso / cresc. → f</td><td>2本のヴァイオリンが対等に絡む唯一の長い区間</td><td class="role">4分＋8分の和声的な支えを継続。cresc. で f へ</td></tr>
+      <tr><td class="m">69–76</td><td class="tk"><span class="rl">C</span></td><td class="tk">転調域</td><td><b>チェロに主題回帰（p cantab.）</b></td><td class="role">fp のあと長い持続音。チェロの p cantab. を支える</td></tr>
+      <tr><td class="m">77–83</td><td class="tk">—</td><td class="tk">—</td><td>主題が1stVnへ（p cantabile）</td><td class="role">数小節休んだのち再入。m.82〜83 で dim. の8分</td></tr>
+      <tr><td class="m">84–90</td><td class="tk">—</td><td class="tk">—</td><td><b>主題がヴィオラへ（Solo. cantabile）</b></td><td class="role"><b>Solo. cantabile — ヴィオラが主題を歌う。</b>前打音・32分の装飾を伴う。m.87 に fz</td></tr>
+      <tr><td class="m">91–97</td><td class="tk">—</td><td class="tk">sempre cresc.</td><td>上行走句が各パートを巡り、risoluto で積み上がる</td><td class="role"><b>risoluto の上行16分走句を先導</b>（m.92付近）。クライマックスへの点火役</td></tr>
+      <tr><td class="m">98–104</td><td class="tk">—</td><td class="tk"><b>ff</b></td><td>楽章の頂点。1stVnとチェロがトリル付きで主題を強奏</td><td class="role">ff の4分音符和音。2ndVnと組んでクライマックスのリズムを刻む</td></tr>
+      <tr><td class="m">105–114</td><td class="tk">—</td><td class="tk">dim. <b>perdendosi</b></td><td>熱が引き、ヴィオラの残響句を経て静寂へ</td><td class="role">dim. のあと <b>p cantabile で旋律的な残響句</b>（m.108前後）。D への橋渡しを歌う</td></tr>
+      <tr><td class="m">115–137</td><td class="tk"><span class="rl">D</span></td><td class="tk"><b>Tempo I.</b> / イ長調（再現）</td><td><b>1stVnとチェロの主題カノン</b>（pp dolce / fp cant. ed espress.）</td><td class="role">4分＋8分の軽い支え（2ndVnの連続8分の内側）。カノンを邪魔しない薄い層</td></tr>
+      <tr><td class="m">138–158</td><td class="tk"><span class="rl">E</span></td><td class="tk">Andante / イ長調</td><td><b>1stVnと2ndVnの掛け合い。</b>チェロは pizz.、ヴィオラは mf leggiero</td><td class="role"><b>mf leggiero、8分2つ組×3を毎小節。</b>2本のヴァイオリンのカノンの下で拍そのものを供給。<b>弓で拍を刻んでいるのはヴィオラだけ</b></td></tr>
+      <tr><td class="m">159–167</td><td class="tk"><span class="rl">F</span></td><td class="tk">Andante</td><td>主題が低声部（ヴィオラ、チェロは arco 復帰）へ</td><td class="role"><b>低声部の主題を担当。</b>cantabile の旋律線（前打音・32分・3連を含む）。チェロの arco 復帰と組む</td></tr>
+      <tr><td class="m">168–177</td><td class="tk"><span class="rl">G</span></td><td class="tk">Andante / イ長調</td><td><b>1stVnとチェロの最後の二重唱</b></td><td class="role">pp → 8分の穏やかな伴奏。1stVn＋チェロの二重唱を支える</td></tr>
+      <tr><td class="m">178–183</td><td class="tk">—</td><td class="tk">dim. — <b>perdendosi</b></td><td>4声の高音和音が消えて終結</td><td class="role">16分の音型を経て dim. — perdendosi。内声として最後の和音を保つ</td></tr>
+    </tbody></table></div>
+    <p class="note">リハーサル記号は A〜G の7つ。小節番号は総数180小節に対する推定値で、後半ほど最大3小節のずれがありえます。<b>チェロの高音域の記譜がテノール記号かどうかは初版の印刷から判別できませんでした。</b>読み違えると3度ずれるため、パート譜で必ず確認してください。</p>
+    <h3 style="margin-top:30px;font-size:1.06rem">リハーサル記号の位置</h3>
+    <div class="cyclic"><div class="cyc-row"><div class="cyc-label">記号＝小節</div><div class="cyc-events">
+      <div class="cyc-evt"><span class="m"><span class="rl">A</span>24</span><span class="d">主題が1stVnへ</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">B</span>47</span><span class="d">a tempo — più mosso, appass. e risoluto</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">C</span>69</span><span class="d">主題がチェロへ回帰（p cantab.）</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">D</span>115</span><span class="d">Tempo I.（再現部、カノン開始）</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">E</span>138</span><span class="d">1stVn／2ndVn の掛け合い、チェロ pizz.</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">F</span>159</span><span class="d">低声部へ主題、チェロ arco</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">G</span>168</span><span class="d">1stVn＋チェロの最終二重唱、コーダへ</span></div>
+    </div></div></div>
+    <div class="callout"><h4>Va の難所トップ5</h4><ol class="diff-list" style="list-style:none;padding:0">
+      <li class="diff-item"><span class="diff-rank">1</span><p><b>m.84–90 — Solo. cantabile</b><b>ヴィオラがこの楽章で唯一、明確に Solo. と書かれて主題を歌う場所</b>です。直前まで和声の内側にいた楽器が、急に前へ出る音量と音色を作らねばならない。この主題はもともとチェロの高音域と1stVnの高音域で鳴っていたもので、<b>ヴィオラで弾くと音域が中庸になり埋もれます</b>。装飾がヴァイオリンより広い指間隔で要求され、音程が甘くなりやすい。<br><b>対策：</b><b>弦の選択が決定的です。</b>同じ音を A線の高いポジションで取るか D線の高ポジションで取るかで性格が変わります。ヴィオラの A線は明るいが細くなりがちなので、<b>歌の芯は D線寄りのポジションで作り、頂点だけ A線へ移す</b>設計が有効。C線が使える音域なら、C線の倍音の豊かさは他の3人が絶対に出せない武器です。音量は「大きく」ではなく<b>接点を駒寄りにして倍音を増やす</b>で作る。装飾は指を寝かせず指先を立てて、<b>手のひらの位置を装飾の間動かさない</b>こと。装飾のためのポジション移動は禁じ手です。</p></li>
+      <li class="diff-item"><span class="diff-rank">2</span><p><b>m.138–158（E以降）— mf leggiero の8分2つ組、20小節超</b>2本のヴァイオリンがカノンを歌い、チェロが pizz. になるこの区間で、<b>弓で拍を刻んでいるのはヴィオラだけ</b>です。つまり20小節以上、楽章のテンポの全責任がヴィオラにあります。しかも指示は leggiero で、<b>重い楽器で軽い8分を延々と続ける</b>という、ヴィオラにとって最も体力を消耗する組み合わせです。<br><b>対策：</b>弓の場所を中弓のごく狭い範囲に固定し、量を数値で決める（2〜3cm）。leggiero は弓を短くすることで作り、圧を抜いて作らない。圧を抜くと発音が消えます。<b>右手の指の柔軟性で軽さを作る</b>——腕全体で刻むと20小節持ちません。2つ組の2音目が痩せないよう、返しの直前で弓速をわずかに落とす練習を単独で。<b>チェロの pizz. と縦を合わせる際は、pizz. の発音が早いのでヴィオラはわずかに前に出る意識</b>で丁度合います。ここは実際に2人で合わせて確認すべき箇所です。</p></li>
+      <li class="diff-item"><span class="diff-rank">3</span><p><b>m.24–46（A〜B直前）— 連続8分の走る伴奏、20小節超</b>E以降と並ぶ持久戦です。1stVnが高音で自由に歌い、2ndVnが付点2分で止まっている中、<b>ヴィオラだけが動き続けます</b>。弓の返しでアクセントが出て歌を邪魔する。20小節の間に無意識にテンポが速くなる（動いている人が急ぐのは物理法則です）。m.43 からの dim. と rall. を、動いている自分が主導しなければならない。<br><b>対策：</b>8分の運指を<b>ポジション移動ゼロ</b>で組む。この区間は音色より均一性が優先です。メトロノームを2拍目だけ、あるいは1小節に1回だけ鳴らす設定で通す。8分に合わせる練習だけでは、遅れや突っ込みの自己修正能力が育ちません。<b>rall. は自分が作るものと自覚する。</b>8分の間隔を自分が広げれば全員が遅くなります。1stVnに付いていく発想だと必ず遅れます。弓は下半分を使わない——元弓は重く、p の伴奏では音が立ちすぎます。</p></li>
+      <li class="diff-item"><span class="diff-rank">4</span><p><b>m.159–167（F）— 低声部の主題</b>ヴァイオリン2本が退いた後、<b>ヴィオラとチェロだけで主題を鳴らす、楽章で最も暗く豊かな瞬間</b>です。低い音域で cantabile を作るには弓の重みが要るのに指示は p。チェロと音域が近く、どちらが旋律でどちらが支えかが曖昧になりやすい。アルト記号で加線の少ない中低音域が続くため、逆に読み間違えやすい。<br><b>対策：</b><b>C線・G線の開放的な響きを積極的に使う。</b>ここはヴィオラという楽器の存在理由を示す場所です。指板寄りの柔らかい接点で、弓を長く使い、圧は弓の自重に任せる。<b>チェロと役割を明示的に決める</b>——どちらが旋律線か、どちらが対旋律か。譜面から即断しにくい書法なので、合奏の場で合意すべき箇所です。ヴィブラートは幅を広く、速度は遅く。低音域で速い細かいヴィブラートをかけると音がやせます。</p></li>
+      <li class="diff-item"><span class="diff-rank">5</span><p><b>m.91–97（C後半）— risoluto の上行16分走句</b><b>クライマックスへの点火役がヴィオラです。</b>sempre cresc. の中で最初に走句を出すのがヴィオラで、この走句が2ndVn・チェロ・1stVnへ受け渡されるので、<b>自分の走句の性格が全体の設計を決めます</b>。ヴィオラの16分走句は反応が遅く濁りやすく、cresc. の途中で音が割れます。<br><b>対策：</b>走句は<b>弦の移動を最小化する運指</b>を選ぶ。ヴィオラの弦交差は物理的に大きく、速いパッセージでは必ず遅れの原因になります。発音を明確にするため、<b>16分の頭を左手の指で「打つ」</b>（左手のアーティキュレーション）。右手だけで粒を作ろうとしないこと。cresc. は弓の量を増やすことで作り、圧の増加は濁りの原因です。さらう順番は、4音ずつ止める練習→リズム変奏→次に受け取るパートと2人で受け渡しだけを練習。</p></li>
+    </ol></div>
+    <h3 style="margin-top:34px;font-size:1.08rem">この楽章で Va が担うもの</h3>
+    <p class="lede">ヴィオラはこの楽章で<b>動きの供給者であり、同時に4人の中で最も遅く、最も深い声で主題を歌う者</b>です。冒頭は2ndVnと一体になってチェロの伴奏の下半分を作り、A 以降は連続8分の走る伴奏、E 以降は leggiero の8分2つ組と、<b>楽章の主要な時間の刻みを2度にわたり単独で担当</b>します。その一方で C 区間の Solo. cantabile と F 以降の低声部主題という2つの見せ場を与えられており、これはチェロ・1stVn・2ndVnが全員主題を持つこの楽章の「回り持ち」設計の一部です。したがってヴィオラの準備は、<b>持久力を要する伴奏（技術）と、C線・D線の音色を作る歌（音楽）の二本立て</b>になります。前者を省力化できる運指と弓使いを確立しておかないと、後者に使う体力が残りません。</p>
+    <h3 style="margin-top:34px;font-size:1.08rem">4パートの役割比較</h3>
+    <div class="compare"><div class="compare-head"><div>観点</div><div>Vn1</div><div>Vn2</div><div>Va</div><div>Vc</div></div>
+      <div class="compare-row"><div>主題を歌う箇所</div><div>A／m.77–83／ff の m.98–104／D のカノン／E の掛け合い／G の二重唱。<b>登場回数は最多だが、常に誰かと組む</b></div><div><b>m.52前後（B の模倣）と E 以降の掛け合いの2箇所のみ。</b>他は全て伴奏</div><div class="me"><b>m.85前後の Solo. cantabile</b> と <b>F 以降の低声部主題</b>、および m.108 付近の cantabile な残響句</div><div><b>冒頭 m.1〜23 の Solo.（主題の原型）／C／D のカノン／G の二重唱。</b>主題の所有者</div></div>
+      <div class="compare-row"><div>伴奏書法</div><div>伴奏はほとんど担当せず、<b>休符か旋律かの二択</b>。支えに回るときは和音か走句</div><div><b>4種類に書き分けられる</b>：反復和音 → 持続重音 → 和音支え → 連続8分</div><div class="me"><b>動きの供給者</b>：反復和音 → 連続8分 → 4分の推進 → 8分2つ組 leggiero</div><div>低音持続 → 能動的なバス → 16分走句 → <b>pizz. の歩くバス</b></div></div>
+      <div class="compare-row"><div>最大の見せ場</div><div><b>A の第一声。</b>23小節の沈黙を破る1音で楽章の第2幕が始まる</div><div><b>E 以降の1stVnとのカノン。</b>伴奏役から主旋律の顔へ切り替わる唯一の長い区間</div><div class="me"><b>m.85 の Solo. cantabile。</b>楽器の音色そのものが主題になる</div><div><b>冒頭 m.1〜23 の Solo。</b>楽章、そして四重奏曲全体で最も有名な旋律</div></div>
+      <div class="compare-row"><div>技術的な核心</div><div>長い休符明けの発音と高ポジションの p、B区間の32分＋トリル、カノンでの装飾の一致</div><div><b>弓を保たせること</b>（付点2分の重音＝1小節3秒）と<b>連続8分の均一性・持久力</b></div><div class="me"><b>持久力</b>（20小節超の刻みが2度）と<b>C線・D線の音色作り</b>、広い指間隔での装飾</div><div><b>弦の選択と弓配分</b>、親指ポジションの判断、<b>pizz. と arco の持ち替え</b>、ff のトリル</div></div>
+      <div class="compare-row"><div>音量設計上の注意</div><div>pp dolce を E線で作らない。ff でチェロを潰さない。<b>最高声部なので何もしなくても聞こえる</b>前提で設計する</div><div><b>常に自分は内声。</b>C区間の fp を出しすぎるとチェロやヴィオラの主題が消える。逆に E 以降は遠慮すると曲が成立しない</div><div class="me">Solo では<b>音量ではなく倍音（接点）で前へ出る</b>。E 以降の leggiero は軽くしすぎると拍が消える</div><div>冒頭 Solo は<b>大きくではなく遠くへ</b>。ff 以外は基本的に p〜mf の設計。pizz. は上の2本を邪魔しない</div></div>
+      <div class="compare-row"><div>他パートとの縦の合わせ方</div><div><b>チェロと合わせる</b>（A の受け継ぎ、D のカノン、m.98 の重奏、G の二重唱）。装飾の形とトリルの回数を事前合意</div><div><b>前半はヴィオラと（同型の刻み）、後半は1stVnと（カノン）。</b>相手が2回替わる</div><div class="me"><b>前半は2ndVnと、E 以降はチェロの pizz. と。</b>pizz. とは弓の発音の立ち上がり分わずかに前に出る</div><div><b>前半は2ndVn＋ヴィオラの刻みの上に乗る、後半は1stVnと。</b>D のカノンでは2ndVnの8分に時間を預け、ルバートしない</div></div>
+      <div class="compare-row"><div>テンポの主導権</div><div>rall. や perdendosi の表情を提案する側だが、<b>時間そのものは持っていない</b></div><div><b>D から E の約23小節、連続8分でテンポを保持。</b>ここは2ndVnが時計</div><div class="me"><b>A から B 直前と E 以降、刻んでいるのがヴィオラだけ</b>の区間があり、実質的な時計</div><div>冒頭 m.1〜23 は <b>Solo として完全にテンポを主導</b>。以後は支える側へ回る</div></div>
+      <div class="compare-row"><div>本番でのリスク</div><div>23小節の休みでの数え落とし／入りの発音事故</div><div>長い休符明け（m.52）の数え落とし、E での消極的な出</div><div class="me">持久戦区間でのテンポの前のめり、Solo での埋没</div><div>Solo での弓不足、pizz. から arco の持ち替え遅れ、頂点での体力使い切り</div></div>
+    </div>
+  </div>
+</section>
+<section id="mvtiv">
+  <div class="wrap">
+    <div class="mvt-head"><div><span class="kicker">MOVEMENT IV</span><h2 class="h-title">第4楽章 — Finale: Andante — Vivace</h2></div><div class="mvt-key">ニ長調 / 2/4 / ソナタ形式 / 約671小節</div></div>
+    <p class="lede">序奏の Andante が展開部の途中と再現部の直前に「割り込み」として再登場し、Vivace の主部が2回、Andante の断片によって断ち切られます。<b>そのたびにテンポが倍以上変化します。</b>拍子は最後まで 2/4 のまま変わらず、テンポ表示だけが変わるため、これが事故の温床になります。主部の主題はチェロ→ヴィオラ→2ndVn→1stVn の順にフーガのように積み上がります。終結では Andante と Vivace 両方の主題が重ねられます。</p>
+    <h3 style="margin-top:30px;font-size:1.06rem">Andante ⇄ Vivace の切り替え地点</h3>
+    <p class="lede">この楽章の最重要ポイントです。テンポが約2倍変化する切り替えが計10回あり、うち2か所は3小節おきに往復します。<b>指揮者のいない四重奏で最も事故が起きやすい箇所</b>です。</p>
+    <div class="tbl-scroll"><table class="form-map wide"><thead><tr><th>小節</th><th>記号</th><th>向き</th><th>テンポ</th><th>Va の動き</th><th>事故が起きやすい理由</th></tr></thead><tbody>
+      <tr><td class="m">約18</td><td class="tk">—</td><td class="tk">Andante → Vivace</td><td class="tk">フェルマータ明け</td><td class="role">直前：チェロと2声の pesante をフェルマータで閉じる。直後：休み</td><td>1stVnが「切る」、チェロが「走り出す」の2段階。フェルマータ後、無伴奏のチェロがいきなり倍速で走り出す</td></tr>
+      <tr><td class="m">約206</td><td class="tk">—</td><td class="tk">Vivace の中で調号解除＋フェルマータ</td><td class="tk">—</td><td class="role"><b>チェロと2人で f risoluto</b></td><td>弱奏の持続音から突然の空白へ。上2声は数えるだけになるので、次の Andante の出を見失いやすい</td></tr>
+      <tr><td class="m">約209</td><td class="tk">—</td><td class="tk"><b>Vivace → Andante</b></td><td class="tk">=108 → ♩76（約半分）</td><td class="role">直前：risoluto を切る。直後：休み</td><td><b>この楽章で最も危険な箇所のひとつ。</b>1stVnと2ndVnだけの2声。指揮者なしで、直前まで別テンポで走っていた身体を一瞬で ♩76 に切り替える</td></tr>
+      <tr><td class="m">約213</td><td class="tk">—</td><td class="tk"><b>Andante → Vivace</b></td><td class="tk">♩76 → =108</td><td class="role"><b>直後：チェロと2人だけで16分音符に切り込む。ヴィオラの最大の責任地点</b></td><td>4小節しかない Andante のあと即座に Vivace。ヴィオラ・チェロが f risoluto で切り込むので、上2声が伸ばしを引きずると激突する</td></tr>
+      <tr><td class="m">約216</td><td class="tk">—</td><td class="tk">Vivace → Andante</td><td class="tk">=108 → ♩76</td><td class="role">直前：risoluto を切る</td><td>3小節単位で振り子のように往復する。<b>小節数を間違えると入りが一つずれる</b></td></tr>
+      <tr><td class="m">約220</td><td class="tk">—</td><td class="tk"><b>Andante → Vivace（本格再開）</b></td><td class="tk">♩76 → =108</td><td class="role">直後：「4分休符＋8分音符」の刻み（fz）</td><td>ここから展開部後半（♭系の遠隔調）に突入。fz の縦を4人で揃えるのが難しい</td></tr>
+      <tr><td class="m">約344</td><td class="tk">—</td><td class="tk">Vivace → Andante</td><td class="tk">=108 → ♩76</td><td class="role">直前：arco 復帰直後の f risoluto。<b>チェロと共同で切る</b></td><td>再現部直前の最大の減速。<b>直前に pizz.→arco の持ち替えがあるため、右手が忙しいまま減速に入る</b></td></tr>
+      <tr><td class="m">約349</td><td class="tk">—</td><td class="tk"><b>Andante → Vivace</b></td><td class="tk">♩76 → =108</td><td class="role">4声全員の f risoluto。内声の16分音符</td><td><b>ここは全員が弾く。</b>4人が同時に f risoluto で突っ込むので、16分音符の粒とテンポ設定が合わないと崩壊する</td></tr>
+      <tr><td class="m">約352</td><td class="tk">—</td><td class="tk">Vivace → Andante</td><td class="tk">=108 → ♩76</td><td class="role">直後：p の序奏動機を4声の一員として</td><td>上と同じ振り子。ここが序奏回帰の最後</td></tr>
+      <tr><td class="m">約355</td><td class="tk"><span class="rl">F</span></td><td class="tk"><b>Andante → Vivace（再現部開始）</b></td><td class="tk">♩76 → =108</td><td class="role">直後：休み約9小節。チェロの刻みを数え続ける</td><td>冒頭とまったく同じ「フェルマータ→無伴奏チェロ」。<b>再現部の全テンポがここのチェロ一人で決まる。</b>速すぎると G 以降の1stVnの主題が破綻し、遅すぎると K の più animato で行き場がなくなる</td></tr>
+    </tbody></table></div>
+    <h3 style="margin-top:30px;font-size:1.06rem">フォームマップ</h3>
+    <div class="tbl-scroll"><table class="form-map"><thead><tr><th>小節</th><th>記号</th><th>テンポ・調</th><th>出来事</th><th>Va の動き</th></tr></thead><tbody>
+      <tr><td class="m">1–18</td><td class="tk">—</td><td class="tk"><b>Andante ♩=76</b> / ニ長調</td><td><b>序奏。</b>1stVn＋2ndVnの問いと、ヴィオラ＋チェロの pesante の答えの対話。フェルマータで閉じる</td><td class="role"><b>答えの側。</b>チェロと2声で pesante の p、半音階的に上行する線。C線〜G線の中低域</td></tr>
+      <tr><td class="m">19–47</td><td class="tk">—</td><td class="tk"><b>Vivace</b>（1小節=108）</td><td><b>主部開始。チェロ単独の8分音符から、ヴィオラが主題を継ぐ</b></td><td class="role"><b>チェロに次ぐ2番手で主部主題に入る</b>（約m.26、segue）。実質のヴィオラ・ソロ</td></tr>
+      <tr><td class="m">48–83</td><td class="tk"><span class="rl">A</span></td><td class="tk">Vivace / ニ長調系</td><td><b>1stVnが f で主題。</b>総奏</td><td class="role">主題から伴奏に移行。8分音符の対旋律とアクセント付きの内声。約m.59から f＞p の交替に参加</td></tr>
+      <tr><td class="m">84–124</td><td class="tk"><span class="rl">B</span></td><td class="tk">Vivace / <b>dolce cantabile</b></td><td><b>第2主題。</b>1stVnが歌い、そのまま半音階で長大に上昇</td><td class="role">第2主題では<b>持続音（p）</b>で和声の土台。約m.92から8分音符の音型を2ndVnから引き継ぎ、約m.99から<b>連続8分音符のモーター役</b></td></tr>
+      <tr><td class="m">125–148</td><td class="tk"><span class="rl">C</span></td><td class="tk">Vivace / <b>p dolce cantabile</b></td><td>第2主題の再提示、薄い書法</td><td class="role">p の旋律的な線（4分＋8分）で1stVnの cantabile に絡む</td></tr>
+      <tr><td class="m">149–161</td><td class="tk"><span class="rl">D</span></td><td class="tk"><b>cresc. e più animato</b></td><td>大きな加速＋クレッシェンド、f へ</td><td class="role">cresc. e più animato でスタッカートの4分・8分。加速に参加、f へ</td></tr>
+      <tr><td class="m">162–205</td><td class="tk">—</td><td class="tk"><b>Tempo I.</b>（＝Vivace）</td><td>全声部が長い持続音の「コラール風」楽節。dim.→大 cresc.</td><td class="role">長い持続音。タイの2分・全音符で内声。dim. → 大 cresc.</td></tr>
+      <tr><td class="m">206–208</td><td class="tk">—</td><td class="tk"><b>調号解除</b>、フェルマータ</td><td>ヴィオラ・チェロの f risoluto 16分音符が割り込む</td><td class="role"><b>ヴィオラとチェロの2人で f risoluto の16分音符。</b>フェルマータの長さを2人で決める</td></tr>
+      <tr><td class="m">209–220</td><td class="tk">—</td><td class="tk"><b>Andante ⇄ Vivace の交替ゾーン①</b></td><td>3小節単位で往復。<b>この楽章で最も危険な区間</b></td><td class="role">Andante 側は休み、Vivace 側でチェロと2人の f risoluto。<b>♩76 の p を聴いた直後に2人だけで =108 に切り込む</b></td></tr>
+      <tr><td class="m">220–266</td><td class="tk">—</td><td class="tk">Vivace / 遠隔調（♭系）</td><td>fz の連続する展開部後半</td><td class="role">「4分休符＋8分音符」の刻み（fz 付き）→ のち総奏のスタッカート4分音符</td></tr>
+      <tr><td class="m">267–300</td><td class="tk"><span class="rl">E</span></td><td class="tk">Vivace / <b>perdendosi</b> → cresc.</td><td>半音階的な長大なオスティナート楽節</td><td class="role">cantabile の旋律線（p→cresc.）。2ndVnのオスティナートの上で1stVnと絡む</td></tr>
+      <tr><td class="m">300–343</td><td class="tk">—</td><td class="tk">Vivace</td><td>オスティナートがヴィオラに移り、pizz. を経て f risoluto へ</td><td class="role"><b>オスティナートを2ndVnから引き継ぐ。</b>「8分音符＋8分休符」の半音階音型を長く担当。約m.330で pizz. → 約m.342で arco</td></tr>
+      <tr><td class="m">344–354</td><td class="tk">—</td><td class="tk"><b>♯2復帰／交替ゾーン②</b></td><td>序奏の最後の回帰。<b>4声全員が f risoluto で突っ込む</b></td><td class="role">4声の一員として p の序奏動機。間の Vivace f risoluto もチェロと担当</td></tr>
+      <tr><td class="m">355–384</td><td class="tk"><span class="rl">F</span></td><td class="tk">Vivace / ニ長調</td><td><b>再現部。冒頭と同じくチェロ単独から積み上がる</b></td><td class="role"><b>再現部でも2番手。</b>チェロの8分音符の上に約m.364から p で主題を再提示 → cresc.</td></tr>
+      <tr><td class="m">385–420</td><td class="tk"><span class="rl">G</span></td><td class="tk">Vivace / f</td><td>1stVnが f で主題（A の再現）</td><td class="role">伴奏へ。f の和音・アクセント付き内声。約m.399から f＞p の交替</td></tr>
+      <tr><td class="m">421–462</td><td class="tk"><span class="rl">H</span></td><td class="tk">Vivace / <b>p cantabile</b></td><td>第2主題の再現。のち1stVnが半音階で長大に上昇</td><td class="role">持続音（p）で第2主題再現を支える → 約m.440から<b>再び連続8分音符のモーター</b></td></tr>
+      <tr><td class="m">463–488</td><td class="tk"><span class="rl">I</span></td><td class="tk">Vivace / p</td><td><b>1stVnが pizz.、チェロがアルト記号に持ち替えて p cantabile の旋律</b></td><td class="role"><b>持続音（2分音符のタイ）。</b>チェロの旋律・2ndVnの刻み・1stVnの pizz. のあいだで和声を保持する薄い一線</td></tr>
+      <tr><td class="m">489–503</td><td class="tk"><span class="rl">K</span></td><td class="tk"><b>arco più animato e cresc.</b></td><td>加速しながらの大クレッシェンド</td><td class="role"><b>marcato 明示。</b>4分・8分音符で加速の駆動に参加</td></tr>
+      <tr><td class="m">504–548</td><td class="tk">—</td><td class="tk"><b>Tempo I.</b></td><td>長い持続音の楽節（コーダへの助走）</td><td class="role">持続音。p のヘアピン</td></tr>
+      <tr><td class="m">549–600</td><td class="tk"><span class="rl">L</span></td><td class="tk">Vivace</td><td>ff の総奏 → p まで落ち、cresc. poco a poco で最終の追い込みへ</td><td class="role">ff → pizz. → 約m.556で ff arco に復帰。8分音符と持続音</td></tr>
+      <tr><td class="m">600–613</td><td class="tk">—</td><td class="tk">Vivace → <b>rit.</b></td><td><b>コーダ。Andante と Vivace 両方の主題が重なる</b></td><td class="role"><b>ト音記号に持ち替え</b>、高音域で marcato の旋律的内声。約m.607でアルト記号に戻り終止和音へ</td></tr>
+    </tbody></table></div>
+    <p class="note">リハーサル記号は A〜L（J は不使用）。小節番号はシステム積算による推定で、外部資料の総数671に対し約9%少なく出ています。<b>区間の順序と相対的な長さは信頼できますが、実譜に読み替えるときは必ずリハーサル記号を基準にしてください。</b></p>
+    <h3 style="margin-top:30px;font-size:1.06rem">リハーサル記号の位置</h3>
+    <div class="cyclic"><div class="cyc-row"><div class="cyc-label">記号＝小節</div><div class="cyc-events">
+      <div class="cyc-evt"><span class="m"><span class="rl">A</span>48</span><span class="d">1stVnが f で主題を取る</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">B</span>84</span><span class="d">dolce cantabile（第2主題）</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">C</span>125</span><span class="d">p dolce cantabile</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">D</span>149</span><span class="d">cresc. e più animato</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">E</span>267</span><span class="d">直後に perdendosi</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">F</span>355</span><span class="d">F Vivace.（再現部開始）</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">G</span>385</span><span class="d">f の総奏</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">H</span>421</span><span class="d">p cantabile</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">I</span>463</span><span class="d">1stVn pizz.、チェロが旋律</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">K</span>489</span><span class="d">arco più animato e cresc.</span></div>
+      <div class="cyc-evt"><span class="m"><span class="rl">L</span>549</span><span class="d">ff の後</span></div>
+    </div></div></div>
+    <div class="callout"><h4>Va の難所トップ5</h4><ol class="diff-list" style="list-style:none;padding:0">
+      <li class="diff-item"><span class="diff-rank">1</span><p><b>約m.213（および m.206 / 216）— チェロと2人だけの f risoluto</b>♩76 の p を聴いた<b>直後に</b>、チェロと2人だけで =108 の16分音符を f・risoluto で出します。3小節おきにこれが往復します。アルト記号の中低域で16分音符を明確に発音するのは、<b>C線・G線の反応の遅さ</b>もあって容易ではありません。<br><b>対策：</b><b>チェロと2人だけで、この6〜10小節を単独練習する。</b>どちらの弓を見るかを明示的に決める（低音側＝チェロを基準にするのが安全）。16分音符は弓を弦に置いてから始める——risoluto は空中から落とすと発音が遅れます。C線・G線は発音までの遅延が大きいので、実際の音の頭が揃うよう気持ち早めに弓を動かし始める。メトロノームを ♩76 と 1小節=108 で交互に鳴らし、切り替えだけを反復してください。</p></li>
+      <li class="diff-item"><span class="diff-rank">2</span><p><b>約m.99–124 と 約m.440–462 — 連続8分音符のモーター</b>1小節あたり4〜6個の8分音符を、<b>20小節以上ほぼ休みなく刻み続けます</b>。しかも半音階的に和声が動くため指の形が毎小節変わり、ヴィオラの広い指間隔では移動距離が大きい。上で1stVnが最高音域を弾いているので、下でテンポが揺れると全体が崩れます。<br><b>対策：</b><b>1stポジションに固執せず、2nd・3rdを積極的に使って移弦を減らす</b>運指を作る。同一弦上に音型を収める方が指間隔の負担が小さくなります。右手は中弓の狭い区間のデタシェに固定し、弓を大きく使わない。音程は1stVn抜きで、2ndVnとチェロの和声だけを鳴らしながら取る。テンポは1小節=70 → 85 → 100 → 108 と上げ、各段階で24小節連続を条件にしてください。</p></li>
+      <li class="diff-item"><span class="diff-rank">3</span><p><b>約m.300–330（E の後）— 2ndVnから引き継ぐ半音階オスティナート</b>「8分音符＋8分休符」の半音階音型を、調号のない（♭系の臨時記号が支配する）領域で長く担当します。<b>休符があるぶん音程の誤りが露出しやすい</b>。しかも poco a poco の長いクレッシェンドの中にあります。<br><b>対策：</b>引き継ぎの前後（2ndVnが弾く区間から自分の区間）を<b>2ndVnと2人でつなげてさらう</b>。音色と発音の長さを2ndVnに揃える。全部レガートに伸ばして音程の骨格を確定してから短くする。弓は先寄りの一定区間で、休符のあいだ弓を弦から離さない（雑音を避ける）。poco a poco は8小節ごとに目標音量を数値化して譜面に書いてください。</p></li>
+      <li class="diff-item"><span class="diff-rank">4</span><p><b>約m.600–613（コーダ）— ト音記号への持ち替え＋高音域の marcato</b><b>アルト記号からト音記号へ持ち替え</b>、普段使わない高音域（A線のハイポジション）で marcato の旋律的内声を ff で弾きます。ヴィオラの高音域は音色が細くなりやすく、1stVnの 8va とチェロの低音に挟まれて埋もれます。<br><b>対策：</b>持ち替え箇所を<b>譜面に大きく印を付ける</b>。読み替えミスがこの区間の最大の事故要因です。高音域は<b>A線を主に使い、D線のハイポジションは避ける</b>（音色が痩せます）。marcato は弓圧＋一瞬の停止で作り、速い弓で押さない。音程はチェロの低音との完全5度・オクターヴを基準に確認してください。</p></li>
+      <li class="diff-item"><span class="diff-rank">5</span><p><b>約m.330–343 と 約m.549–556 — pizz. と arco の短い持ち替え</b>両方とも<b>pizz. の直後に f（または ff）の arco</b> が来ます。ヴィオラの弦は太く反応が遅いので、持ち替え直後に十分な音量を出すのは難しい。<br><b>対策：</b>pizz. の最後の1小節で<b>弓を弦の上に構え終える</b>（弓を持つ位置も含めて動作を固定）。arco 復帰の第一音は必ず弓を弦に置いた状態から。該当の6〜8小節を、持ち替え動作込みで反復練習してください。なお約m.330 の pizz. が2ndVnとヴィオラの両方に掛かっているかは、段の位置から断定できません。パート譜で確認が必要です。</p></li>
+    </ol></div>
+    <h3 style="margin-top:34px;font-size:1.08rem">この楽章で Va が担うもの</h3>
+    <p class="lede">ヴィオラはこの楽章で<b>低音側の相棒</b>と<b>リズムの心臓</b>という2つの役を兼ねます。序奏ではチェロと2声で pesante の応答を担い、Andante が回帰する切り替えゾーンではチェロと2人だけで f risoluto の16分音符を弾いて、1stVn＋2ndVnの Andante と対峙します。<b>この楽章のテンポ切り替えは、上2声の組と下2声の組の対決として書かれている</b>ので、ヴィオラはその一方の当事者です。主部ではチェロに次ぐ2番手として主題を受け継ぎ（提示部・再現部とも）、フーガ的な積み上げの成否を実質的に決めます。cantabile 楽節では持続音で和声を支えたのち、<b>1stVnの半音階上行の下で連続8分音符のモーターに転じる</b>のが最大の技術的負担であり、E の後には2ndVnから半音階オスティナートを引き継いで長く走り続けます。終結ではト音記号に持ち替えて高音域の marcato に加わります。</p>
+    <h3 style="margin-top:34px;font-size:1.08rem">4パートの役割比較</h3>
+    <div class="compare"><div class="compare-head"><div>観点</div><div>Vn1</div><div>Vn2</div><div>Va</div><div>Vc</div></div>
+      <div class="compare-row"><div>序奏（m.1–18）での機能</div><div><b>問いの第一声。</b>16分音符の上行動機で楽章を開始し、フェルマータで区切る主導者</div><div><b>問いの相方。</b>1stVnに p の下降8分音符で応答し、上声2声の対話を成立させる</div><div class="me"><b>答えの側。</b>チェロと2声で pesante の半音階上行を担う応答者</div><div><b>答えの側の基準。</b>ヴィオラと同じ pesante の線を最低音で支え、応答の重心を作る</div></div>
+      <div class="compare-row"><div>主部主題の提示順での位置</div><div><b>4番手。</b>テンポは既に確立済みで、合流する側</div><div><b>3番手。</b>ヴィオラの主題を受け、1stVnが入る前の推進力を作る</div><div class="me"><b>2番手。</b>チェロの刻みの上に主題を乗せ、フーガ的積み上げを軌道に乗せる</div><div><b>1番手。無伴奏でテンポを設定する。</b>積み上げの全責任の起点</div></div>
+      <div class="compare-row"><div>第2主題（B / C / H）での機能</div><div><b>歌い手。</b>dolce cantabile の旋律を担当。直後に必ず半音階の長大な上行が続く</div><div><b>伴奏エンジン。</b>反復8分音符の p でリズムと和声を同時に供給</div><div class="me"><b>持続音で和声を支える</b>→途中から8分音符のモーターに転じ、2ndVnから刻みを引き継ぐ</div><div><b>意図的に休止。</b>書法を軽くし、途中から p の持続音で復帰</div></div>
+      <div class="compare-row"><div>テンポ切り替えでの責任</div><div><b>Andante 側の合図を出す立場。</b>p の序奏動機を最初に出し、フェルマータを切る</div><div><b>Andante 側の相方。</b>1stVnと2声で往復するため切り替えの当事者だが、合図は出さない</div><div class="me"><b>Vivace 側の当事者。</b>チェロと2人で f risoluto に切り込む。低音側の一方</div><div><b>Vivace 側の基準かつ最重量の責任。</b>無伴奏開始、risoluto の発音基準、いずれも代役なし</div></div>
+      <div class="compare-row"><div>最大の見せ場</div><div><b>コーダの 8va 最高音域の持続音</b>（ff、Andante 主題由来）と、A・G の f の主題</div><div><b>E 以降の半音階オスティナート約40小節</b>と、I での唯一の刻み</div><div class="me"><b>主部主題の2番手提示</b>、および終結のト音記号持ち替えによる高音域 marcato</div><div><b>I のアルト記号・高音域 p cantabile の旋律独奏</b></div></div>
+      <div class="compare-row"><div>技術的な核心</div><div><b>最高音域の半音階の音程</b>と、pizz. から arco、più animato への持ち替え</div><div><b>半音階の短い音を長時間、均質に刻む右手と音程</b>。加えて f＞p の弓配分</div><div class="me"><b>アルト記号・広い指間隔での連続8分音符の持久力</b>と、C線・G線の遅い発音を揃える技術</div><div><b>親指ポジションでの高音域の歌</b>、記号の3種持ち替え、弦の反応の遅さを見越した先行発音</div></div>
+      <div class="compare-row"><div>他パートとの縦の合わせ方</div><div>自分が出す側（Andante・K の加速・rit.）。ただし Vivace の主部では<b>2ndVnの8分音符に乗る</b>のが正解</div><div>上は1stVnの旋律、下はチェロの刻みに挟まれる。<b>1stVnとは2声のデュオ、ヴィオラとは音型の受け渡し</b>で組む</div><div class="me"><b>チェロとペアで低音側ユニット</b>を組む（序奏・risoluto）。刻みの受け渡しでは<b>2ndVnとペア</b>になる</div><div><b>全員がチェロに合わせる</b>のが基本。チェロはヴィオラとだけペアを組み、上2声には合わせに行かない</div></div>
+      <div class="compare-row"><div>休みの意味</div><div>主部の積み上げ（約28小節）と再現部で待つ。<b>待つ間にテンポを受け取る</b>のが仕事</div><div>提示部冒頭で約17小節、F の後で約15小節。<b>次の自分の刻みのテンポ把握</b>に使う</div><div class="me">切り替えゾーンの Andante 側で休む。<b>次の risoluto の発音準備</b>の時間</div><div>B・H での休止は<b>書法上の意図（軽量化）</b>。休みが役割の一部になっている唯一のパート</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="theory">
+  <div class="wrap">
+    <span class="kicker">MUSIC THEORY BRIDGE</span>
+    <h2 class="h-title">この曲を理解するための3つの視点</h2>
+    <div class="theory-grid">
+      <div class="theory-card"><h4>対立ではなく巡回</h4><p>ベートーヴェン以降の四重奏が「主題の対立と解決」で構成されるのに対し、ボロディンのこの曲は<b>同じ旋律が楽器を巡る</b>ことで進みます。第3楽章はその典型で、主題がチェロ・1stVn・ヴィオラ・2ndVnを順に訪れます。「自分の番はどこか」を先に地図にしておくと、譜読みが速くなります。</p></div>
+      <div class="theory-card"><h4>書法が入れ替わる</h4><p>同じ主題が戻ってくるとき、<b>伴奏の書法が丸ごと書き換えられている</b>のがこの曲の特徴です。第2楽章の中間部は1回目と2回目でヴィオラとチェロの役割が正反対になり、2ndVnは内声から旋律に昇格します。「前と同じ」と思って弾くと必ずずれます。</p></div>
+      <div class="theory-card"><h4>テンポは誰かが持っている</h4><p>指揮者がいないので、区間ごとに<b>誰がテンポの物差しか</b>が決まっています。第1楽章 C は2ndVnの重音、第2楽章の展開部はヴィオラの8分、第4楽章の主部はチェロの無伴奏。自分が持っている区間では遠慮せず、持っていない区間では素直に乗るのが原則です。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="glossary">
+  <div class="wrap">
+    <span class="kicker">GLOSSARY</span>
+    <h2 class="h-title">用語集</h2>
+    <div class="tbl-scroll"><table class="form-map"><tbody>
+      <tr><td class="m">cantabile</td><td>歌うように。この曲では単なる表情記号ではなく「いまこのパートが主役」という配役の指示として読める</td></tr>
+      <tr><td class="m">pesante</td><td>重々しく。第4楽章の序奏でヴィオラとチェロに付く</td></tr>
+      <tr><td class="m">risoluto</td><td>決然と。第4楽章の切り替えでヴィオラとチェロが f で切り込む箇所に付く</td></tr>
+      <tr><td class="m">perdendosi</td><td>次第に消えるように。第3楽章の終結と第4楽章 E の入口に現れる</td></tr>
+      <tr><td class="m">segue</td><td>切れ目なく続けて。同じ音型をそのまま継続する指示</td></tr>
+      <tr><td class="m">fp</td><td>強く出してすぐ弱く。圧を抜くのではなく<b>弓速を落とす</b>のがコツ</td></tr>
+      <tr><td class="m">sempre stacc.</td><td>常にスタッカートで。第2楽章冒頭の2ndVnに付く</td></tr>
+      <tr><td class="m">オスティナート</td><td>同じ音型の執拗な反復。第4楽章 E 以降の2ndVnとヴィオラが担当</td></tr>
+      <tr><td class="m">カノン</td><td>同じ旋律を時間差で追いかける書法。第3楽章 D の1stVnとチェロ</td></tr>
+      <tr><td class="m">二重再現</td><td>主題と主調が同時に戻ること。ソナタ形式の再現部を確定させる手がかり</td></tr>
+      <tr><td class="m">サウンディングポイント</td><td>弓が弦に触れる位置。駒に近いほど音量と倍音が増え、指板に近いほど柔らかくなる</td></tr>
+      <tr><td class="m">後退練習</td><td>速いパッセージを最後の音から逆に1音ずつ足していく練習。着地点が先に決まるので転びにくい</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section id="recordings">
+  <div class="wrap">
+    <span class="kicker">RECOMMENDED RECORDINGS</span>
+    <h2 class="h-title">おすすめ音源</h2>
+    <p class="lede">批評の横断比較で第一級と評価される演奏です。<b>動画自体を試聴した上での評価ではないため、必ず自分の耳で聴き比べてから練習の参考にしてください。</b></p>
+    <div class="callout">
+      <ol class="diff-list" style="list-style:none;padding:0">
+        <li class="diff-item"><span class="diff-rank">1</span><p><b>ボロディン弦楽四重奏団（1980年録音）</b> — <a href="https://www.youtube.com/watch?v=2YAzUC6LzNk" target="_blank" rel="noopener">YouTubeで聴く</a><br>この曲の名前を冠した団体による、最も参照される演奏。テンポの取り方と各パートの受け渡しの基準として最初に聴くべき1枚です。</p></li>
+        <li class="diff-item"><span class="diff-rank">2</span><p><b>ボロディン弦楽四重奏団（1973年映像）</b> — <a href="https://www.youtube.com/watch?v=9YVd5efkUnw" target="_blank" rel="noopener">YouTubeで観る</a><br>映像なので、弓使いとアイコンタクトが見えます。第4楽章の Andante と Vivace の切り替えで誰がどう合図を出しているかの参考になります。</p></li>
+        <li class="diff-item"><span class="diff-rank">3</span><p><b>ボロディン弦楽四重奏団（モスクワ音楽院、創立55周年ライブ）</b> — <a href="https://www.youtube.com/watch?v=WrbJyzyOG6A" target="_blank" rel="noopener">YouTubeで聴く</a><br>ライブならではのテンポの揺れが分かる演奏です。</p></li>
+        <li class="diff-item"><span class="diff-rank">4</span><p><b>エマーソン弦楽四重奏団</b>／<b>ターカーチ弦楽四重奏団</b><br>批評では第3楽章の終結の扱いでエマーソンが、アンサンブルの機敏さでターカーチが高く評価されています。内声の聴き取りやすさで選ぶならこの2団体を比較してみてください。</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <span class="kicker">FINAL CHECK</span>
+    <h2 class="h-title">本番までの総チェックリスト</h2>
+    <div class="checklist">
+
+      <div class="check-item"><span class="check-box"></span><p>第1楽章冒頭の連続8分で、チェロの歌を支えられる均等さが保てる。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>第2楽章 m.106–119 を、両ヴァイオリンが交替で休む中で拍を出し続けられる。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>第3楽章 m.85 の Solo. cantabile が、4人の中で埋もれずに聴こえる。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>第4楽章の f risoluto を、チェロと2人だけで縦を揃えて出せる。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>第4楽章コーダのト音記号への持ち替えを、疲労した状態でも間違えない。</p></div>
+      <div class="check-item"><span class="check-box"></span><p>全4楽章を通して弾いても、4回ある持久区間で右手が固まらない。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    参照資料: <code>Documents/Score/ボロディン：弦楽四重奏曲第2番/Borodin String Quartet No.2_score.pdf</code>（M. P. Belaieff, Leipzig, 1894年初版の総譜、全37ページ）。小節番号はシステムごとの積算による推定値で、総小節数は各種文献の値（第1楽章304／第2楽章299／第3楽章180／第4楽章671）を基準に補正しています。<b>リハーサル記号を主、小節番号を従として扱ってください。</b>チェロとヴィオラの記譜（テノール記号・ト音記号への持ち替え）については、初版の印刷から判別しきれない箇所があるため、パート譜での確認を推奨します。1st Violin / 2nd Violin / Viola / Violoncello の4パート版が対になっています。
+  </div>
+</footer>
+
+</body>
+</html>

@@ -19,6 +19,10 @@ franck/
 mendelssohn-sq6/
   index.html                メンデルスゾーン SQ6 — パート一覧
   1stvn.html  2ndvn.html  viola.html  cello.html
+
+borodin-sq2/
+  index.html                ボロディン SQ2 — パート一覧
+  1stvn.html  2ndvn.html  viola.html  cello.html
 ```
 
 ## 収録作品
@@ -27,5 +31,6 @@ mendelssohn-sq6/
 |---|---|---|
 | César Franck: 交響曲 ニ短調 FWV 48 (1888) | 全3楽章 | 1stVn / 2ndVn / Va / Vc / Cb |
 | Felix Mendelssohn: 弦楽四重奏曲 第6番 ヘ短調 Op.80 (1847) | 第1・第4楽章 | 1stVn / 2ndVn / Va / Vc |
+| Alexander Borodin: 弦楽四重奏曲 第2番 ニ長調 (1881) | 全4楽章 | 1stVn / 2ndVn / Va / Vc |
 
 各ロードマップは静的ファイルのみで完結しており、外部リソースへの依存はありません。
