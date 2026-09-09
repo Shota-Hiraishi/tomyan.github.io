@@ -657,6 +657,7 @@
   <symbol id="i-audio" viewBox="0 0 24 24"><path d="M3 12h2.2M8 7.2v9.6M12 4v16M16 8.4v7.2M20.8 12H19" /></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4" /><path d="M6 4.6h10.5l-1.9 3.6 1.9 3.6H6" /></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.2c2.9-1 5.4-1 8 .6v13.4c-2.6-1.6-5.1-1.6-8-.6V5.2Z" /><path d="M20 5.2c-2.9-1-5.4-1-8 .6v13.4c2.6-1.6 5.1-1.6 8-.6V5.2Z" /></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9L12 3.6Z" /></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-6.1 6.5-10.4A6.5 6.5 0 0 0 5.5 10.6C5.5 14.9 12 21 12 21Z" /><circle cx="12" cy="10.4" r="2.4" /></symbol>
 </svg>
 
@@ -1226,6 +1227,7 @@
     <div><dt><svg class="icon" aria-hidden="true"><use href="#i-flag" /></svg><span>本番の持ち物と時間が不安</span></dt><dd>本番の準備（チェックリスト・タイムライン）</dd></div>
     <div><dt><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg><span>練習量が可視化されない</span></dt><dd>練習ログ（直近 14 日の日別グラフ）</dd></div>
     <div><dt><svg class="icon" aria-hidden="true"><use href="#i-sync" /></svg><span>機種変更・複数端末で使いたい</span></dt><dd>同期とアカウント</dd></div>
+    <div><dt><svg class="icon" aria-hidden="true"><use href="#i-star" /></svg><span>使っていて気になった点を伝えたい</span></dt><dd>感想を送る（端末を振る／設定から。★だけでも可）</dd></div>
   </div>
 
   <h2 class="band">続けるためのルール</h2>
@@ -1278,10 +1280,22 @@
     </div>
 
     <div class="rule-block">
+      <h3><svg class="icon" aria-hidden="true"><use href="#i-star" /></svg>気づいたことを送る</h3>
+      <ul>
+        <li><strong>端末を軽く 2〜3 回振る</strong>と、どの画面からでも感想の入力が開きます（設定の歯車からも開けます）</li>
+        <li>入力は <strong>★ 1〜5 とひとことだけ</strong>。開いていた画面・アプリのバージョン・OS は自動で添えられます</li>
+        <li>練習を「終了して記録」したあとにも★が出ます。1 タップで終わります</li>
+        <li>ログイン中はその場で届き、未ログインなら端末に貯まって次の同期で届きます。<strong>楽譜・録音そのものは送りません</strong></li>
+        <li>練習中の画面では振っても反応しません（演奏中に操作させないため）</li>
+      </ul>
+    </div>
+
+    <div class="rule-block">
       <h3><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg>知り合いに試してもらうとき</h3>
       <ul>
         <li>配布とインストールの手順は <code>docs/testing-guide.md</code> にあります</li>
         <li>テスト期間中はパスワード再設定のメールが届きません。忘れたら開発者に連絡してもらってください</li>
+        <li>感想は上の「気づいたことを送る」からアプリ内で送れます。別途フォームを用意する必要はありません</li>
         <li>最初に試すなら <span class="m">A</span> →  <span class="m">D</span> → <span class="m">E</span>（登録 → 合奏メモ → 宿題化）の順が、このアプリの狙いを一番短く体験できます</li>
       </ul>
     </div>
